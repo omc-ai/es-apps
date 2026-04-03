@@ -1,0 +1,597 @@
+Double Dragon 2 Arcade ROM Data Extraction Report
+==================================================
+Generated: 2026-04-01T11:10:00.902Z
+Main ROM: 26a9-04.bin (32768 bytes, loaded at 0x8000)
+Bank ROM: 26aa-03.bin (32768 bytes, loaded at 0x10000)
+
+=== 6809/6309 VECTOR TABLE ===
+  Reserved  : 0xFFFF
+  SWI3      : 0x80A8
+  SWI2      : 0x80A8
+  FIRQ      : 0x8081
+  IRQ       : 0x809F
+  SWI       : 0x80A8
+  NMI       : 0x8038
+  RESET     : 0x8000
+
+=== POINTER TABLE SCAN ===
+  Found 570 pointer tables in main ROM
+  Found 469 pointer tables in bank ROM
+  Top pointer tables:
+    main 0x9156: 64 pointers -> [0x9256, 0x9256, 0x9256, 0x9256, 0x9256, 0x9256...]
+    main 0x91D6: 64 pointers -> [0x9256, 0x9256, 0x9256, 0x9256, 0x9256, 0x9256...]
+    main 0xABB6: 64 pointers -> [0xB639, 0xABCE, 0xABD8, 0xAC04, 0xAC0C, 0xAC14...]
+    main 0xC3F8: 41 pointers -> [0xC400, 0xADB6, 0xBDC6, 0xC039, 0xC6E8, 0xFE40...]
+    main 0xC7D4: 29 pointers -> [0xC8A7, 0xC80F, 0xC80F, 0xCE7B, 0xCBC5, 0xD4A1...]
+    bank 0x13DAE: 29 pointers -> [0xC77F, 0x837D, 0xC77D, 0xC77D, 0xC77D, 0xC77F...]
+    bank 0x1546C: 29 pointers -> [0xF0FF, 0xF0FF, 0xF0FF, 0xF0FF, 0xF0FF, 0xF0FF...]
+    bank 0x13EAA: 28 pointers -> [0xE77D, 0xE77D, 0xE77D, 0xE77D, 0xE77D, 0xE77D...]
+    bank 0x13E72: 26 pointers -> [0xE77D, 0xE77D, 0xE77D, 0xE77D, 0xE77D, 0xE77D...]
+    main 0x8B36: 25 pointers -> [0x8BAA, 0xA944, 0x9F12, 0x9F91, 0x9FE6, 0x9286...]
+    main 0xD368: 25 pointers -> [0xD39C, 0xD3A7, 0xD38E, 0xD39B, 0xD39B, 0xD39C...]
+    bank 0x14234: 24 pointers -> [0xEC84, 0xDD00, 0xEC08, 0xED84, 0xDC00, 0xED08...]
+    main 0x9640: 22 pointers -> [0x966C, 0x9704, 0x9759, 0x98E7, 0x9926, 0x9927...]
+    main 0xAC36: 21 pointers -> [0xB137, 0xAC60, 0x9C88, 0x9B68, 0x9D29, 0xAE0F...]
+    main 0x8CA8: 20 pointers -> [0xEDA4, 0xEC06, 0xED22, 0xEC08, 0xED24, 0xA603...]
+    main 0x8CF3: 20 pointers -> [0xA607, 0xE60B, 0xED61, 0xA609, 0xE60C, 0xE361...]
+    main 0xC8D0: 20 pointers -> [0xC8F9, 0xC904, 0xC909, 0xC8F8, 0xC8F8, 0xC8F9...]
+    main 0xC9EC: 20 pointers -> [0xCA15, 0xCA19, 0xCA44, 0xCA14, 0xCA14, 0xCA6B...]
+    main 0xCBEE: 20 pointers -> [0xCC17, 0xCC22, 0xCC28, 0xCC16, 0xCC16, 0xCC17...]
+    main 0xCCF8: 20 pointers -> [0xCD21, 0xCD25, 0xCD4C, 0xCD20, 0xCD20, 0xCD73...]
+
+=== PALETTE DATA SCAN ===
+  Found 40 candidate palettes in main ROM
+  Found 40 candidate palettes in bank ROM
+    bank 0x17248 (score 21): 00 00 05 73 07 93 09 C4 0C E0 0C F1 03 31 0E DA 09 B0 75 5A ...
+      Colors: RGB(0,0,0), RGB(152,88,8), RGB(152,224,8), RGB(32,112,16)...
+    bank 0x17B3C (score 21): 00 00 09 09 03 03 03 50 05 70 0A A2 02 02 05 05 08 48 00 60 ...
+      Colors: RGB(0,0,0), RGB(72,64,16), RGB(24,192,0), RGB(128,208,0)...
+    bank 0x17C8A (score 21): 00 00 0D FB 0C E9 0A E7 08 C5 07 A4 05 82 02 70 09 6E 06 2B ...
+      Colors: RGB(0,0,0), RGB(216,120,24), RGB(72,56,24), RGB(56,184,16)...
+    bank 0x17CAA (score 21): 00 00 0E FB 0B F7 09 D5 06 B3 04 81 03 50 08 E8 01 91 01 21 ...
+      Colors: RGB(0,0,0), RGB(216,184,24), RGB(184,248,16), RGB(168,112,16)...
+    bank 0x17D6A (score 21): 00 00 0F FF 09 1F 08 1F 07 1D 06 1C 05 1B 04 2B 03 1A 08 89 ...
+      Colors: RGB(0,0,0), RGB(248,248,24), RGB(248,64,16), RGB(248,0,16)...
+    bank 0x13507 (score 20): 00 00 00 FC 00 14 38 10 30 10 08 08 10 0C 0C 08 30 0E 0E DC ...
+      Colors: RGB(0,0,0), RGB(224,56,0), RGB(160,0,0), RGB(128,0,112)...
+    bank 0x16D7A (score 20): 00 00 0B F9 08 D6 04 84 04 70 08 C0 0C F0 00 00 04 46 08 5A ...
+      Colors: RGB(0,0,0), RGB(200,248,16), RGB(176,48,16), RGB(32,32,8)...
+    bank 0x16D9A (score 20): 00 00 08 0D 0A 1F 0C 3F 0F FF 07 0A 0A F3 05 C5 0D FA 00 00 ...
+      Colors: RGB(0,0,0), RGB(104,0,16), RGB(248,128,16), RGB(248,8,24)...
+    bank 0x16DE8 (score 20): 00 00 08 69 08 8A 0F FF 05 B0 0B BA 00 0F 06 FA 03 70 00 00 ...
+      Colors: RGB(0,0,0), RGB(72,24,16), RGB(80,32,16), RGB(248,248,24)...
+    bank 0x16DFA (score 20): 00 00 0B F9 08 D6 04 84 00 03 02 25 04 47 00 00 04 46 08 5A ...
+      Colors: RGB(0,0,0), RGB(200,248,16), RGB(176,48,16), RGB(32,32,8)...
+
+=== SPRITE ANIMATION TABLE SCAN ===
+  Tile sequences: 90 in main ROM, 160 in bank ROM
+  Frame count tables: 96 in main, 169 in bank
+    main 0x9022: 32 frames - tiles: 0x00FF, 0x0005, 0x0008, 0x0002, 0x0006...
+    bank 0x1621F: 32 frames - tiles: 0x0002, 0x0607, 0x0405, 0x0003, 0x0405...
+    main 0xBE6D: 21 frames - tiles: 0x00A0, 0x08B0, 0x10D0, 0x00F0, 0x10E0...
+    bank 0x13450: 15 frames - tiles: 0x1038, 0x1050, 0x0C50, 0x1050, 0x1040...
+    bank 0x17E2F: 13 frames - tiles: 0x01FC, 0x034C, 0x0404, 0x0600, 0x0700...
+    main 0x90A2: 12 frames - tiles: 0x0011, 0x00FF, 0x0011, 0x0010, 0x00FF...
+    main 0xF7AA: 12 frames - tiles: 0x0040, 0x0240, 0x0440, 0x0640, 0x0840...
+    main 0xAD3D: 11 frames - tiles: 0x0202, 0x0202, 0x0404, 0x0202, 0x0203...
+    bank 0x13531: 11 frames - tiles: 0x14E0, 0x1010, 0x0C10, 0x0810, 0x1008...
+    bank 0x1629F: 11 frames - tiles: 0x000C, 0x000C, 0x0A0A, 0x0607, 0x000A...
+
+=== LEVEL / TILEMAP DATA SCAN ===
+  Byte tilemaps: 20 in main, 37 in bank
+  RLE blocks: 120 in main, 211 in bank
+  Word tilemaps: 8 in main, 13 in bank
+    main 0xE62C: 213 bytes, 4 unique tiles, avgRep 53.3
+    main 0xF5B5: 185 bytes, 52 unique tiles, avgRep 3.6
+    bank 0x1621C: 179 bytes, 19 unique tiles, avgRep 9.4
+    main 0xF778: 141 bytes, 49 unique tiles, avgRep 2.9
+    bank 0x13106: 125 bytes, 16 unique tiles, avgRep 7.8
+    RLE main 0xF79F: 37 pairs -> 2248 decoded bytes
+    RLE bank 0x1321F: 27 pairs -> 1566 decoded bytes
+    RLE bank 0x16142: 25 pairs -> 863 decoded bytes
+    RLE bank 0x1281B: 16 pairs -> 786 decoded bytes
+    RLE main 0xB6C5: 12 pairs -> 662 decoded bytes
+
+=== HITBOX / COLLISION DATA SCAN ===
+  Found 53 candidate hitbox tables in main ROM
+  Found 86 candidate hitbox tables in bank ROM
+    main 0x9014: 47 boxes
+      [1, 6, 6, 2] (raw: 01 06 06 02)
+      [2, 0, 0, 6] (raw: 02 00 00 06)
+      [6, 5, 5, 0] (raw: 06 05 05 00)
+    bank 0x1621D: 44 boxes
+      [0, 0, 0, 2] (raw: 00 00 00 02)
+      [0, 0, 6, 7] (raw: 00 00 06 07)
+      [2, 3, 4, 5] (raw: 02 03 04 05)
+    bank 0x13535: 14 boxes
+      [16, 16, 44, 12] (raw: 10 10 2C 0C)
+      [12, 16, 32, 32] (raw: 0C 10 20 20)
+      [8, 16, 24, 20] (raw: 08 10 18 14)
+    main 0xF778: 12 boxes
+      [0, 1, 2, 3] (raw: 00 01 02 03)
+      [4, 5, 6, 0] (raw: 04 05 06 00)
+      [7, 8, 9, 10] (raw: 07 08 09 0A)
+    bank 0x1423C: 10 boxes
+      [-36, 0, -19, 8] (raw: DC 00 ED 08)
+      [-20, 2, -35, 0] (raw: EC 02 DD 00)
+      [-20, 10, -19, 2] (raw: EC 0A ED 02)
+    main 0xA0E6: 9 boxes
+      [-1, 3, -1, -1] (raw: FF 03 FF FF)
+      [-1, -1, 1, 5] (raw: FF FF 01 05)
+      [-1, -1, 3, 0] (raw: FF FF 03 00)
+    bank 0x12892: 9 boxes
+      [2, 15, 12, 0] (raw: 02 0F 0C 00)
+      [-1, -1, 3, 15] (raw: FF FF 03 0F)
+      [12, 0, -1, -1] (raw: 0C 00 FF FF)
+    bank 0x1350E: 9 boxes
+      [16, 48, 16, 8] (raw: 10 30 10 08)
+      [8, 16, 12, 12] (raw: 08 10 0C 0C)
+      [8, 48, 14, 14] (raw: 08 30 0E 0E)
+    main 0xB741: 8 boxes
+      [2, 18, 2, 19] (raw: 02 12 02 13)
+      [2, 19, 2, 44] (raw: 02 13 02 2C)
+      [2, 45, 2, 47] (raw: 02 2D 02 2F)
+    bank 0x166E6: 8 boxes
+      [0, 0, 0, 1] (raw: 00 00 00 01)
+      [1, 1, 1, 0] (raw: 01 01 01 00)
+      [0, 0, 1, 1] (raw: 00 00 01 01)
+
+=== ENEMY WAVE / SPAWN DATA SCAN ===
+  Found 38 candidate wave tables in main ROM
+  Found 155 candidate wave tables in bank ROM
+    main 0xF7AA: 16 entries (4 bytes/entry)
+      scroll=0x0040 enemy=1 y=64 [00 40 01 40]
+      scroll=0x0240 enemy=3 y=64 [02 40 03 40]
+      scroll=0x0440 enemy=5 y=64 [04 40 05 40]
+      scroll=0x0640 enemy=7 y=64 [06 40 07 40]
+    main 0xF7AA: 11 entries (6 bytes/entry)
+      scroll=0x0040 enemy=1 y=64 [00 40 01 40 02 40]
+      scroll=0x0340 enemy=4 y=64 [03 40 04 40 05 40]
+      scroll=0x0640 enemy=7 y=64 [06 40 07 40 08 40]
+      scroll=0x0940 enemy=10 y=64 [09 40 0A 40 0B 40]
+    main 0xF7EA: 7 entries (4 bytes/entry)
+      scroll=0x0060 enemy=1 y=96 [00 60 01 60]
+      scroll=0x0260 enemy=3 y=96 [02 60 03 60]
+      scroll=0x0460 enemy=5 y=96 [04 60 05 60]
+      scroll=0x0660 enemy=7 y=96 [06 60 07 60]
+    bank 0x1793E: 6 entries (4 bytes/entry)
+      scroll=0x0222 enemy=3 y=51 [02 22 03 33]
+      scroll=0x0444 enemy=5 y=85 [04 44 05 55]
+      scroll=0x0666 enemy=7 y=119 [06 66 07 77]
+      scroll=0x0888 enemy=9 y=153 [08 88 09 99]
+    main 0xD909: 5 entries (4 bytes/entry)
+      scroll=0x0127 enemy=22 y=129 [01 27 16 81]
+      scroll=0x0727 enemy=18 y=129 [07 27 12 81]
+      scroll=0x0D27 enemy=14 y=129 [0D 27 0E 81]
+      scroll=0x0E27 enemy=10 y=129 [0E 27 0A 81]
+    bank 0x17806: 5 entries (4 bytes/entry)
+      scroll=0x0220 enemy=2 y=96 [02 20 02 60]
+      scroll=0x0343 enemy=5 y=80 [03 43 05 50]
+      scroll=0x0660 enemy=8 y=128 [06 60 08 80]
+      scroll=0x0819 enemy=0 y=160 [08 19 00 A0]
+    bank 0x17224: 5 entries (6 bytes/entry)
+      scroll=0x009B enemy=0 y=189 [00 9B 00 BD 00 00]
+      scroll=0x016A enemy=1 y=154 [01 6A 01 9A 04 BB]
+      scroll=0x03EE enemy=0 y=190 [03 EE 00 BE 00 46]
+      scroll=0x09DD enemy=0 y=153 [09 DD 00 99 00 00]
+    main 0x8FDC: 4 entries (4 bytes/entry)
+      scroll=0x0520 enemy=14 y=134 [05 20 0E 86]
+      scroll=0x0D20 enemy=10 y=134 [0D 20 0A 86]
+      scroll=0x0F20 enemy=6 y=134 [0F 20 06 86]
+      scroll=0x1120 enemy=2 y=134 [11 20 02 86]
+    main 0xA94C: 4 entries (4 bytes/entry)
+      scroll=0x0225 enemy=26 y=129 [02 25 1A 81]
+      scroll=0x0527 enemy=12 y=129 [05 27 0C 81]
+      scroll=0x0727 enemy=8 y=129 [07 27 08 81]
+      scroll=0x0B27 enemy=4 y=129 [0B 27 04 81]
+    main 0xAABD: 4 entries (4 bytes/entry)
+      scroll=0x03C4 enemy=15 y=234 [03 C4 0F EA]
+      scroll=0x03E7 enemy=3 y=150 [03 E7 03 96]
+      scroll=0x0627 enemy=16 y=236 [06 27 10 EC]
+      scroll=0x0F2B enemy=7 y=131 [0F 2B 07 83]
+
+=== ADDITIONAL DATA TABLE SCAN ===
+  JMP tables: 4 in main, 0 in bank
+  Byte lookups: 33 in main, 29 in bank
+    JMP table main 0xFE40: 14 entries -> [0xA944, 0x9F12, 0x9F91, 0x9FE6, 0x9286...]
+    JMP table main 0xFD00: 8 entries -> [0xC698, 0xC6A2, 0xFD06, 0xFD09, 0xC070...]
+    JMP table main 0xFDF0: 6 entries -> [0xF8C1, 0xF8C8, 0xECF7, 0xED85, 0xF50B...]
+    JMP table main 0xFE70: 3 entries -> [0xF428, 0xF805, 0xF8C8]
+
+=== MEMORY-MAPPED I/O REFERENCES ===
+  Found 66 I/O register writes (0x3800-0x3FFF range)
+    0x3808: 45 writes
+    0x380E: 7 writes
+    0x380B: 5 writes
+    0x380D: 2 writes
+    0x380C: 2 writes
+    0x39B6: 1 writes
+    0x39A6: 1 writes
+    0x3809: 1 writes
+    0x380A: 1 writes
+    0x3900: 1 writes
+
+=== TEXT / STRING DATA ===
+  Found 85 strings in main ROM, 284 in bank ROM
+    main 0x8245: "SXYY"
+    main 0x873B: "@&X'"
+    main 0x8807: "2c9@"
+    main 0x8920: "k2~|"
+    main 0x8974: "2b9M+"
+    main 0x89E9: "?HH$"
+    main 0x8A9F: "94~_"
+    main 0x8B7B: "DDDD"
+    main 0x8CE3: "94x2z"
+    main 0x8E84: "94~2"
+    main 0x8EB6: "HHHH"
+    main 0x8EE3: "1!4 "
+    main 0x8F25: "S2a5"
+    main 0x8F70: "'e J"
+    main 0x92E1: "TTTT"
+    main 0x9463: "&&))'('('(*+,-./01222"
+    main 0x9479: "22210/.-,+*"
+    main 0x9552: "@'&o"
+    main 0x960C: "9XYYYcdddfgTwxThiSyzh"
+    main 0x9B16: "&)4v"
+    main 0x9BD1: "&44&"
+    main 0x9C4E: "/012334@_"
+    main 0x9D7A: "6B?:"
+    main 0x9E2B: "9WX4WX4VW4kl4"
+    main 0x9F00: "UVUVTUij"
+    main 0xA095: "6HHH1"
+    main 0xA2FA: "-94@"
+    main 0xA502: "/94@"
+    main 0xA589: "ZZ[nYYZYZZ[mnXY`ab`ab_`atuv"
+    main 0xA5A7: "[\Z[\Zbc[opn"
+    main 0xA5B5: "Y^]__^]__edffrqss]\^^YYYYZZmmXX4v"
+    main 0xA6A5: "==DG5C>9@71"
+    main 0xA81C: "TTTTT"
+    main 0xAAFE: "==DG5C>9@71"
+    main 0xB09E: "&&4&"
+    main 0xB17D: "&!4&"
+    main 0xB19D: ")5&H"
+    main 0xB448: "0123"
+    main 0xB456: "6HH3"
+    main 0xB495: "CDEF"
+    main 0xB6E6: "HHH1"
+    main 0xB896: "& 4&"
+    main 0xC5D5: "B2d9"
+    main 0xC7D0: "d2a9"
+    main 0xC826: "@!@!@!@!@!@!@"
+    main 0xC834: "@6@*@-@0@3@3@6@"
+    main 0xC850: "@i@6@6@"
+    main 0xC8A4: "2b94~"
+    main 0xDAF4: "4~2q"
+    main 0xDB46: "=5 1"
+    main 0xEE1B: ":92|"
+    main 0xEEF0: "946m"
+    main 0xEF89: "9462|m"
+    main 0xF067: "%a E"
+    main 0xF14D: "%b F"
+    main 0xF3C4: "2d92y"
+    main 0xF3D7: "aDDDD"
+    main 0xF3ED: "f2g946"
+    main 0xF428: "402z"
+    main 0xF43F: "aTTT"
+    main 0xF450: "d2f5"
+    main 0xF48D: "DDDDD"
+    main 0xF4DF: "aDDDD4"
+    main 0xF4F1: "d2f5"
+    main 0xF54D: "\9CS"
+    main 0xF564: "94v5"
+    main 0xF569: "XIXIXIXI94"
+    main 0xF5F7: "#%'*"
+    main 0xF601: "PQRabcdhj"
+    main 0xF612: "!"$&)CEGIKMO"
+    main 0xF622: "efgi"
+    main 0xF632: "ABDFHJLN"
+    main 0xF79A: " !"#"
+    main 0xF79F: "$%&'()*+,-@"
+    main 0xFE80: "~@"~E"
+    main 0xFE86: "~E<~Dg~HP~Fy~H"
+    main 0xFEA4: "~B5~D"
+    main 0xFEB5: "x~DX~C"
+    main 0xFEBF: "~Eb~Gt~`&~e"
+    main 0xFECB: "~G|~G"
+    main 0xFED4: "~_i~W>~@!~@!~S"
+    main 0xFEE9: "~I?~J"
+    main 0xFEEF: "~J+~KK~I"
+    main 0xFEFB: "~F.~"
+    main 0xFF01: "~BF~H+"
+    bank 0x10003: "~Fy~Eb~@"~G"
+    bank 0x1000F: "~Gt~E<~F.~DX~B"
+    bank 0x1001E: "~Dg94~O"
+    bank 0x10034: "@>@w@"
+    bank 0x1015D: "462xDDDDD"
+    bank 0x1017C: "amb*"
+    bank 0x10245: "94H2"
+    bank 0x103FA: "OTITITITI"
+    bank 0x1040D: "DDFF"
+    bank 0x10466: "94v2x"
+    bank 0x104A5: "XIXIXIXI5"
+    bank 0x104D7: "XIXIXIXI5"
+    bank 0x1051C: ""J=0"
+    bank 0x10530: "1!Z&"
+    bank 0x105DD: "4~2q"
+    bank 0x105E5: "F.%="
+    bank 0x10675: "b2d9442{"
+    bank 0x1085A: "''2{"
+    bank 0x10866: "dO_hai"
+    bank 0x10875: "blajd&"
+    bank 0x10891: "'%2q"
+    bank 0x1089C: "cO_hai"
+    bank 0x108AA: "blajc&"
+    bank 0x108C6: "'$2q"
+    bank 0x108D1: "bocOhcXI"
+    bank 0x108DF: "lcjb&"
+    bank 0x108E8: "c2o9O_9"
+    bank 0x108F8: "'=2qodoeofog"
+    bank 0x10933: "f2o9"
+    bank 0x10A71: "9JzJ"
+    bank 0x10C8E: "M;MH{"
+    bank 0x10C98: "MpM}M"
+    bank 0x10E3E: "9NIOaO"
+    bank 0x112DE: "`402|"
+    bank 0x11378: "a$<|"
+    bank 0x11433: "9ThU"
+    bank 0x1161B: "TB92"
+    bank 0x11648: "2a94"
+    bank 0x1168E: "2a9V"
+    bank 0x1182A: "v1! "
+    bank 0x11879: "HHI_"
+    bank 0x11884: "H1* "
+    bank 0x119A2: "4P2|"
+    bank 0x11A00: "YYYY"
+    bank 0x11A3B: "E&Uob"
+    bank 0x11A5F: "#XIXIXI"
+    bank 0x11AF4: "J2d5"
+    bank 0x11B5A: "94v2"
+    bank 0x11C12: "\(\,\0\4\8\<\@\D\H\L\PDDDD"
+    bank 0x11C34: "*,22"
+    bank 0x11C8D: "` cJ'"
+    bank 0x11CF1: "DX94"
+    bank 0x11D54: "]\]]]g]h"
+    bank 0x11D82: "^2^Q^f^"
+    bank 0x11F9E: "'.L "
+    bank 0x12025: "94@O"
+    bank 0x1240E: "1" $1!"
+    bank 0x124AA: "%5 ~eB"
+    bank 0x124D1: "#~e{"
+    bank 0x126B2: "2f9CS"
+    bank 0x126C1: "O940"
+    bank 0x126F2: "f-69W"
+    bank 0x126FE: "f-69W"
+    bank 0x1270A: "f-69W"
+    bank 0x12716: "f-69W"
+    bank 0x12722: "f-69X"
+    bank 0x12728: "hHhHhHhHhHhHhHhHh(h(h(h(h(h(h(h"
+    bank 0x12748: "h(i!iCiei"
+    bank 0x12754: "j)jQj"
+    bank 0x1275C: "k'kQk"
+    bank 0x12768: "lCl}l"
+    bank 0x12774: "m+mZm|m"
+    bank 0x1277C: "h:h:m"
+    bank 0x12784: "n2nhn"
+    bank 0x12792: "h(o"oDolo"
+    bank 0x127A0: "h(h(h(h(h(o"
+    bank 0x127B0: "p$pFp"
+    bank 0x127BE: "q4qNqhq"
+    bank 0x127D8: "rTrTrnr"
+    bank 0x127E6: "rTrTrTrTr"
+    bank 0x127F0: "h(h(h(h(h(r"
+    bank 0x12800: "h(h(s"
+    bank 0x1280E: "hHsfs"
+    bank 0x1281C: "h(h(h(h(h(h(h:h:h:h:h:h:h:h:h:"
+    bank 0x12848: "hrhzh"
+    bank 0x12852: "h:hbhjhZ"
+    bank 0x128FF: "h:h:h:i"
+    bank 0x12909: "h:h:h:h:"
+    bank 0x12921: "i3h:i3i;i3h:iUh:h:"
+    bank 0x12943: "i3h:i3i;i3h:iUh:i]"
+    bank 0x1296F: "h:iwh:h:"
+    bank 0x12989: "t:uJi"
+    bank 0x129F5: "i3h:i3i;i3h:h:j"
+    bank 0x12A0D: "hBi3h:i3i;i3h:j!h:h:"
+    bank 0x12A33: "h:j;jCh:"
+    bank 0x12A55: "j{h:j{h:jcjsjk"
+    bank 0x12A99: "jsh:"
+    bank 0x12ABF: "h:h:j"
+    bank 0x12B27: "kIh:kIh:kAh:h:k9h:"
+    bank 0x12B4F: "hBk{h:k{h:kkh:h:kcks"
+    bank 0x12B8D: "h:h:k"
+    bank 0x12BB7: "h:h:k"
+    bank 0x12BF3: "h:h:h:h:k"
+    bank 0x12C15: "hBl)k"
+    bank 0x12C1B: "l)h:h:h:h:h:h:"
+    bank 0x12C2D: "u"l1"
+    bank 0x12C43: "lmlulmh:h:h:l]lelU"
+    bank 0x12C83: "h:h:h:l"
+    bank 0x12CB7: "h:h:lel"
+    bank 0x12CD9: "h:h:lel"
+    bank 0x12CEB: "tfuZl"
+    bank 0x12D01: "h:h:leh:m"
+    bank 0x12D13: "h:h:lel"
+    bank 0x12D2B: "m=mEm=h:m=h:h:h:h:"
+    bank 0x12D47: "tfu^mM"
+    bank 0x12D5A: "mlmtmlh:mlh:h:h:h:"
+    bank 0x12D86: "h:h:h:h:"
+    bank 0x12D98: "t~ubm"
+    bank 0x12DAE: "h:h:h:h:"
+    bank 0x12DBC: "hBh:h:h:h:n"
+    bank 0x12DC8: "h:h:h:h:m"
+    bank 0x12DDE: "h:h:"
+    bank 0x12DF4: "t^uzo"
+    bank 0x12DFA: "n$h:n$m"
+    bank 0x12E08: "h:h:"
+    bank 0x12E0D: "Bt^u"
+    bank 0x12E28: "u.n,"
+    bank 0x12E32: "nDh:nDnLnTh:nzh:h:"
+    bank 0x12E4E: "tVuFn\"
+    bank 0x12E56: "t^uRnb"
+    bank 0x12E72: "h:nzh:h:"
+    bank 0x12EA2: "h:h:h:h:"
+    bank 0x12EBC: "h:h:h:h:"
+    bank 0x12ED6: "h:h:h:h:"
+    bank 0x12EF0: "h:h:h:h:"
+    bank 0x12EFE: "hBh:h:o"
+    bank 0x12F06: "h:h:h:h:h:h:"
+    bank 0x12F20: "hBo4h:o4o<o"
+    bank 0x12F2C: "h:h:h:h:"
+    bank 0x12F42: "hBoVh:oVo^o"
+    bank 0x12F4E: "h:h:h:h:"
+    bank 0x12F5A: "u2of"
+    bank 0x12F6C: "o~h:o~h:m"
+    bank 0x12F76: "h:h:h:h:"
+    bank 0x12F90: "h:h:h:h:"
+    bank 0x12FAA: "h:h:h:h:"
+    bank 0x12FB4: "t*u6o"
+    bank 0x12FBC: "t*u6o"
+    bank 0x12FD4: "h:h:h:h:h:h:"
+    bank 0x12FF2: "h:h:h:h:"
+    bank 0x1300C: "h:h:h:h:"
+    bank 0x13022: "hBp6h:p6p>p6h:h:h:h:"
+    bank 0x13044: "hBpXh:pXh:pXh:h:h:h:"
+    bank 0x1305C: "u:p`"
+    bank 0x1308E: "h:h:h:h:"
+    bank 0x130A0: "t6uNp"
+    bank 0x130B6: "h:h:h:h:"
+    bank 0x130D8: "h:h:h:h:"
+    bank 0x130FA: "h:h:h:h:"
+    bank 0x13110: "hBq$h:q$q,q$h:h:h:h:"
+    bank 0x13132: "hBqFh:qFq,qFh:h:h:h:"
+    bank 0x1314C: "hBq`h:q`q,q`h:h:h:h:"
+    bank 0x13166: "hBqzh:qzq,qzh:h:h:h:"
+    bank 0x1318C: "h:h:h:h:"
+    bank 0x131A6: "h:h:h:h:"
+    bank 0x131C0: "h:h:h:h:"
+    bank 0x131DA: "h:h:h:h:"
+    bank 0x131F4: "h:h:h:h:"
+    bank 0x13202: "hBrfh:rfh:rfh:h:h:h:"
+    bank 0x1321C: "hBh:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:h:rfh:rfh:rfh:h:h:h:"
+    bank 0x1326C: "hBrfh:rfh:rfh:h:h:h:rfh:rfh:rfh:h:h:h:rfh:rfh:rfh:h:h:h:h:h:r"
+    bank 0x132AE: "h:h:h:h:"
+    bank 0x132BC: "hBh:h:r"
+    bank 0x132C8: "h:h:h:h:"
+    bank 0x132E0: "h:h:h:h:h:h:h:h:"
+    bank 0x132F2: "t*urs"
+    bank 0x132FA: "h:h:h:h:h:h:h:h:"
+    bank 0x1330C: "t*uvs"
+    bank 0x13318: "s*h:h:h:h:h:h:h:h:"
+    bank 0x13332: "sDh:h:h:m"
+    bank 0x1333C: "h:h:h:h:"
+    bank 0x1334C: "h:h:h:h:s^h:h:h:h:"
+    bank 0x13360: "t^uRjKsxh:h:h:h:h:h:h:h:"
+    bank 0x13394: "h:h:h:h:h:h:h:h:"
+    bank 0x133A8: "ufjKs"
+    bank 0x133AE: "h:h:h:h:h:h:h:h:"
+    bank 0x133C2: "ufhB"
+    bank 0x13584: "$P$("
+    bank 0x135F5: "vf$F"
+    bank 0x137B8: "5 &x"
+    bank 0x137E1: "|`$O"
+    bank 0x13831: "45 9"
+    bank 0x13C22: " 94 XO"
+    bank 0x13C74: "'mXI"
+    bank 0x13CA1: "'@XO"
+    bank 0x13CAC: "h('34 "
+    bank 0x13D97: "~'~q~"
+    bank 0x13E11: "~!~!~!~!~!"
+    bank 0x13E49: "~e~e~e~e~e~e}"
+    bank 0x13E5B: "~k~k~k~k~k"
+    bank 0x13F08: " 0 }"
+    bank 0x13F34: "@0 }"
+    bank 0x13FAC: "x@8}"
+    bank 0x1401E: "~C%~Q"
+    bank 0x14024: "~Rq~S"
+    bank 0x1402D: "~Wv~e"
+    bank 0x1403C: "~Xa~XN~D"
+    bank 0x1404B: "~U`~Z,~Y"
+    bank 0x14057: "~eG~f7~h"
+    bank 0x1406C: "~Bt~h"
+    bank 0x14078: "~c:~h"
+    bank 0x14084: "~kS~ij~k"
+    bank 0x14090: "~j1~l"
+    bank 0x140A8: "~l#~}"
+    bank 0x142DF: "cdee4v"
+    bank 0x14385: "D&%%"
+    bank 0x143FF: "9DDEJE"
+    bank 0x14412: "J3J3J7JeK"
+    bank 0x1450B: "8_D%"
+    bank 0x14617: "'O J"
+    bank 0x1488A: "2a92"
+    bank 0x148D1: "82a9"
+    bank 0x14909: "'< Q"
+    bank 0x14924: "'9 R"
+    bank 0x14943: "'# *"
+    bank 0x149FA: "Xa~D"
+    bank 0x149FF: "9`8(,h@00`8(,h@00pH84xP@<"
+    bank 0x14A61: "82a9"
+    bank 0x14AB7: "r92}"
+    bank 0x14C6D: "82b9"
+    bank 0x14E42: ")']j"
+    bank 0x14E5E: ")'A "
+    bank 0x150E8: "W%$o"
+    bank 0x1527D: "KJHH1"
+    bank 0x15344: "TTTTT"
+    bank 0x15442: "TJTJTLTT"
+    bank 0x15454: "T\T^TbTi"
+    bank 0x15507: "DDDDD"
+    bank 0x1555B: "U`2d92q"
+    bank 0x155BD: "2o9U"
+    bank 0x155C8: "VHVH"
+    bank 0x15788: "@&,M+"
+    bank 0x157C0: "S9 ! !"
+    bank 0x15A4E: "4x2|"
+    bank 0x15CDE: "]@]{]"
+    bank 0x15CE6: "^@^}"
+    bank 0x15E3C: "@9Z["
+    bank 0x15FB4: "2o946"
+    bank 0x16025: "c4&4"
+    bank 0x16083: "c.'!"
+    bank 0x1614D: "$,$,$.$,$,$,$.$,$.$,$,$,$,$,$.$.$,$,$,$,"
+    bank 0x16447: "Z@ D"
+    bank 0x16637: "4v2|"
+    bank 0x1669F: "HHH4"
+    bank 0x16755: "4@2qo"
+    bank 0x16797: "8&Wo"
+    bank 0x16855: "      "
+    bank 0x1685F: "            "
+    bank 0x1686C: "               "
+    bank 0x168DC: "4@2q"
+    bank 0x1695A: "62d9"
+    bank 0x16C11: "9999"
+    bank 0x16C22: "P4@2"
+    bank 0x16CA6: "XIXIXIXI"
+    bank 0x16CB0: "3Bjb&"
+    bank 0x16D6E: "mzr:p"
+    bank 0x1728C: "uzu:t"
+    bank 0x1729C: "uzu:v:v"
+    bank 0x172AE: "u:v:v"
+    bank 0x172BE: "w:v:v"
+    bank 0x172CE: "w:vzv"
+    bank 0x172DC: "wZwzvzw"
+    bank 0x172FA: "y:xZx"
+    bank 0x1730A: "y:xZy"
+    bank 0x1731A: "y:xZy"
+    bank 0x1737A: "{Z{Z{Z{Zs"
+    bank 0x1738A: "{z{z{z{zs"
+    bank 0x17B99: "y|*}"
+    bank 0x17BA2: "}J|j}"
+    bank 0x17BB2: "}J}j}"
+    bank 0x17BBA: "|*|J|"
+    bank 0x17BCA: "|j|js"
+    bank 0x17BDA: "|j|js"
+    bank 0x17E27: "O2a9"
+
+=== ROM COVERAGE SUMMARY ===
+  Main ROM: 450 bytes unused (1.4%)
+    0x6CD3-0x6CF6: 36 bytes
+    0x7917-0x793B: 37 bytes
+    0x79D0-0x79FF: 48 bytes
+    0x7BB2-0x7BFF: 78 bytes
+    0x7CD2-0x7CFF: 46 bytes
+  Bank ROM: 509 bytes unused (1.6%)
+    0x40B4-0x40FF: 76 bytes
+    0x7E67-0x7FFF: 409 bytes
+
+Wrote JSON data to: /Users/asi/Documents/double-dragon-2-modern/output/game-data.json

@@ -1,0 +1,10 @@
+{
+  "billy_idle": 8,
+  "billy_walk": 4,
+  "billy_punch": 6,
+  "billy_kick": 5,
+  "billy_jump": 8,
+  "billy_damage": 0,
+  "enemy_walk": 8,
+  "enemy_fight": 6
+}

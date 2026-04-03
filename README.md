@@ -19,5 +19,8 @@ ElementStore applications and namespaces.
 
 The `game:` namespace defines universal game structure classes for 2D games: scenes, characters, sprites, tilemaps, physics, AI, combat, audio, input, camera, effects.
 
+All games use **Phaser 3** as the engine and follow **exact ROM flow replication** — copying the original game logic, timing, and behavior from the source ROMs.
+
 **Apps:**
-- `bruce_lee` — C64 Bruce Lee arcade ROM-to-JavaScript port
+- `bruce_lee` — C64 Bruce Lee arcade (6510 CPU, VIC-II) → Phaser 3
+- `double_dragon_2` — DD2: The Revenge arcade (HD6309, Technos TA-0026) → Phaser 3

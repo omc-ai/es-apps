@@ -1,0 +1,2181 @@
+{
+  "idle": [
+    {
+      "entries": [
+        {
+          "tile": 4886,
+          "size": 1,
+          "relX": -56,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4888,
+          "size": 1,
+          "relX": -56,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4890,
+          "size": 1,
+          "relX": -40,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4892,
+          "size": 1,
+          "relX": -40,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4905,
+          "size": 0,
+          "relX": -24,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 24,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": 24,
+          "relY": -62,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 40,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": 40,
+          "relY": -62,
+          "flipX": true
+        }
+      ],
+      "width": 112,
+      "height": 94,
+      "count": 12,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "hurt",
+        "fight",
+        "stage1",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1816,
+          "size": 1,
+          "relX": -51,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1832,
+          "size": 1,
+          "relX": -51,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1820,
+          "size": 1,
+          "relX": -35,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1834,
+          "size": 1,
+          "relX": -35,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 19,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1814,
+          "size": 1,
+          "relX": 19,
+          "relY": -66,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 35,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1812,
+          "size": 1,
+          "relX": 35,
+          "relY": -66,
+          "flipX": true
+        }
+      ],
+      "width": 102,
+      "height": 98,
+      "count": 8,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "punch",
+        "fight",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 4352,
+          "size": 1,
+          "relX": -38,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4354,
+          "size": 1,
+          "relX": -38,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4356,
+          "size": 1,
+          "relX": -22,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4358,
+          "size": 1,
+          "relX": -22,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4364,
+          "size": 0,
+          "relX": -22,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4360,
+          "size": 1,
+          "relX": -6,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4362,
+          "size": 1,
+          "relX": -6,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4365,
+          "size": 0,
+          "relX": -6,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": 7,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": 7,
+          "relY": -54,
+          "flipX": true
+        },
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": 23,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": 23,
+          "relY": -54,
+          "flipX": true
+        }
+      ],
+      "width": 77,
+      "height": 86,
+      "count": 7,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "hurt",
+        "stage1",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1824,
+          "size": 1,
+          "relX": -48,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1826,
+          "size": 1,
+          "relX": -48,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1828,
+          "size": 1,
+          "relX": -32,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1830,
+          "size": 1,
+          "relX": -32,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 6022,
+          "size": 1,
+          "relX": 16,
+          "relY": -89,
+          "flipX": false
+        },
+        {
+          "tile": 6027,
+          "size": 0,
+          "relX": 16,
+          "relY": -73,
+          "flipX": false
+        },
+        {
+          "tile": 6024,
+          "size": 1,
+          "relX": 32,
+          "relY": -89,
+          "flipX": false
+        },
+        {
+          "tile": 6028,
+          "size": 0,
+          "relX": 32,
+          "relY": -73,
+          "flipX": false
+        },
+        {
+          "tile": 6011,
+          "size": 0,
+          "relX": 32,
+          "relY": -57,
+          "flipX": false
+        }
+      ],
+      "width": 96,
+      "height": 89,
+      "count": 7,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkU",
+        "hurt",
+        "stage1"
+      ]
+    }
+  ],
+  "walkR": [
+    {
+      "entries": [
+        {
+          "tile": 4886,
+          "size": 1,
+          "relX": -56,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4888,
+          "size": 1,
+          "relX": -56,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4890,
+          "size": 1,
+          "relX": -40,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4892,
+          "size": 1,
+          "relX": -40,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4905,
+          "size": 0,
+          "relX": -24,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 24,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": 24,
+          "relY": -62,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 40,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": 40,
+          "relY": -62,
+          "flipX": true
+        }
+      ],
+      "width": 112,
+      "height": 94,
+      "count": 12,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "hurt",
+        "fight",
+        "stage1",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1816,
+          "size": 1,
+          "relX": -51,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1832,
+          "size": 1,
+          "relX": -51,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1820,
+          "size": 1,
+          "relX": -35,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1834,
+          "size": 1,
+          "relX": -35,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 19,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1814,
+          "size": 1,
+          "relX": 19,
+          "relY": -66,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 35,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1812,
+          "size": 1,
+          "relX": 35,
+          "relY": -66,
+          "flipX": true
+        }
+      ],
+      "width": 102,
+      "height": 98,
+      "count": 8,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "punch",
+        "fight",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 4352,
+          "size": 1,
+          "relX": -38,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4354,
+          "size": 1,
+          "relX": -38,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4356,
+          "size": 1,
+          "relX": -22,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4358,
+          "size": 1,
+          "relX": -22,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4364,
+          "size": 0,
+          "relX": -22,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4360,
+          "size": 1,
+          "relX": -6,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4362,
+          "size": 1,
+          "relX": -6,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4365,
+          "size": 0,
+          "relX": -6,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": 7,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": 7,
+          "relY": -54,
+          "flipX": true
+        },
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": 23,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": 23,
+          "relY": -54,
+          "flipX": true
+        }
+      ],
+      "width": 77,
+      "height": 86,
+      "count": 7,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "hurt",
+        "stage1",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1824,
+          "size": 1,
+          "relX": -48,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1826,
+          "size": 1,
+          "relX": -48,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1828,
+          "size": 1,
+          "relX": -32,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1830,
+          "size": 1,
+          "relX": -32,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 6022,
+          "size": 1,
+          "relX": 16,
+          "relY": -89,
+          "flipX": false
+        },
+        {
+          "tile": 6027,
+          "size": 0,
+          "relX": 16,
+          "relY": -73,
+          "flipX": false
+        },
+        {
+          "tile": 6024,
+          "size": 1,
+          "relX": 32,
+          "relY": -89,
+          "flipX": false
+        },
+        {
+          "tile": 6028,
+          "size": 0,
+          "relX": 32,
+          "relY": -73,
+          "flipX": false
+        },
+        {
+          "tile": 6011,
+          "size": 0,
+          "relX": 32,
+          "relY": -57,
+          "flipX": false
+        }
+      ],
+      "width": 96,
+      "height": 89,
+      "count": 7,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkU",
+        "hurt",
+        "stage1"
+      ]
+    }
+  ],
+  "walkL": [
+    {
+      "entries": [
+        {
+          "tile": 4886,
+          "size": 1,
+          "relX": -56,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4888,
+          "size": 1,
+          "relX": -56,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4890,
+          "size": 1,
+          "relX": -40,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4892,
+          "size": 1,
+          "relX": -40,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4905,
+          "size": 0,
+          "relX": -24,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 24,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": 24,
+          "relY": -62,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 40,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": 40,
+          "relY": -62,
+          "flipX": true
+        }
+      ],
+      "width": 112,
+      "height": 94,
+      "count": 12,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "hurt",
+        "fight",
+        "stage1",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1816,
+          "size": 1,
+          "relX": -51,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1832,
+          "size": 1,
+          "relX": -51,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1820,
+          "size": 1,
+          "relX": -35,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1834,
+          "size": 1,
+          "relX": -35,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 19,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1814,
+          "size": 1,
+          "relX": 19,
+          "relY": -66,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 35,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1812,
+          "size": 1,
+          "relX": 35,
+          "relY": -66,
+          "flipX": true
+        }
+      ],
+      "width": 102,
+      "height": 98,
+      "count": 8,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "punch",
+        "fight",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1824,
+          "size": 1,
+          "relX": -32,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1826,
+          "size": 1,
+          "relX": -32,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1828,
+          "size": 1,
+          "relX": -16,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1830,
+          "size": 1,
+          "relX": -16,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4894,
+          "size": 1,
+          "relX": -15,
+          "relY": -116,
+          "flipX": false
+        },
+        {
+          "tile": 4896,
+          "size": 1,
+          "relX": -15,
+          "relY": -84,
+          "flipX": false
+        },
+        {
+          "tile": 4898,
+          "size": 1,
+          "relX": 1,
+          "relY": -100,
+          "flipX": false
+        },
+        {
+          "tile": 4900,
+          "size": 1,
+          "relX": 1,
+          "relY": -68,
+          "flipX": false
+        },
+        {
+          "tile": 4902,
+          "size": 1,
+          "relX": 17,
+          "relY": -84,
+          "flipX": false
+        },
+        {
+          "tile": 4904,
+          "size": 0,
+          "relX": 17,
+          "relY": -68,
+          "flipX": false
+        }
+      ],
+      "width": 65,
+      "height": 116,
+      "count": 8,
+      "labels": [
+        "walkL",
+        "walkD",
+        "punch",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 4352,
+          "size": 1,
+          "relX": -38,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4354,
+          "size": 1,
+          "relX": -38,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4356,
+          "size": 1,
+          "relX": -22,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4358,
+          "size": 1,
+          "relX": -22,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4364,
+          "size": 0,
+          "relX": -22,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4360,
+          "size": 1,
+          "relX": -6,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4362,
+          "size": 1,
+          "relX": -6,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4365,
+          "size": 0,
+          "relX": -6,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": 7,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": 7,
+          "relY": -54,
+          "flipX": true
+        },
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": 23,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": 23,
+          "relY": -54,
+          "flipX": true
+        }
+      ],
+      "width": 77,
+      "height": 86,
+      "count": 7,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "hurt",
+        "stage1",
+        "stage1b"
+      ]
+    }
+  ],
+  "punch": [
+    {
+      "entries": [
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": -25,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": -25,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1778,
+          "size": 1,
+          "relX": -22,
+          "relY": -77,
+          "flipX": false
+        },
+        {
+          "tile": 1782,
+          "size": 0,
+          "relX": -22,
+          "relY": -61,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": -9,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": -9,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1780,
+          "size": 1,
+          "relX": -6,
+          "relY": -77,
+          "flipX": false
+        },
+        {
+          "tile": 1783,
+          "size": 0,
+          "relX": -6,
+          "relY": -61,
+          "flipX": false
+        },
+        {
+          "tile": 1784,
+          "size": 0,
+          "relX": 10,
+          "relY": -77,
+          "flipX": false
+        }
+      ],
+      "width": 51,
+      "height": 77,
+      "count": 9,
+      "labels": [
+        "punch",
+        "kick",
+        "hurt",
+        "stage1"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1816,
+          "size": 1,
+          "relX": -51,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1832,
+          "size": 1,
+          "relX": -51,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1820,
+          "size": 1,
+          "relX": -35,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1834,
+          "size": 1,
+          "relX": -35,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 19,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1814,
+          "size": 1,
+          "relX": 19,
+          "relY": -66,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 35,
+          "relY": -98,
+          "flipX": true
+        },
+        {
+          "tile": 1812,
+          "size": 1,
+          "relX": 35,
+          "relY": -66,
+          "flipX": true
+        }
+      ],
+      "width": 102,
+      "height": 98,
+      "count": 8,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "punch",
+        "fight",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1824,
+          "size": 1,
+          "relX": -32,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1826,
+          "size": 1,
+          "relX": -32,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1828,
+          "size": 1,
+          "relX": -16,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1830,
+          "size": 1,
+          "relX": -16,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4894,
+          "size": 1,
+          "relX": -15,
+          "relY": -116,
+          "flipX": false
+        },
+        {
+          "tile": 4896,
+          "size": 1,
+          "relX": -15,
+          "relY": -84,
+          "flipX": false
+        },
+        {
+          "tile": 4898,
+          "size": 1,
+          "relX": 1,
+          "relY": -100,
+          "flipX": false
+        },
+        {
+          "tile": 4900,
+          "size": 1,
+          "relX": 1,
+          "relY": -68,
+          "flipX": false
+        },
+        {
+          "tile": 4902,
+          "size": 1,
+          "relX": 17,
+          "relY": -84,
+          "flipX": false
+        },
+        {
+          "tile": 4904,
+          "size": 0,
+          "relX": 17,
+          "relY": -68,
+          "flipX": false
+        }
+      ],
+      "width": 65,
+      "height": 116,
+      "count": 8,
+      "labels": [
+        "walkL",
+        "walkD",
+        "punch",
+        "stage1b"
+      ]
+    }
+  ],
+  "kick": [
+    {
+      "entries": [
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": -25,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": -25,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1778,
+          "size": 1,
+          "relX": -22,
+          "relY": -77,
+          "flipX": false
+        },
+        {
+          "tile": 1782,
+          "size": 0,
+          "relX": -22,
+          "relY": -61,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": -9,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": -9,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1780,
+          "size": 1,
+          "relX": -6,
+          "relY": -77,
+          "flipX": false
+        },
+        {
+          "tile": 1783,
+          "size": 0,
+          "relX": -6,
+          "relY": -61,
+          "flipX": false
+        },
+        {
+          "tile": 1784,
+          "size": 0,
+          "relX": 10,
+          "relY": -77,
+          "flipX": false
+        }
+      ],
+      "width": 51,
+      "height": 77,
+      "count": 9,
+      "labels": [
+        "punch",
+        "kick",
+        "hurt",
+        "stage1"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 6036,
+          "size": 1,
+          "relX": -44,
+          "relY": -60,
+          "flipX": true
+        },
+        {
+          "tile": 6032,
+          "size": 1,
+          "relX": -28,
+          "relY": -92,
+          "flipX": true
+        },
+        {
+          "tile": 6034,
+          "size": 1,
+          "relX": -28,
+          "relY": -60,
+          "flipX": true
+        },
+        {
+          "tile": 6029,
+          "size": 0,
+          "relX": -12,
+          "relY": -108,
+          "flipX": true
+        },
+        {
+          "tile": 6030,
+          "size": 1,
+          "relX": -12,
+          "relY": -76,
+          "flipX": true
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": 13,
+          "relY": -64,
+          "flipX": true
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": 13,
+          "relY": -32,
+          "flipX": true
+        },
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": 29,
+          "relY": -64,
+          "flipX": true
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": 29,
+          "relY": -32,
+          "flipX": true
+        }
+      ],
+      "width": 89,
+      "height": 108,
+      "count": 5,
+      "labels": [
+        "walkR",
+        "kick",
+        "combat"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": -16,
+          "relY": -67,
+          "flipX": false
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": -16,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1812,
+          "size": 1,
+          "relX": -16,
+          "relY": -35,
+          "flipX": false
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": -16,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 0,
+          "relY": -67,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 0,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1814,
+          "size": 1,
+          "relX": 0,
+          "relY": -35,
+          "flipX": false
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": 0,
+          "relY": -32,
+          "flipX": false
+        }
+      ],
+      "width": 32,
+      "height": 67,
+      "count": 5,
+      "labels": [
+        "punch",
+        "kick",
+        "combat",
+        "stage1",
+        "stage1b"
+      ]
+    }
+  ],
+  "jump": [
+    {
+      "entries": [
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": -20,
+          "relY": -78,
+          "flipX": false
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": -20,
+          "relY": -46,
+          "flipX": false
+        },
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": -11,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": -11,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": -4,
+          "relY": -78,
+          "flipX": false
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": -4,
+          "relY": -46,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": 5,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": 5,
+          "relY": -32,
+          "flipX": false
+        }
+      ],
+      "width": 41,
+      "height": 78,
+      "count": 5,
+      "labels": [
+        "punch",
+        "kick",
+        "jump",
+        "combat",
+        "stage1"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": -25,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": -25,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 2030,
+          "size": 1,
+          "relX": -22,
+          "relY": -65,
+          "flipX": true
+        },
+        {
+          "tile": 2032,
+          "size": 1,
+          "relX": -22,
+          "relY": -33,
+          "flipX": true
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": -9,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": -9,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 2026,
+          "size": 1,
+          "relX": -6,
+          "relY": -65,
+          "flipX": true
+        },
+        {
+          "tile": 2028,
+          "size": 1,
+          "relX": -6,
+          "relY": -33,
+          "flipX": true
+        },
+        {
+          "tile": 2024,
+          "size": 1,
+          "relX": 10,
+          "relY": -49,
+          "flipX": true
+        }
+      ],
+      "width": 51,
+      "height": 65,
+      "count": 5,
+      "labels": [
+        "punch",
+        "jump",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": -27,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1794,
+          "size": 1,
+          "relX": -27,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 2030,
+          "size": 1,
+          "relX": -20,
+          "relY": -65,
+          "flipX": true
+        },
+        {
+          "tile": 2032,
+          "size": 1,
+          "relX": -20,
+          "relY": -33,
+          "flipX": true
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": -11,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1798,
+          "size": 1,
+          "relX": -11,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 2026,
+          "size": 1,
+          "relX": -4,
+          "relY": -65,
+          "flipX": true
+        },
+        {
+          "tile": 2028,
+          "size": 1,
+          "relX": -4,
+          "relY": -33,
+          "flipX": true
+        },
+        {
+          "tile": 2024,
+          "size": 1,
+          "relX": 12,
+          "relY": -49,
+          "flipX": true
+        }
+      ],
+      "width": 55,
+      "height": 65,
+      "count": 4,
+      "labels": [
+        "punch",
+        "jump"
+      ]
+    }
+  ],
+  "jkick": [
+    {
+      "entries": [
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": -31,
+          "relY": -99,
+          "flipX": false
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": -31,
+          "relY": -67,
+          "flipX": false
+        },
+        {
+          "tile": 4604,
+          "size": 1,
+          "relX": -16,
+          "relY": -80,
+          "flipX": true
+        },
+        {
+          "tile": 4607,
+          "size": 0,
+          "relX": -16,
+          "relY": -64,
+          "flipX": true
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": -15,
+          "relY": -99,
+          "flipX": false
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": -15,
+          "relY": -67,
+          "flipX": false
+        },
+        {
+          "tile": 4600,
+          "size": 1,
+          "relX": 0,
+          "relY": -64,
+          "flipX": true
+        },
+        {
+          "tile": 4602,
+          "size": 1,
+          "relX": 0,
+          "relY": -32,
+          "flipX": true
+        },
+        {
+          "tile": 4598,
+          "size": 1,
+          "relX": 16,
+          "relY": -48,
+          "flipX": true
+        },
+        {
+          "tile": 4606,
+          "size": 0,
+          "relX": 16,
+          "relY": -32,
+          "flipX": true
+        }
+      ],
+      "width": 63,
+      "height": 99,
+      "count": 5,
+      "labels": [
+        "walkL",
+        "jkick",
+        "hurt",
+        "fight",
+        "stage1"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 4372,
+          "size": 0,
+          "relX": -32,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4366,
+          "size": 1,
+          "relX": -16,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4373,
+          "size": 0,
+          "relX": -16,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": -4,
+          "relY": -93,
+          "flipX": true
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": -4,
+          "relY": -61,
+          "flipX": true
+        },
+        {
+          "tile": 4368,
+          "size": 1,
+          "relX": 0,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4374,
+          "size": 0,
+          "relX": 0,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 12,
+          "relY": -93,
+          "flipX": true
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": 12,
+          "relY": -61,
+          "flipX": true
+        },
+        {
+          "tile": 4370,
+          "size": 1,
+          "relX": 16,
+          "relY": -32,
+          "flipX": false
+        }
+      ],
+      "width": 64,
+      "height": 93,
+      "count": 3,
+      "labels": [
+        "idle",
+        "jkick",
+        "stage1"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": -19,
+          "relY": -64,
+          "flipX": true
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": -19,
+          "relY": -32,
+          "flipX": true
+        },
+        {
+          "tile": 4880,
+          "size": 1,
+          "relX": -12,
+          "relY": -100,
+          "flipX": true
+        },
+        {
+          "tile": 4882,
+          "size": 1,
+          "relX": -12,
+          "relY": -68,
+          "flipX": true
+        },
+        {
+          "tile": 4885,
+          "size": 0,
+          "relX": -12,
+          "relY": -52,
+          "flipX": true
+        },
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": -3,
+          "relY": -64,
+          "flipX": true
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": -3,
+          "relY": -32,
+          "flipX": true
+        },
+        {
+          "tile": 4876,
+          "size": 1,
+          "relX": 4,
+          "relY": -100,
+          "flipX": true
+        },
+        {
+          "tile": 4878,
+          "size": 1,
+          "relX": 4,
+          "relY": -68,
+          "flipX": true
+        },
+        {
+          "tile": 4884,
+          "size": 0,
+          "relX": 4,
+          "relY": -52,
+          "flipX": true
+        }
+      ],
+      "width": 39,
+      "height": 100,
+      "count": 3,
+      "labels": [
+        "jkick",
+        "stage1b"
+      ]
+    }
+  ],
+  "hurt": [
+    {
+      "entries": [
+        {
+          "tile": 4886,
+          "size": 1,
+          "relX": -56,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4888,
+          "size": 1,
+          "relX": -56,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4890,
+          "size": 1,
+          "relX": -40,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 4892,
+          "size": 1,
+          "relX": -40,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4905,
+          "size": 0,
+          "relX": -24,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1804,
+          "size": 1,
+          "relX": 24,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1806,
+          "size": 1,
+          "relX": 24,
+          "relY": -62,
+          "flipX": true
+        },
+        {
+          "tile": 1800,
+          "size": 1,
+          "relX": 40,
+          "relY": -94,
+          "flipX": true
+        },
+        {
+          "tile": 1802,
+          "size": 1,
+          "relX": 40,
+          "relY": -62,
+          "flipX": true
+        }
+      ],
+      "width": 112,
+      "height": 94,
+      "count": 12,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "walkD",
+        "hurt",
+        "fight",
+        "stage1",
+        "stage1b"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": -25,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": -25,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1778,
+          "size": 1,
+          "relX": -22,
+          "relY": -77,
+          "flipX": false
+        },
+        {
+          "tile": 1782,
+          "size": 0,
+          "relX": -22,
+          "relY": -61,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": -9,
+          "relY": -64,
+          "flipX": false
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": -9,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1780,
+          "size": 1,
+          "relX": -6,
+          "relY": -77,
+          "flipX": false
+        },
+        {
+          "tile": 1783,
+          "size": 0,
+          "relX": -6,
+          "relY": -61,
+          "flipX": false
+        },
+        {
+          "tile": 1784,
+          "size": 0,
+          "relX": 10,
+          "relY": -77,
+          "flipX": false
+        }
+      ],
+      "width": 51,
+      "height": 77,
+      "count": 9,
+      "labels": [
+        "punch",
+        "kick",
+        "hurt",
+        "stage1"
+      ]
+    },
+    {
+      "entries": [
+        {
+          "tile": 4352,
+          "size": 1,
+          "relX": -38,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4354,
+          "size": 1,
+          "relX": -38,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4356,
+          "size": 1,
+          "relX": -22,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4358,
+          "size": 1,
+          "relX": -22,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4364,
+          "size": 0,
+          "relX": -22,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 4360,
+          "size": 1,
+          "relX": -6,
+          "relY": -80,
+          "flipX": false
+        },
+        {
+          "tile": 4362,
+          "size": 1,
+          "relX": -6,
+          "relY": -48,
+          "flipX": false
+        },
+        {
+          "tile": 4365,
+          "size": 0,
+          "relX": -6,
+          "relY": -32,
+          "flipX": false
+        },
+        {
+          "tile": 1796,
+          "size": 1,
+          "relX": 7,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1810,
+          "size": 1,
+          "relX": 7,
+          "relY": -54,
+          "flipX": true
+        },
+        {
+          "tile": 1792,
+          "size": 1,
+          "relX": 23,
+          "relY": -86,
+          "flipX": true
+        },
+        {
+          "tile": 1808,
+          "size": 1,
+          "relX": 23,
+          "relY": -54,
+          "flipX": true
+        }
+      ],
+      "width": 77,
+      "height": 86,
+      "count": 7,
+      "labels": [
+        "idle",
+        "walkR",
+        "walkL",
+        "hurt",
+        "stage1",
+        "stage1b"
+      ]
+    }
+  ]
+}

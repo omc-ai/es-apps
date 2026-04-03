@@ -1,0 +1,206 @@
+{
+  "version": "2.0.0",
+  "description": "Double Dragon II: The Revenge — arcade ROM-to-JS translation using Phaser 3. Exact flow replication of Technos TA-0026 arcade hardware.",
+  "objects": [
+    {
+      "id": "dd2_arcade",
+      "class_id": "game:game",
+      "title": "Double Dragon II: The Revenge",
+      "description": "Technos Japan arcade beat-em-up (1988). HD6309 main CPU, HD63701 sub CPU, YM2151+OKI sound. Exact ROM flow replication.",
+      "screen_width": 256,
+      "screen_height": 240,
+      "fps": 57,
+      "render_mode": "canvas2d",
+      "scale_mode": "fit",
+      "auto_center": "center_both",
+      "pixel_art": true,
+      "fullscreen": true,
+      "palette_id": "dd2_palette",
+      "input_map_id": "dd2_arcade_controls",
+      "scene_ids": ["dd2_stage1", "dd2_stage2", "dd2_stage3", "dd2_stage4"],
+      "sound_bank_id": "dd2_sound_bank",
+      "game_loop_id": "dd2_main_loop"
+    },
+    {
+      "id": "dd2_platform",
+      "class_id": "rom:platform",
+      "name": "Technos TA-0026",
+      "cpu": "HD6309",
+      "cpu_clock_hz": 3579545,
+      "sub_cpu": "HD63701",
+      "video_chip": "Custom Technos",
+      "sound_chip": "YM2151 + OKI MSM6295",
+      "screen_width": 256,
+      "screen_height": 240,
+      "sprite_width": 16,
+      "sprite_height": 16,
+      "max_sprites": 128,
+      "colors_per_sprite": 16,
+      "total_palette_colors": 512
+    },
+    {
+      "id": "dd2_palette",
+      "class_id": "game:palette",
+      "name": "DD2 Arcade Palette",
+      "description": "512-color palette from prom.16 priority PROM + runtime palette RAM",
+      "color_depth": 12,
+      "palette_source": "prom.16"
+    },
+    {
+      "id": "dd2_memory_map",
+      "class_id": "rom:memory_map",
+      "name": "DD2 Arcade Memory Map",
+      "regions": [
+        {"name": "main_program", "start": "0x0000", "end": "0xFFFF", "source": "26a10-0.bin", "description": "HD6309 main CPU program (128K banked)"},
+        {"name": "sub_program", "start": "0x0000", "end": "0xFFFF", "source": "26a8-0.bin", "description": "HD63701 sub CPU program"},
+        {"name": "char_gfx", "start": "0x00000", "end": "0x0FFFF", "source": "26a9-04.bin + 26aa-03.bin", "description": "8x8 character tiles, 4bpp 2-plane"},
+        {"name": "fg_tiles", "start": "0x00000", "end": "0x0FFFF", "source": "26ab-0.bin + 26ac-02.bin", "description": "16x16 foreground tiles, 4bpp"},
+        {"name": "sprites", "start": "0x00000", "end": "0x37FFF", "source": "26ad-0.bin + 26ae-0.bin + 26af-0.bin", "description": "16x16 sprite banks (224K total)"},
+        {"name": "adpcm_samples", "start": "0x00000", "end": "0xFFFFF", "source": "26j0..26j7", "description": "OKI ADPCM audio samples (1MB)"}
+      ]
+    },
+    {
+      "id": "dd2_rom_source",
+      "class_id": "rom:source",
+      "name": "DD2 Arcade ROM Set",
+      "files": [
+        {"filename": "26a10-0.bin", "size": 131072, "type": "program", "cpu": "main"},
+        {"filename": "26a8-0.bin", "size": 65536, "type": "program", "cpu": "sub"},
+        {"filename": "26a9-04.bin", "size": 32768, "type": "graphics", "layer": "characters"},
+        {"filename": "26aa-03.bin", "size": 32768, "type": "graphics", "layer": "characters"},
+        {"filename": "26ab-0.bin", "size": 32768, "type": "graphics", "layer": "foreground"},
+        {"filename": "26ac-02.bin", "size": 32768, "type": "graphics", "layer": "foreground"},
+        {"filename": "26ad-0.bin", "size": 32768, "type": "graphics", "layer": "sprites"},
+        {"filename": "26ae-0.bin", "size": 65536, "type": "graphics", "layer": "sprites"},
+        {"filename": "26af-0.bin", "size": 131072, "type": "graphics", "layer": "sprites"},
+        {"filename": "26j0-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "26j1-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "26j2-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "26j3-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "26j4-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "26j5-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "26j6-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "26j7-0.bin", "size": 131072, "type": "audio", "format": "adpcm"},
+        {"filename": "prom.16", "size": 512, "type": "prom", "purpose": "priority/palette"}
+      ]
+    },
+    {
+      "id": "dd2_arcade_controls",
+      "class_id": "game:input_map",
+      "name": "DD2 Arcade Controls",
+      "description": "2-player arcade cabinet controls",
+      "actions": [
+        {"id": "left", "label": "Move Left", "keys": ["ArrowLeft", "a"]},
+        {"id": "right", "label": "Move Right", "keys": ["ArrowRight", "d"]},
+        {"id": "up", "label": "Move Up / Jump", "keys": ["ArrowUp", "w"]},
+        {"id": "down", "label": "Move Down / Crouch", "keys": ["ArrowDown", "s"]},
+        {"id": "punch", "label": "Punch", "keys": ["z", "j"]},
+        {"id": "kick", "label": "Kick", "keys": ["x", "k"]},
+        {"id": "coin", "label": "Insert Coin", "keys": ["5"]},
+        {"id": "start_1p", "label": "1P Start", "keys": ["1"]},
+        {"id": "start_2p", "label": "2P Start", "keys": ["2"]}
+      ]
+    },
+    {
+      "id": "billy_lee",
+      "class_id": "game:character",
+      "name": "Billy Lee",
+      "character_type": "player",
+      "description": "Player 1 protagonist. Blue outfit.",
+      "health": 100,
+      "speed": 2,
+      "sprite_overlay_id": "billy_sprites",
+      "ai_behavior_id": null,
+      "combat_config_id": "dd2_player_combat"
+    },
+    {
+      "id": "jimmy_lee",
+      "class_id": "game:character",
+      "name": "Jimmy Lee",
+      "character_type": "player",
+      "description": "Player 2 protagonist. Red outfit.",
+      "health": 100,
+      "speed": 2,
+      "sprite_overlay_id": "jimmy_sprites",
+      "ai_behavior_id": null,
+      "combat_config_id": "dd2_player_combat"
+    },
+    {
+      "id": "dd2_player_combat",
+      "class_id": "game:combat_config",
+      "name": "Player Combat",
+      "attacks": [
+        {"id": "punch", "damage": 10, "range": 24, "frames": 4},
+        {"id": "kick", "damage": 15, "range": 28, "frames": 5},
+        {"id": "uppercut", "damage": 20, "range": 20, "frames": 6, "input": "up+punch"},
+        {"id": "roundhouse", "damage": 25, "range": 32, "frames": 7, "input": "up+kick"},
+        {"id": "knee", "damage": 18, "range": 16, "frames": 4, "input": "down+kick"},
+        {"id": "elbow", "damage": 22, "range": 12, "frames": 5, "input": "back+punch"}
+      ]
+    },
+    {
+      "id": "dd2_stage1",
+      "class_id": "game:scene",
+      "name": "Stage 1 - At the Heliport",
+      "scene_type": "gameplay",
+      "scroll_type": "horizontal",
+      "width": 2048,
+      "height": 240
+    },
+    {
+      "id": "dd2_stage2",
+      "class_id": "game:scene",
+      "name": "Stage 2 - In the Storehouse",
+      "scene_type": "gameplay",
+      "scroll_type": "horizontal",
+      "width": 2048,
+      "height": 240
+    },
+    {
+      "id": "dd2_stage3",
+      "class_id": "game:scene",
+      "name": "Stage 3 - On the Truck",
+      "scene_type": "gameplay",
+      "scroll_type": "horizontal",
+      "width": 1536,
+      "height": 240
+    },
+    {
+      "id": "dd2_stage4",
+      "class_id": "game:scene",
+      "name": "Stage 4 - In the Forest",
+      "scene_type": "gameplay",
+      "scroll_type": "horizontal",
+      "width": 2048,
+      "height": 240
+    },
+    {
+      "id": "dd2_sound_bank",
+      "class_id": "game:sound_bank",
+      "name": "DD2 Arcade Audio",
+      "description": "YM2151 FM synthesis + OKI MSM6295 ADPCM samples. 8 ROM banks (26j0-26j7).",
+      "format": "adpcm",
+      "channels": 4
+    },
+    {
+      "id": "dd2_main_loop",
+      "class_id": "game:game_loop",
+      "name": "DD2 Main Loop",
+      "description": "Arcade game loop — exact ROM flow replication",
+      "phases": [
+        {"id": "input", "handler": "processInput", "order": 1},
+        {"id": "ai", "handler": "updateEnemyAI", "order": 2},
+        {"id": "physics", "handler": "updatePhysics", "order": 3},
+        {"id": "collision", "handler": "checkCollisions", "order": 4},
+        {"id": "combat", "handler": "processCombat", "order": 5},
+        {"id": "animation", "handler": "updateAnimations", "order": 6},
+        {"id": "camera", "handler": "updateCamera", "order": 7},
+        {"id": "bg_scroll", "handler": "updateBackground", "order": 8},
+        {"id": "render_bg", "handler": "renderBackground", "order": 9},
+        {"id": "render_sprites", "handler": "renderSprites", "order": 10},
+        {"id": "render_hud", "handler": "renderHUD", "order": 11},
+        {"id": "sound", "handler": "updateSound", "order": 12}
+      ]
+    }
+  ]
+}

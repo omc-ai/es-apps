@@ -1,0 +1,985 @@
+{
+  "spriteRAMFormat": {
+    "bytesPerEntry": 5,
+    "format": {
+      "byte0": "Y position",
+      "byte1": "Attributes: bit7=visible, bit5:4=size(0=16x16,1=16x32,2=32x16,3=32x32), bit3=flipX, bit2=flipY, bit1=X_MSB, bit0=Y_MSB",
+      "byte2": "(color<<5) | (tile_high & 0x1F)",
+      "byte3": "tile_low",
+      "byte4": "X position"
+    },
+    "tileComputation": "tile = byte3 | ((byte2 & 0x1F) << 8)",
+    "colorComputation": "color = byte2 >> 5",
+    "positionComputation": "sx = 240 - byte4 + ((attr & 2) << 7); sy = 232 - byte0 + ((attr & 1) << 8)",
+    "sizeDrawing": {
+      "0": "1 tile (16x16)",
+      "1": "2 tiles vertical (16x32): tile, tile+1",
+      "2": "2 tiles horizontal (32x16): tile, tile+2",
+      "3": "4 tiles (32x32): tile, tile+1, tile+2, tile+3"
+    }
+  },
+  "tileAssignments": {
+    "mainRom": [
+      {
+        "address": 35563,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 36283,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 36629,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 37122,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 37129,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 37136,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 37663,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 37674,
+        "instruction": "LDA #$01; STA 27,X",
+        "entityOffset": 27,
+        "value": 1
+      },
+      {
+        "address": 37871,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 38186,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 38262,
+        "instruction": "LDA #$08; STA 27,X",
+        "entityOffset": 27,
+        "value": 8
+      },
+      {
+        "address": 38625,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 38721,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 39196,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 39271,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 39527,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 39614,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 39758,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 39977,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 40158,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 40304,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 40390,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 40659,
+        "instruction": "LDA #$06; STA 27,X",
+        "entityOffset": 27,
+        "value": 6
+      },
+      {
+        "address": 40716,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 40732,
+        "instruction": "LDA #$01; STA 27,X",
+        "entityOffset": 27,
+        "value": 1
+      },
+      {
+        "address": 40776,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 40799,
+        "instruction": "LDA #$03; STA 27,X",
+        "entityOffset": 27,
+        "value": 3
+      },
+      {
+        "address": 40884,
+        "instruction": "LDA #$01; STA 27,X",
+        "entityOffset": 27,
+        "value": 1
+      },
+      {
+        "address": 40921,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 41168,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 41184,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 41307,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 41403,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 41538,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 42077,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 42215,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 42281,
+        "instruction": "LDA #$01; STA 27,X",
+        "entityOffset": 27,
+        "value": 1
+      },
+      {
+        "address": 42727,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 42769,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 42856,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 43264,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 43292,
+        "instruction": "LDA #$01; STA 27,X",
+        "entityOffset": 27,
+        "value": 1
+      },
+      {
+        "address": 44328,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 44393,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 44471,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 44549,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 44702,
+        "instruction": "LDA #$09; STA 27,X",
+        "entityOffset": 27,
+        "value": 9
+      },
+      {
+        "address": 44721,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 44791,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 44902,
+        "instruction": "LDA #$06; STA 27,X",
+        "entityOffset": 27,
+        "value": 6
+      },
+      {
+        "address": 44925,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 44952,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 45078,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 45269,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 45487,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 45501,
+        "instruction": "LDA #$22; STA 27,X",
+        "entityOffset": 27,
+        "value": 34
+      },
+      {
+        "address": 45627,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 45806,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 45916,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46053,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46145,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46222,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46312,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46494,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46591,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46613,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46694,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46906,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 46957,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 47075,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 47172,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 47303,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 48353,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 48466,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 50147,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 50310,
+        "instruction": "LDA #$21; STA 27,X",
+        "entityOffset": 27,
+        "value": 33
+      },
+      {
+        "address": 50473,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 50723,
+        "instruction": "LDA #$20; STA 27,X",
+        "entityOffset": 27,
+        "value": 32
+      },
+      {
+        "address": 50772,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 51828,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 51970,
+        "instruction": "LDA #$06; STA 27,X",
+        "entityOffset": 27,
+        "value": 6
+      },
+      {
+        "address": 52629,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 52712,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 53354,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 53451,
+        "instruction": "LDA #$06; STA 27,X",
+        "entityOffset": 27,
+        "value": 6
+      },
+      {
+        "address": 54027,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 54405,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 54687,
+        "instruction": "LDA #$10; STA 27,X",
+        "entityOffset": 27,
+        "value": 16
+      },
+      {
+        "address": 54872,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 54975,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 55115,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 55257,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 55529,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 55536,
+        "instruction": "LDA #$08; STA 27,X",
+        "entityOffset": 27,
+        "value": 8
+      },
+      {
+        "address": 55602,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 55613,
+        "instruction": "LDA #$0e; STA 27,X",
+        "entityOffset": 27,
+        "value": 14
+      },
+      {
+        "address": 55624,
+        "instruction": "LDA #$0f; STA 27,X",
+        "entityOffset": 27,
+        "value": 15
+      },
+      {
+        "address": 55635,
+        "instruction": "LDA #$06; STA 27,X",
+        "entityOffset": 27,
+        "value": 6
+      },
+      {
+        "address": 55651,
+        "instruction": "LDA #$0d; STA 27,X",
+        "entityOffset": 27,
+        "value": 13
+      },
+      {
+        "address": 55687,
+        "instruction": "LDB #$07; STB 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 55739,
+        "instruction": "LDA #$09; STA 27,X",
+        "entityOffset": 27,
+        "value": 9
+      },
+      {
+        "address": 55769,
+        "instruction": "LDA #$0a; STA 27,X",
+        "entityOffset": 27,
+        "value": 10
+      },
+      {
+        "address": 55780,
+        "instruction": "LDA #$12; STA 27,X",
+        "entityOffset": 27,
+        "value": 18
+      },
+      {
+        "address": 55834,
+        "instruction": "LDA #$0b; STA 27,X",
+        "entityOffset": 27,
+        "value": 11
+      },
+      {
+        "address": 56045,
+        "instruction": "LDA #$03; STA 27,X",
+        "entityOffset": 27,
+        "value": 3
+      },
+      {
+        "address": 63941,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      }
+    ],
+    "bankedRom": [
+      {
+        "address": 20172,
+        "instruction": "LDA #$57; STA 27,X",
+        "entityOffset": 27,
+        "value": 87
+      },
+      {
+        "address": 21797,
+        "instruction": "LDA #$57; STA 27,X",
+        "entityOffset": 27,
+        "value": 87
+      },
+      {
+        "address": 23737,
+        "instruction": "LDA #$89; STA 23,X",
+        "entityOffset": 23,
+        "value": 137
+      },
+      {
+        "address": 23754,
+        "instruction": "LDA #$1f; STA 27,X",
+        "entityOffset": 27,
+        "value": 31
+      },
+      {
+        "address": 24608,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 25886,
+        "instruction": "LDA #$0a; STA 27,X",
+        "entityOffset": 27,
+        "value": 10
+      },
+      {
+        "address": 30257,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 33562,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 33733,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 33767,
+        "instruction": "LDA #$1e; STA 27,X",
+        "entityOffset": 27,
+        "value": 30
+      },
+      {
+        "address": 34492,
+        "instruction": "LDA #$16; STA 27,X",
+        "entityOffset": 27,
+        "value": 22
+      },
+      {
+        "address": 35167,
+        "instruction": "LDA #$1c; STA 27,X",
+        "entityOffset": 27,
+        "value": 28
+      },
+      {
+        "address": 35176,
+        "instruction": "LDA #$1d; STA 27,X",
+        "entityOffset": 27,
+        "value": 29
+      },
+      {
+        "address": 35188,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 35194,
+        "instruction": "LDA #$22; STA 27,X",
+        "entityOffset": 27,
+        "value": 34
+      },
+      {
+        "address": 35907,
+        "instruction": "LDA #$12; STA 27,X",
+        "entityOffset": 27,
+        "value": 18
+      },
+      {
+        "address": 36022,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 36078,
+        "instruction": "LDA #$1c; STA 27,X",
+        "entityOffset": 27,
+        "value": 28
+      },
+      {
+        "address": 36091,
+        "instruction": "LDA #$1d; STA 27,X",
+        "entityOffset": 27,
+        "value": 29
+      },
+      {
+        "address": 36140,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 36204,
+        "instruction": "LDA #$1c; STA 27,X",
+        "entityOffset": 27,
+        "value": 28
+      },
+      {
+        "address": 36254,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 36346,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 36473,
+        "instruction": "LDA #$1d; STA 27,X",
+        "entityOffset": 27,
+        "value": 29
+      },
+      {
+        "address": 36520,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 36631,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 36727,
+        "instruction": "LDA #$21; STA 27,X",
+        "entityOffset": 27,
+        "value": 33
+      },
+      {
+        "address": 36789,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 37001,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 37291,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 37461,
+        "instruction": "LDA #$08; STA 27,X",
+        "entityOffset": 27,
+        "value": 8
+      },
+      {
+        "address": 37546,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 37901,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 38513,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 38654,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 38839,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 38972,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 39667,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 39899,
+        "instruction": "LDA #$11; STA 27,X",
+        "entityOffset": 27,
+        "value": 17
+      },
+      {
+        "address": 40083,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 40630,
+        "instruction": "LDA #$00; STA 27,X",
+        "entityOffset": 27,
+        "value": 0
+      },
+      {
+        "address": 41486,
+        "instruction": "LDB #$04; STB 27,X",
+        "entityOffset": 27,
+        "value": 4
+      },
+      {
+        "address": 42116,
+        "instruction": "LDA #$0b; STA 27,X",
+        "entityOffset": 27,
+        "value": 11
+      },
+      {
+        "address": 42522,
+        "instruction": "LDA #$05; STA 27,X",
+        "entityOffset": 27,
+        "value": 5
+      },
+      {
+        "address": 42674,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 42811,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 43189,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 43637,
+        "instruction": "LDA #$07; STA 27,X",
+        "entityOffset": 27,
+        "value": 7
+      },
+      {
+        "address": 43714,
+        "instruction": "LDA #$1a; STA 27,X",
+        "entityOffset": 27,
+        "value": 26
+      },
+      {
+        "address": 43743,
+        "instruction": "LDA #$05; STA 23,X",
+        "entityOffset": 23,
+        "value": 5
+      },
+      {
+        "address": 43754,
+        "instruction": "LDA #$01; STA 23,X",
+        "entityOffset": 23,
+        "value": 1
+      },
+      {
+        "address": 43853,
+        "instruction": "LDA #$1b; STA 27,X",
+        "entityOffset": 27,
+        "value": 27
+      },
+      {
+        "address": 43981,
+        "instruction": "LDA #$04; STA 27,X",
+        "entityOffset": 27,
+        "value": 4
+      }
+    ]
+  },
+  "spriteRAMWrites": {
+    "mainRom": 5,
+    "bankedRom": 4
+  }
+}

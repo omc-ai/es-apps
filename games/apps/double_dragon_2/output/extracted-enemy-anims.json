@@ -1,0 +1,206 @@
+[
+  {
+    "entries": [
+      {
+        "tile": 3382,
+        "size": 1,
+        "relX": -256,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3396,
+        "size": 1,
+        "relX": -256,
+        "relY": -32,
+        "flipX": false
+      },
+      {
+        "tile": 3378,
+        "size": 1,
+        "relX": 240,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3394,
+        "size": 1,
+        "relX": 240,
+        "relY": -32,
+        "flipX": false
+      }
+    ],
+    "width": 512,
+    "height": 64,
+    "count": 57,
+    "labels": [
+      "combat",
+      "hurt",
+      "fight",
+      "stage1",
+      "stage1b"
+    ]
+  },
+  {
+    "entries": [
+      {
+        "tile": 3390,
+        "size": 1,
+        "relX": -256,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3400,
+        "size": 1,
+        "relX": -256,
+        "relY": -32,
+        "flipX": false
+      },
+      {
+        "tile": 3386,
+        "size": 1,
+        "relX": 240,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3398,
+        "size": 1,
+        "relX": 240,
+        "relY": -32,
+        "flipX": false
+      }
+    ],
+    "width": 512,
+    "height": 64,
+    "count": 50,
+    "labels": [
+      "combat",
+      "hurt",
+      "fight",
+      "stage1"
+    ]
+  },
+  {
+    "entries": [
+      {
+        "tile": 3390,
+        "size": 1,
+        "relX": -256,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3392,
+        "size": 1,
+        "relX": -256,
+        "relY": -32,
+        "flipX": false
+      },
+      {
+        "tile": 3386,
+        "size": 1,
+        "relX": 240,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3388,
+        "size": 1,
+        "relX": 240,
+        "relY": -32,
+        "flipX": false
+      }
+    ],
+    "width": 512,
+    "height": 64,
+    "count": 18,
+    "labels": [
+      "combat",
+      "hurt",
+      "fight",
+      "stage1",
+      "stage1b"
+    ]
+  },
+  {
+    "entries": [
+      {
+        "tile": 3382,
+        "size": 1,
+        "relX": -256,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3384,
+        "size": 1,
+        "relX": -256,
+        "relY": -32,
+        "flipX": false
+      },
+      {
+        "tile": 3378,
+        "size": 1,
+        "relX": 240,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3380,
+        "size": 1,
+        "relX": 240,
+        "relY": -32,
+        "flipX": false
+      }
+    ],
+    "width": 512,
+    "height": 64,
+    "count": 11,
+    "labels": [
+      "combat",
+      "hurt",
+      "fight",
+      "stage1"
+    ]
+  },
+  {
+    "entries": [
+      {
+        "tile": 3406,
+        "size": 1,
+        "relX": -256,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3408,
+        "size": 1,
+        "relX": -256,
+        "relY": -32,
+        "flipX": false
+      },
+      {
+        "tile": 3402,
+        "size": 1,
+        "relX": 240,
+        "relY": -64,
+        "flipX": false
+      },
+      {
+        "tile": 3404,
+        "size": 1,
+        "relX": 240,
+        "relY": -32,
+        "flipX": false
+      }
+    ],
+    "width": 512,
+    "height": 64,
+    "count": 1,
+    "labels": [
+      "combat"
+    ]
+  }
+]

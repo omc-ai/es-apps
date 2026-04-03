@@ -1,0 +1,5547 @@
+{
+  "animations": {
+    "idle_1": {
+      "spriteCount": 14,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4886,
+        4888,
+        4890,
+        4892,
+        4905,
+        4905,
+        4890,
+        4892,
+        4886,
+        4888
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          80,
+          193
+        ],
+        [
+          80,
+          225
+        ],
+        [
+          96,
+          193
+        ],
+        [
+          96,
+          225
+        ],
+        [
+          112,
+          193
+        ],
+        [
+          155,
+          151
+        ],
+        [
+          171,
+          151
+        ],
+        [
+          171,
+          183
+        ],
+        [
+          187,
+          151
+        ],
+        [
+          187,
+          183
+        ]
+      ],
+      "entities": []
+    },
+    "idle_2": {
+      "spriteCount": 14,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4876,
+        4878,
+        4884,
+        4880,
+        4882,
+        4885,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          72,
+          177
+        ],
+        [
+          72,
+          209
+        ],
+        [
+          72,
+          225
+        ],
+        [
+          88,
+          177
+        ],
+        [
+          88,
+          209
+        ],
+        [
+          88,
+          225
+        ],
+        [
+          156,
+          157
+        ],
+        [
+          156,
+          189
+        ],
+        [
+          172,
+          157
+        ],
+        [
+          172,
+          189
+        ]
+      ],
+      "entities": []
+    },
+    "idle_3": {
+      "spriteCount": 14,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4598,
+        4606,
+        4600,
+        4602,
+        4604,
+        4607,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          60,
+          209
+        ],
+        [
+          60,
+          225
+        ],
+        [
+          76,
+          193
+        ],
+        [
+          76,
+          225
+        ],
+        [
+          92,
+          177
+        ],
+        [
+          92,
+          193
+        ],
+        [
+          151,
+          156
+        ],
+        [
+          151,
+          188
+        ],
+        [
+          167,
+          156
+        ],
+        [
+          167,
+          188
+        ]
+      ],
+      "entities": []
+    },
+    "idle_4": {
+      "spriteCount": 14,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4894,
+        4896,
+        4898,
+        4900,
+        4902,
+        4904,
+        1804,
+        1814,
+        1800,
+        1812
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          34,
+          177
+        ],
+        [
+          34,
+          209
+        ],
+        [
+          50,
+          193
+        ],
+        [
+          50,
+          225
+        ],
+        [
+          66,
+          209
+        ],
+        [
+          66,
+          225
+        ],
+        [
+          151,
+          146
+        ],
+        [
+          151,
+          178
+        ],
+        [
+          167,
+          146
+        ],
+        [
+          167,
+          178
+        ]
+      ],
+      "entities": []
+    },
+    "idle_late_1": {
+      "spriteCount": 21,
+      "playerSpriteCount": 12,
+      "playerTiles": [
+        4370,
+        4368,
+        4374,
+        4366,
+        4373,
+        4372,
+        4604,
+        4607,
+        4600,
+        4602,
+        4598,
+        4606
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          87,
+          183
+        ],
+        [
+          103,
+          167
+        ],
+        [
+          103,
+          183
+        ],
+        [
+          119,
+          167
+        ],
+        [
+          119,
+          183
+        ],
+        [
+          135,
+          167
+        ],
+        [
+          175,
+          177
+        ],
+        [
+          175,
+          193
+        ],
+        [
+          191,
+          193
+        ],
+        [
+          191,
+          225
+        ],
+        [
+          207,
+          209
+        ],
+        [
+          207,
+          225
+        ]
+      ],
+      "entities": []
+    },
+    "idle_late_2": {
+      "spriteCount": 25,
+      "playerSpriteCount": 16,
+      "playerTiles": [
+        4360,
+        4362,
+        4365,
+        4356,
+        4358,
+        4364,
+        4352,
+        4354,
+        4360,
+        4362,
+        4365,
+        4356,
+        4358,
+        4364,
+        4352,
+        4354
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          120,
+          135
+        ],
+        [
+          120,
+          167
+        ],
+        [
+          120,
+          183
+        ],
+        [
+          136,
+          135
+        ],
+        [
+          136,
+          167
+        ],
+        [
+          136,
+          183
+        ],
+        [
+          152,
+          135
+        ],
+        [
+          152,
+          183
+        ],
+        [
+          192,
+          177
+        ],
+        [
+          192,
+          209
+        ],
+        [
+          192,
+          225
+        ],
+        [
+          208,
+          177
+        ],
+        [
+          208,
+          209
+        ],
+        [
+          208,
+          225
+        ],
+        [
+          224,
+          177
+        ],
+        [
+          224,
+          225
+        ]
+      ],
+      "entities": []
+    },
+    "idle_late_3": {
+      "spriteCount": 20,
+      "playerSpriteCount": 11,
+      "playerTiles": [
+        4902,
+        4904,
+        4898,
+        4900,
+        4894,
+        4896,
+        4905,
+        4890,
+        4892,
+        4886,
+        4888
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          129,
+          167
+        ],
+        [
+          129,
+          183
+        ],
+        [
+          145,
+          151
+        ],
+        [
+          145,
+          183
+        ],
+        [
+          161,
+          135
+        ],
+        [
+          161,
+          167
+        ],
+        [
+          227,
+          193
+        ],
+        [
+          243,
+          193
+        ],
+        [
+          243,
+          225
+        ],
+        [
+          259,
+          193
+        ],
+        [
+          259,
+          225
+        ]
+      ],
+      "entities": []
+    },
+    "idle_late_4": {
+      "spriteCount": 19,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4880,
+        4882,
+        4885,
+        4876,
+        4878,
+        4884,
+        1820,
+        1834,
+        1816,
+        1832
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          179,
+          135
+        ],
+        [
+          179,
+          167
+        ],
+        [
+          179,
+          183
+        ],
+        [
+          195,
+          135
+        ],
+        [
+          195,
+          167
+        ],
+        [
+          195,
+          183
+        ],
+        [
+          235,
+          199
+        ],
+        [
+          235,
+          231
+        ],
+        [
+          251,
+          199
+        ],
+        [
+          251,
+          231
+        ]
+      ],
+      "entities": []
+    },
+    "jump_1": {
+      "spriteCount": 20,
+      "playerSpriteCount": 11,
+      "playerTiles": [
+        6020,
+        6026,
+        6016,
+        6018,
+        6012,
+        6014,
+        1680,
+        1676,
+        1678,
+        1698,
+        1674
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          132,
+          144
+        ],
+        [
+          132,
+          160
+        ],
+        [
+          148,
+          144
+        ],
+        [
+          148,
+          176
+        ],
+        [
+          164,
+          144
+        ],
+        [
+          164,
+          176
+        ],
+        [
+          177,
+          168
+        ],
+        [
+          193,
+          168
+        ],
+        [
+          193,
+          200
+        ],
+        [
+          209,
+          168
+        ],
+        [
+          209,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "jump_10": {
+      "spriteCount": 17,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        1804,
+        1814,
+        6056,
+        1800,
+        1812,
+        6052,
+        6054,
+        6048,
+        6050
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          175,
+          168
+        ],
+        [
+          175,
+          200
+        ],
+        [
+          184,
+          176
+        ],
+        [
+          191,
+          168
+        ],
+        [
+          191,
+          200
+        ],
+        [
+          200,
+          144
+        ],
+        [
+          200,
+          176
+        ],
+        [
+          216,
+          144
+        ],
+        [
+          216,
+          176
+        ]
+      ],
+      "entities": []
+    },
+    "jump_11": {
+      "spriteCount": 16,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1804,
+        1814,
+        1800,
+        1812,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          178,
+          168
+        ],
+        [
+          178,
+          200
+        ],
+        [
+          194,
+          168
+        ],
+        [
+          194,
+          200
+        ],
+        [
+          196,
+          144
+        ],
+        [
+          196,
+          176
+        ],
+        [
+          212,
+          144
+        ],
+        [
+          212,
+          176
+        ]
+      ],
+      "entities": []
+    },
+    "jump_2": {
+      "spriteCount": 18,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6024,
+        6028,
+        6011,
+        6022,
+        6027,
+        1686,
+        1688,
+        1682,
+        1684
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          144,
+          144
+        ],
+        [
+          144,
+          160
+        ],
+        [
+          144,
+          176
+        ],
+        [
+          160,
+          144
+        ],
+        [
+          160,
+          160
+        ],
+        [
+          193,
+          168
+        ],
+        [
+          193,
+          200
+        ],
+        [
+          209,
+          168
+        ],
+        [
+          209,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "jump_3": {
+      "spriteCount": 18,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6024,
+        6028,
+        6011,
+        6022,
+        6027,
+        1686,
+        1688,
+        1682,
+        1684
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          148,
+          144
+        ],
+        [
+          148,
+          160
+        ],
+        [
+          148,
+          176
+        ],
+        [
+          164,
+          144
+        ],
+        [
+          164,
+          160
+        ],
+        [
+          193,
+          168
+        ],
+        [
+          193,
+          200
+        ],
+        [
+          209,
+          168
+        ],
+        [
+          209,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "jump_4": {
+      "spriteCount": 18,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6036,
+        6032,
+        6034,
+        6029,
+        6030,
+        1686,
+        1688,
+        1682,
+        1684
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          148,
+          176
+        ],
+        [
+          164,
+          144
+        ],
+        [
+          164,
+          176
+        ],
+        [
+          180,
+          128
+        ],
+        [
+          180,
+          160
+        ],
+        [
+          193,
+          168
+        ],
+        [
+          193,
+          200
+        ],
+        [
+          209,
+          168
+        ],
+        [
+          209,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "jump_5": {
+      "spriteCount": 18,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6036,
+        6032,
+        6034,
+        6029,
+        6030,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          152,
+          176
+        ],
+        [
+          168,
+          144
+        ],
+        [
+          168,
+          176
+        ],
+        [
+          184,
+          128
+        ],
+        [
+          184,
+          160
+        ],
+        [
+          189,
+          168
+        ],
+        [
+          189,
+          200
+        ],
+        [
+          205,
+          168
+        ],
+        [
+          205,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "jump_6": {
+      "spriteCount": 18,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6046,
+        6042,
+        6044,
+        1796,
+        1810,
+        6038,
+        6040,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          162,
+          160
+        ],
+        [
+          178,
+          144
+        ],
+        [
+          178,
+          176
+        ],
+        [
+          187,
+          168
+        ],
+        [
+          187,
+          200
+        ],
+        [
+          194,
+          144
+        ],
+        [
+          194,
+          176
+        ],
+        [
+          203,
+          168
+        ],
+        [
+          203,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "jump_7": {
+      "spriteCount": 18,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6046,
+        6042,
+        1804,
+        6044,
+        1806,
+        6038,
+        1800,
+        6040,
+        1802
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          166,
+          160
+        ],
+        [
+          182,
+          144
+        ],
+        [
+          182,
+          168
+        ],
+        [
+          182,
+          176
+        ],
+        [
+          182,
+          200
+        ],
+        [
+          198,
+          144
+        ],
+        [
+          198,
+          168
+        ],
+        [
+          198,
+          176
+        ],
+        [
+          198,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "jump_8": {
+      "spriteCount": 16,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1804,
+        1806,
+        6060,
+        6062,
+        1800,
+        1802,
+        6058,
+        6064
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          180,
+          168
+        ],
+        [
+          180,
+          200
+        ],
+        [
+          186,
+          144
+        ],
+        [
+          186,
+          176
+        ],
+        [
+          196,
+          168
+        ],
+        [
+          196,
+          200
+        ],
+        [
+          202,
+          144
+        ],
+        [
+          202,
+          160
+        ]
+      ],
+      "entities": []
+    },
+    "jump_9": {
+      "spriteCount": 16,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1804,
+        1814,
+        6060,
+        6062,
+        1800,
+        1812,
+        6058,
+        6064
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          175,
+          168
+        ],
+        [
+          175,
+          200
+        ],
+        [
+          190,
+          144
+        ],
+        [
+          190,
+          176
+        ],
+        [
+          191,
+          168
+        ],
+        [
+          191,
+          200
+        ],
+        [
+          206,
+          144
+        ],
+        [
+          206,
+          160
+        ]
+      ],
+      "entities": []
+    },
+    "kick_1": {
+      "spriteCount": 18,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4894,
+        4896,
+        4898,
+        4900,
+        1828,
+        1838,
+        4902,
+        4904,
+        1824,
+        1836
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          158,
+          132
+        ],
+        [
+          158,
+          164
+        ],
+        [
+          174,
+          148
+        ],
+        [
+          174,
+          180
+        ],
+        [
+          174,
+          184
+        ],
+        [
+          174,
+          216
+        ],
+        [
+          190,
+          164
+        ],
+        [
+          190,
+          180
+        ],
+        [
+          190,
+          184
+        ],
+        [
+          190,
+          216
+        ]
+      ],
+      "entities": []
+    },
+    "kick_2": {
+      "spriteCount": 17,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        4886,
+        4888,
+        4890,
+        4892,
+        4905,
+        1828,
+        1838,
+        1824,
+        1836
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          132,
+          148
+        ],
+        [
+          132,
+          180
+        ],
+        [
+          148,
+          148
+        ],
+        [
+          148,
+          180
+        ],
+        [
+          164,
+          148
+        ],
+        [
+          174,
+          184
+        ],
+        [
+          174,
+          216
+        ],
+        [
+          190,
+          184
+        ],
+        [
+          190,
+          216
+        ]
+      ],
+      "entities": []
+    },
+    "kick_3": {
+      "spriteCount": 17,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        4886,
+        4888,
+        4890,
+        4892,
+        4905,
+        1828,
+        1838,
+        1824,
+        1836
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          132,
+          148
+        ],
+        [
+          132,
+          180
+        ],
+        [
+          148,
+          148
+        ],
+        [
+          148,
+          180
+        ],
+        [
+          164,
+          148
+        ],
+        [
+          174,
+          184
+        ],
+        [
+          174,
+          216
+        ],
+        [
+          190,
+          184
+        ],
+        [
+          190,
+          216
+        ]
+      ],
+      "entities": []
+    },
+    "kick_4": {
+      "spriteCount": 18,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4876,
+        4878,
+        4884,
+        4880,
+        4882,
+        4885,
+        1828,
+        1838,
+        1824,
+        1836
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          124,
+          132
+        ],
+        [
+          124,
+          164
+        ],
+        [
+          124,
+          180
+        ],
+        [
+          140,
+          132
+        ],
+        [
+          140,
+          164
+        ],
+        [
+          140,
+          180
+        ],
+        [
+          174,
+          184
+        ],
+        [
+          174,
+          216
+        ],
+        [
+          190,
+          184
+        ],
+        [
+          190,
+          216
+        ]
+      ],
+      "entities": []
+    },
+    "kick_5": {
+      "spriteCount": 19,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        4372,
+        4366,
+        4373,
+        4368,
+        4374,
+        4370,
+        1828,
+        1838,
+        1824,
+        1836
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          112,
+          164
+        ],
+        [
+          128,
+          164
+        ],
+        [
+          128,
+          180
+        ],
+        [
+          144,
+          164
+        ],
+        [
+          144,
+          180
+        ],
+        [
+          160,
+          180
+        ],
+        [
+          182,
+          184
+        ],
+        [
+          182,
+          216
+        ],
+        [
+          198,
+          184
+        ],
+        [
+          198,
+          216
+        ]
+      ],
+      "entities": []
+    },
+    "punch_1": {
+      "spriteCount": 16,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1792,
+        1808,
+        1796,
+        1810,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          150,
+          163
+        ],
+        [
+          150,
+          195
+        ],
+        [
+          166,
+          163
+        ],
+        [
+          166,
+          195
+        ],
+        [
+          229,
+          168
+        ],
+        [
+          229,
+          200
+        ],
+        [
+          245,
+          168
+        ],
+        [
+          245,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "punch_2": {
+      "spriteCount": 16,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1800,
+        1802,
+        1804,
+        1806,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          150,
+          159
+        ],
+        [
+          150,
+          191
+        ],
+        [
+          166,
+          159
+        ],
+        [
+          166,
+          191
+        ],
+        [
+          229,
+          168
+        ],
+        [
+          229,
+          200
+        ],
+        [
+          245,
+          168
+        ],
+        [
+          245,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "punch_3": {
+      "spriteCount": 16,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1800,
+        1802,
+        1804,
+        1806,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          150,
+          155
+        ],
+        [
+          150,
+          187
+        ],
+        [
+          166,
+          155
+        ],
+        [
+          166,
+          187
+        ],
+        [
+          229,
+          168
+        ],
+        [
+          229,
+          200
+        ],
+        [
+          245,
+          168
+        ],
+        [
+          245,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "punch_4": {
+      "spriteCount": 16,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1800,
+        1812,
+        1804,
+        1814,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          152,
+          151
+        ],
+        [
+          152,
+          183
+        ],
+        [
+          168,
+          151
+        ],
+        [
+          168,
+          183
+        ],
+        [
+          229,
+          168
+        ],
+        [
+          229,
+          200
+        ],
+        [
+          245,
+          168
+        ],
+        [
+          245,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "punch_5": {
+      "spriteCount": 19,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        6020,
+        6026,
+        6016,
+        6018,
+        6012,
+        6014,
+        1796,
+        1810,
+        1792,
+        1808
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          146,
+          151
+        ],
+        [
+          146,
+          167
+        ],
+        [
+          162,
+          151
+        ],
+        [
+          162,
+          183
+        ],
+        [
+          178,
+          151
+        ],
+        [
+          178,
+          183
+        ],
+        [
+          229,
+          168
+        ],
+        [
+          229,
+          200
+        ],
+        [
+          245,
+          168
+        ],
+        [
+          245,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "punch_6": {
+      "spriteCount": 19,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6024,
+        6028,
+        6011,
+        6022,
+        6027,
+        1804,
+        1806,
+        1800,
+        1802
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          162,
+          151
+        ],
+        [
+          162,
+          167
+        ],
+        [
+          162,
+          183
+        ],
+        [
+          178,
+          151
+        ],
+        [
+          178,
+          167
+        ],
+        [
+          224,
+          168
+        ],
+        [
+          224,
+          200
+        ],
+        [
+          240,
+          168
+        ],
+        [
+          240,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "walk_1": {
+      "spriteCount": 12,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1800,
+        1802,
+        1804,
+        1806,
+        6060,
+        6062,
+        6058,
+        6064
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          30,
+          144
+        ],
+        [
+          30,
+          176
+        ],
+        [
+          46,
+          144
+        ],
+        [
+          46,
+          176
+        ],
+        [
+          82,
+          185
+        ],
+        [
+          82,
+          217
+        ],
+        [
+          98,
+          185
+        ],
+        [
+          98,
+          201
+        ]
+      ],
+      "entities": []
+    },
+    "walk_2": {
+      "spriteCount": 13,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6046,
+        6042,
+        6044,
+        6038,
+        6040,
+        1824,
+        1826,
+        1828,
+        1830
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "playerPositions": [
+        [
+          58,
+          160
+        ],
+        [
+          74,
+          144
+        ],
+        [
+          74,
+          176
+        ],
+        [
+          90,
+          144
+        ],
+        [
+          90,
+          176
+        ],
+        [
+          92,
+          171
+        ],
+        [
+          92,
+          203
+        ],
+        [
+          108,
+          171
+        ],
+        [
+          108,
+          203
+        ]
+      ],
+      "entities": []
+    },
+    "walk_3": {
+      "spriteCount": 14,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        6020,
+        6026,
+        6016,
+        6018,
+        1792,
+        1808,
+        6012,
+        6014,
+        1796,
+        1810
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "playerPositions": [
+        [
+          84,
+          144
+        ],
+        [
+          84,
+          160
+        ],
+        [
+          100,
+          144
+        ],
+        [
+          100,
+          176
+        ],
+        [
+          110,
+          169
+        ],
+        [
+          110,
+          201
+        ],
+        [
+          116,
+          144
+        ],
+        [
+          116,
+          176
+        ],
+        [
+          126,
+          169
+        ],
+        [
+          126,
+          201
+        ]
+      ],
+      "entities": []
+    },
+    "walk_4": {
+      "spriteCount": 13,
+      "playerSpriteCount": 9,
+      "playerTiles": [
+        6046,
+        1800,
+        1812,
+        6042,
+        6044,
+        1804,
+        1814,
+        6038,
+        6040
+      ],
+      "playerFlips": [
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          102,
+          160
+        ],
+        [
+          113,
+          169
+        ],
+        [
+          113,
+          201
+        ],
+        [
+          118,
+          144
+        ],
+        [
+          118,
+          176
+        ],
+        [
+          129,
+          169
+        ],
+        [
+          129,
+          201
+        ],
+        [
+          134,
+          144
+        ],
+        [
+          134,
+          176
+        ]
+      ],
+      "entities": []
+    },
+    "walk_5": {
+      "spriteCount": 19,
+      "playerSpriteCount": 10,
+      "playerTiles": [
+        6020,
+        6026,
+        1800,
+        1802,
+        6016,
+        6018,
+        1804,
+        1806,
+        6012,
+        6014
+      ],
+      "playerFlips": [
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          112,
+          144
+        ],
+        [
+          112,
+          160
+        ],
+        [
+          115,
+          169
+        ],
+        [
+          115,
+          201
+        ],
+        [
+          128,
+          144
+        ],
+        [
+          128,
+          176
+        ],
+        [
+          131,
+          169
+        ],
+        [
+          131,
+          201
+        ],
+        [
+          144,
+          144
+        ],
+        [
+          144,
+          176
+        ]
+      ],
+      "entities": []
+    },
+    "walk_6": {
+      "spriteCount": 17,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1824,
+        1836,
+        1828,
+        1838,
+        6060,
+        6062,
+        6058,
+        6064
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "playerPositions": [
+        [
+          100,
+          185
+        ],
+        [
+          100,
+          217
+        ],
+        [
+          116,
+          185
+        ],
+        [
+          116,
+          217
+        ],
+        [
+          142,
+          144
+        ],
+        [
+          142,
+          176
+        ],
+        [
+          158,
+          144
+        ],
+        [
+          158,
+          160
+        ]
+      ],
+      "entities": []
+    },
+    "walk_7": {
+      "spriteCount": 21,
+      "playerSpriteCount": 12,
+      "playerTiles": [
+        4360,
+        4362,
+        4365,
+        4356,
+        4358,
+        4364,
+        1800,
+        1802,
+        4352,
+        4354,
+        1804,
+        1806
+      ],
+      "playerFlips": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false
+      ],
+      "playerPositions": [
+        [
+          111,
+          169
+        ],
+        [
+          111,
+          201
+        ],
+        [
+          111,
+          217
+        ],
+        [
+          127,
+          169
+        ],
+        [
+          127,
+          201
+        ],
+        [
+          127,
+          217
+        ],
+        [
+          131,
+          158
+        ],
+        [
+          131,
+          190
+        ],
+        [
+          143,
+          169
+        ],
+        [
+          143,
+          217
+        ],
+        [
+          147,
+          158
+        ],
+        [
+          147,
+          190
+        ]
+      ],
+      "entities": []
+    },
+    "walk_8": {
+      "spriteCount": 17,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1792,
+        1808,
+        1816,
+        1832,
+        1796,
+        1810,
+        1820,
+        1834
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "playerPositions": [
+        [
+          125,
+          167
+        ],
+        [
+          125,
+          199
+        ],
+        [
+          134,
+          191
+        ],
+        [
+          134,
+          223
+        ],
+        [
+          141,
+          167
+        ],
+        [
+          141,
+          199
+        ],
+        [
+          150,
+          191
+        ],
+        [
+          150,
+          223
+        ]
+      ],
+      "entities": []
+    },
+    "walkleft_1": {
+      "spriteCount": 16,
+      "playerSpriteCount": 7,
+      "playerTiles": [
+        1658,
+        1660,
+        1662,
+        1664,
+        1899,
+        1894,
+        1896
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "playerPositions": [
+        [
+          118,
+          167
+        ],
+        [
+          118,
+          199
+        ],
+        [
+          134,
+          167
+        ],
+        [
+          134,
+          199
+        ],
+        [
+          141,
+          168
+        ],
+        [
+          157,
+          168
+        ],
+        [
+          157,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "walkleft_2": {
+      "spriteCount": 16,
+      "playerSpriteCount": 7,
+      "playerTiles": [
+        1792,
+        1808,
+        1796,
+        1810,
+        1899,
+        1894,
+        1896
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "playerPositions": [
+        [
+          118,
+          167
+        ],
+        [
+          118,
+          199
+        ],
+        [
+          134,
+          167
+        ],
+        [
+          134,
+          199
+        ],
+        [
+          141,
+          168
+        ],
+        [
+          157,
+          168
+        ],
+        [
+          157,
+          200
+        ]
+      ],
+      "entities": []
+    },
+    "walkleft_3": {
+      "spriteCount": 17,
+      "playerSpriteCount": 8,
+      "playerTiles": [
+        1778,
+        1782,
+        1899,
+        1780,
+        1783,
+        1894,
+        1896,
+        1784
+      ],
+      "playerFlips": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "playerPositions": [
+        [
+          136,
+          139
+        ],
+        [
+          136,
+          155
+        ],
+        [
+          141,
+          168
+        ],
+        [
+          152,
+          139
+        ],
+        [
+          152,
+          155
+        ],
+        [
+          157,
+          168
+        ],
+        [
+          157,
+          200
+        ],
+        [
+          168,
+          139
+        ]
+      ],
+      "entities": []
+    }
+  },
+  "groups": {
+    "idle": [
+      {
+        "name": "idle_1",
+        "spriteCount": 14,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4886,
+          4888,
+          4890,
+          4892,
+          4905,
+          4905,
+          4890,
+          4892,
+          4886,
+          4888
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            80,
+            193
+          ],
+          [
+            80,
+            225
+          ],
+          [
+            96,
+            193
+          ],
+          [
+            96,
+            225
+          ],
+          [
+            112,
+            193
+          ],
+          [
+            155,
+            151
+          ],
+          [
+            171,
+            151
+          ],
+          [
+            171,
+            183
+          ],
+          [
+            187,
+            151
+          ],
+          [
+            187,
+            183
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "idle_2",
+        "spriteCount": 14,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4876,
+          4878,
+          4884,
+          4880,
+          4882,
+          4885,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            72,
+            177
+          ],
+          [
+            72,
+            209
+          ],
+          [
+            72,
+            225
+          ],
+          [
+            88,
+            177
+          ],
+          [
+            88,
+            209
+          ],
+          [
+            88,
+            225
+          ],
+          [
+            156,
+            157
+          ],
+          [
+            156,
+            189
+          ],
+          [
+            172,
+            157
+          ],
+          [
+            172,
+            189
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "idle_3",
+        "spriteCount": 14,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4598,
+          4606,
+          4600,
+          4602,
+          4604,
+          4607,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            60,
+            209
+          ],
+          [
+            60,
+            225
+          ],
+          [
+            76,
+            193
+          ],
+          [
+            76,
+            225
+          ],
+          [
+            92,
+            177
+          ],
+          [
+            92,
+            193
+          ],
+          [
+            151,
+            156
+          ],
+          [
+            151,
+            188
+          ],
+          [
+            167,
+            156
+          ],
+          [
+            167,
+            188
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "idle_4",
+        "spriteCount": 14,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4894,
+          4896,
+          4898,
+          4900,
+          4902,
+          4904,
+          1804,
+          1814,
+          1800,
+          1812
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            34,
+            177
+          ],
+          [
+            34,
+            209
+          ],
+          [
+            50,
+            193
+          ],
+          [
+            50,
+            225
+          ],
+          [
+            66,
+            209
+          ],
+          [
+            66,
+            225
+          ],
+          [
+            151,
+            146
+          ],
+          [
+            151,
+            178
+          ],
+          [
+            167,
+            146
+          ],
+          [
+            167,
+            178
+          ]
+        ],
+        "entities": []
+      }
+    ],
+    "idle_late": [
+      {
+        "name": "idle_late_1",
+        "spriteCount": 21,
+        "playerSpriteCount": 12,
+        "playerTiles": [
+          4370,
+          4368,
+          4374,
+          4366,
+          4373,
+          4372,
+          4604,
+          4607,
+          4600,
+          4602,
+          4598,
+          4606
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            87,
+            183
+          ],
+          [
+            103,
+            167
+          ],
+          [
+            103,
+            183
+          ],
+          [
+            119,
+            167
+          ],
+          [
+            119,
+            183
+          ],
+          [
+            135,
+            167
+          ],
+          [
+            175,
+            177
+          ],
+          [
+            175,
+            193
+          ],
+          [
+            191,
+            193
+          ],
+          [
+            191,
+            225
+          ],
+          [
+            207,
+            209
+          ],
+          [
+            207,
+            225
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "idle_late_2",
+        "spriteCount": 25,
+        "playerSpriteCount": 16,
+        "playerTiles": [
+          4360,
+          4362,
+          4365,
+          4356,
+          4358,
+          4364,
+          4352,
+          4354,
+          4360,
+          4362,
+          4365,
+          4356,
+          4358,
+          4364,
+          4352,
+          4354
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            120,
+            135
+          ],
+          [
+            120,
+            167
+          ],
+          [
+            120,
+            183
+          ],
+          [
+            136,
+            135
+          ],
+          [
+            136,
+            167
+          ],
+          [
+            136,
+            183
+          ],
+          [
+            152,
+            135
+          ],
+          [
+            152,
+            183
+          ],
+          [
+            192,
+            177
+          ],
+          [
+            192,
+            209
+          ],
+          [
+            192,
+            225
+          ],
+          [
+            208,
+            177
+          ],
+          [
+            208,
+            209
+          ],
+          [
+            208,
+            225
+          ],
+          [
+            224,
+            177
+          ],
+          [
+            224,
+            225
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "idle_late_3",
+        "spriteCount": 20,
+        "playerSpriteCount": 11,
+        "playerTiles": [
+          4902,
+          4904,
+          4898,
+          4900,
+          4894,
+          4896,
+          4905,
+          4890,
+          4892,
+          4886,
+          4888
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            129,
+            167
+          ],
+          [
+            129,
+            183
+          ],
+          [
+            145,
+            151
+          ],
+          [
+            145,
+            183
+          ],
+          [
+            161,
+            135
+          ],
+          [
+            161,
+            167
+          ],
+          [
+            227,
+            193
+          ],
+          [
+            243,
+            193
+          ],
+          [
+            243,
+            225
+          ],
+          [
+            259,
+            193
+          ],
+          [
+            259,
+            225
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "idle_late_4",
+        "spriteCount": 19,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4880,
+          4882,
+          4885,
+          4876,
+          4878,
+          4884,
+          1820,
+          1834,
+          1816,
+          1832
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            179,
+            135
+          ],
+          [
+            179,
+            167
+          ],
+          [
+            179,
+            183
+          ],
+          [
+            195,
+            135
+          ],
+          [
+            195,
+            167
+          ],
+          [
+            195,
+            183
+          ],
+          [
+            235,
+            199
+          ],
+          [
+            235,
+            231
+          ],
+          [
+            251,
+            199
+          ],
+          [
+            251,
+            231
+          ]
+        ],
+        "entities": []
+      }
+    ],
+    "jump": [
+      {
+        "name": "jump_1",
+        "spriteCount": 20,
+        "playerSpriteCount": 11,
+        "playerTiles": [
+          6020,
+          6026,
+          6016,
+          6018,
+          6012,
+          6014,
+          1680,
+          1676,
+          1678,
+          1698,
+          1674
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            132,
+            144
+          ],
+          [
+            132,
+            160
+          ],
+          [
+            148,
+            144
+          ],
+          [
+            148,
+            176
+          ],
+          [
+            164,
+            144
+          ],
+          [
+            164,
+            176
+          ],
+          [
+            177,
+            168
+          ],
+          [
+            193,
+            168
+          ],
+          [
+            193,
+            200
+          ],
+          [
+            209,
+            168
+          ],
+          [
+            209,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_10",
+        "spriteCount": 17,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          1804,
+          1814,
+          6056,
+          1800,
+          1812,
+          6052,
+          6054,
+          6048,
+          6050
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            175,
+            168
+          ],
+          [
+            175,
+            200
+          ],
+          [
+            184,
+            176
+          ],
+          [
+            191,
+            168
+          ],
+          [
+            191,
+            200
+          ],
+          [
+            200,
+            144
+          ],
+          [
+            200,
+            176
+          ],
+          [
+            216,
+            144
+          ],
+          [
+            216,
+            176
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_11",
+        "spriteCount": 16,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1804,
+          1814,
+          1800,
+          1812,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            178,
+            168
+          ],
+          [
+            178,
+            200
+          ],
+          [
+            194,
+            168
+          ],
+          [
+            194,
+            200
+          ],
+          [
+            196,
+            144
+          ],
+          [
+            196,
+            176
+          ],
+          [
+            212,
+            144
+          ],
+          [
+            212,
+            176
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_2",
+        "spriteCount": 18,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6024,
+          6028,
+          6011,
+          6022,
+          6027,
+          1686,
+          1688,
+          1682,
+          1684
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            144,
+            144
+          ],
+          [
+            144,
+            160
+          ],
+          [
+            144,
+            176
+          ],
+          [
+            160,
+            144
+          ],
+          [
+            160,
+            160
+          ],
+          [
+            193,
+            168
+          ],
+          [
+            193,
+            200
+          ],
+          [
+            209,
+            168
+          ],
+          [
+            209,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_3",
+        "spriteCount": 18,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6024,
+          6028,
+          6011,
+          6022,
+          6027,
+          1686,
+          1688,
+          1682,
+          1684
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            148,
+            144
+          ],
+          [
+            148,
+            160
+          ],
+          [
+            148,
+            176
+          ],
+          [
+            164,
+            144
+          ],
+          [
+            164,
+            160
+          ],
+          [
+            193,
+            168
+          ],
+          [
+            193,
+            200
+          ],
+          [
+            209,
+            168
+          ],
+          [
+            209,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_4",
+        "spriteCount": 18,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6036,
+          6032,
+          6034,
+          6029,
+          6030,
+          1686,
+          1688,
+          1682,
+          1684
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            148,
+            176
+          ],
+          [
+            164,
+            144
+          ],
+          [
+            164,
+            176
+          ],
+          [
+            180,
+            128
+          ],
+          [
+            180,
+            160
+          ],
+          [
+            193,
+            168
+          ],
+          [
+            193,
+            200
+          ],
+          [
+            209,
+            168
+          ],
+          [
+            209,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_5",
+        "spriteCount": 18,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6036,
+          6032,
+          6034,
+          6029,
+          6030,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            152,
+            176
+          ],
+          [
+            168,
+            144
+          ],
+          [
+            168,
+            176
+          ],
+          [
+            184,
+            128
+          ],
+          [
+            184,
+            160
+          ],
+          [
+            189,
+            168
+          ],
+          [
+            189,
+            200
+          ],
+          [
+            205,
+            168
+          ],
+          [
+            205,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_6",
+        "spriteCount": 18,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6046,
+          6042,
+          6044,
+          1796,
+          1810,
+          6038,
+          6040,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            162,
+            160
+          ],
+          [
+            178,
+            144
+          ],
+          [
+            178,
+            176
+          ],
+          [
+            187,
+            168
+          ],
+          [
+            187,
+            200
+          ],
+          [
+            194,
+            144
+          ],
+          [
+            194,
+            176
+          ],
+          [
+            203,
+            168
+          ],
+          [
+            203,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_7",
+        "spriteCount": 18,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6046,
+          6042,
+          1804,
+          6044,
+          1806,
+          6038,
+          1800,
+          6040,
+          1802
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            166,
+            160
+          ],
+          [
+            182,
+            144
+          ],
+          [
+            182,
+            168
+          ],
+          [
+            182,
+            176
+          ],
+          [
+            182,
+            200
+          ],
+          [
+            198,
+            144
+          ],
+          [
+            198,
+            168
+          ],
+          [
+            198,
+            176
+          ],
+          [
+            198,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_8",
+        "spriteCount": 16,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1804,
+          1806,
+          6060,
+          6062,
+          1800,
+          1802,
+          6058,
+          6064
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            180,
+            168
+          ],
+          [
+            180,
+            200
+          ],
+          [
+            186,
+            144
+          ],
+          [
+            186,
+            176
+          ],
+          [
+            196,
+            168
+          ],
+          [
+            196,
+            200
+          ],
+          [
+            202,
+            144
+          ],
+          [
+            202,
+            160
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "jump_9",
+        "spriteCount": 16,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1804,
+          1814,
+          6060,
+          6062,
+          1800,
+          1812,
+          6058,
+          6064
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            175,
+            168
+          ],
+          [
+            175,
+            200
+          ],
+          [
+            190,
+            144
+          ],
+          [
+            190,
+            176
+          ],
+          [
+            191,
+            168
+          ],
+          [
+            191,
+            200
+          ],
+          [
+            206,
+            144
+          ],
+          [
+            206,
+            160
+          ]
+        ],
+        "entities": []
+      }
+    ],
+    "kick": [
+      {
+        "name": "kick_1",
+        "spriteCount": 18,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4894,
+          4896,
+          4898,
+          4900,
+          1828,
+          1838,
+          4902,
+          4904,
+          1824,
+          1836
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            158,
+            132
+          ],
+          [
+            158,
+            164
+          ],
+          [
+            174,
+            148
+          ],
+          [
+            174,
+            180
+          ],
+          [
+            174,
+            184
+          ],
+          [
+            174,
+            216
+          ],
+          [
+            190,
+            164
+          ],
+          [
+            190,
+            180
+          ],
+          [
+            190,
+            184
+          ],
+          [
+            190,
+            216
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "kick_2",
+        "spriteCount": 17,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          4886,
+          4888,
+          4890,
+          4892,
+          4905,
+          1828,
+          1838,
+          1824,
+          1836
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            132,
+            148
+          ],
+          [
+            132,
+            180
+          ],
+          [
+            148,
+            148
+          ],
+          [
+            148,
+            180
+          ],
+          [
+            164,
+            148
+          ],
+          [
+            174,
+            184
+          ],
+          [
+            174,
+            216
+          ],
+          [
+            190,
+            184
+          ],
+          [
+            190,
+            216
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "kick_3",
+        "spriteCount": 17,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          4886,
+          4888,
+          4890,
+          4892,
+          4905,
+          1828,
+          1838,
+          1824,
+          1836
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            132,
+            148
+          ],
+          [
+            132,
+            180
+          ],
+          [
+            148,
+            148
+          ],
+          [
+            148,
+            180
+          ],
+          [
+            164,
+            148
+          ],
+          [
+            174,
+            184
+          ],
+          [
+            174,
+            216
+          ],
+          [
+            190,
+            184
+          ],
+          [
+            190,
+            216
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "kick_4",
+        "spriteCount": 18,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4876,
+          4878,
+          4884,
+          4880,
+          4882,
+          4885,
+          1828,
+          1838,
+          1824,
+          1836
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            124,
+            132
+          ],
+          [
+            124,
+            164
+          ],
+          [
+            124,
+            180
+          ],
+          [
+            140,
+            132
+          ],
+          [
+            140,
+            164
+          ],
+          [
+            140,
+            180
+          ],
+          [
+            174,
+            184
+          ],
+          [
+            174,
+            216
+          ],
+          [
+            190,
+            184
+          ],
+          [
+            190,
+            216
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "kick_5",
+        "spriteCount": 19,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          4372,
+          4366,
+          4373,
+          4368,
+          4374,
+          4370,
+          1828,
+          1838,
+          1824,
+          1836
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            112,
+            164
+          ],
+          [
+            128,
+            164
+          ],
+          [
+            128,
+            180
+          ],
+          [
+            144,
+            164
+          ],
+          [
+            144,
+            180
+          ],
+          [
+            160,
+            180
+          ],
+          [
+            182,
+            184
+          ],
+          [
+            182,
+            216
+          ],
+          [
+            198,
+            184
+          ],
+          [
+            198,
+            216
+          ]
+        ],
+        "entities": []
+      }
+    ],
+    "punch": [
+      {
+        "name": "punch_1",
+        "spriteCount": 16,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1792,
+          1808,
+          1796,
+          1810,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            150,
+            163
+          ],
+          [
+            150,
+            195
+          ],
+          [
+            166,
+            163
+          ],
+          [
+            166,
+            195
+          ],
+          [
+            229,
+            168
+          ],
+          [
+            229,
+            200
+          ],
+          [
+            245,
+            168
+          ],
+          [
+            245,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "punch_2",
+        "spriteCount": 16,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1800,
+          1802,
+          1804,
+          1806,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            150,
+            159
+          ],
+          [
+            150,
+            191
+          ],
+          [
+            166,
+            159
+          ],
+          [
+            166,
+            191
+          ],
+          [
+            229,
+            168
+          ],
+          [
+            229,
+            200
+          ],
+          [
+            245,
+            168
+          ],
+          [
+            245,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "punch_3",
+        "spriteCount": 16,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1800,
+          1802,
+          1804,
+          1806,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            150,
+            155
+          ],
+          [
+            150,
+            187
+          ],
+          [
+            166,
+            155
+          ],
+          [
+            166,
+            187
+          ],
+          [
+            229,
+            168
+          ],
+          [
+            229,
+            200
+          ],
+          [
+            245,
+            168
+          ],
+          [
+            245,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "punch_4",
+        "spriteCount": 16,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1800,
+          1812,
+          1804,
+          1814,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            152,
+            151
+          ],
+          [
+            152,
+            183
+          ],
+          [
+            168,
+            151
+          ],
+          [
+            168,
+            183
+          ],
+          [
+            229,
+            168
+          ],
+          [
+            229,
+            200
+          ],
+          [
+            245,
+            168
+          ],
+          [
+            245,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "punch_5",
+        "spriteCount": 19,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          6020,
+          6026,
+          6016,
+          6018,
+          6012,
+          6014,
+          1796,
+          1810,
+          1792,
+          1808
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            146,
+            151
+          ],
+          [
+            146,
+            167
+          ],
+          [
+            162,
+            151
+          ],
+          [
+            162,
+            183
+          ],
+          [
+            178,
+            151
+          ],
+          [
+            178,
+            183
+          ],
+          [
+            229,
+            168
+          ],
+          [
+            229,
+            200
+          ],
+          [
+            245,
+            168
+          ],
+          [
+            245,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "punch_6",
+        "spriteCount": 19,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6024,
+          6028,
+          6011,
+          6022,
+          6027,
+          1804,
+          1806,
+          1800,
+          1802
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            162,
+            151
+          ],
+          [
+            162,
+            167
+          ],
+          [
+            162,
+            183
+          ],
+          [
+            178,
+            151
+          ],
+          [
+            178,
+            167
+          ],
+          [
+            224,
+            168
+          ],
+          [
+            224,
+            200
+          ],
+          [
+            240,
+            168
+          ],
+          [
+            240,
+            200
+          ]
+        ],
+        "entities": []
+      }
+    ],
+    "walk": [
+      {
+        "name": "walk_1",
+        "spriteCount": 12,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1800,
+          1802,
+          1804,
+          1806,
+          6060,
+          6062,
+          6058,
+          6064
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            30,
+            144
+          ],
+          [
+            30,
+            176
+          ],
+          [
+            46,
+            144
+          ],
+          [
+            46,
+            176
+          ],
+          [
+            82,
+            185
+          ],
+          [
+            82,
+            217
+          ],
+          [
+            98,
+            185
+          ],
+          [
+            98,
+            201
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walk_2",
+        "spriteCount": 13,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6046,
+          6042,
+          6044,
+          6038,
+          6040,
+          1824,
+          1826,
+          1828,
+          1830
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false
+        ],
+        "playerPositions": [
+          [
+            58,
+            160
+          ],
+          [
+            74,
+            144
+          ],
+          [
+            74,
+            176
+          ],
+          [
+            90,
+            144
+          ],
+          [
+            90,
+            176
+          ],
+          [
+            92,
+            171
+          ],
+          [
+            92,
+            203
+          ],
+          [
+            108,
+            171
+          ],
+          [
+            108,
+            203
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walk_3",
+        "spriteCount": 14,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          6020,
+          6026,
+          6016,
+          6018,
+          1792,
+          1808,
+          6012,
+          6014,
+          1796,
+          1810
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false
+        ],
+        "playerPositions": [
+          [
+            84,
+            144
+          ],
+          [
+            84,
+            160
+          ],
+          [
+            100,
+            144
+          ],
+          [
+            100,
+            176
+          ],
+          [
+            110,
+            169
+          ],
+          [
+            110,
+            201
+          ],
+          [
+            116,
+            144
+          ],
+          [
+            116,
+            176
+          ],
+          [
+            126,
+            169
+          ],
+          [
+            126,
+            201
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walk_4",
+        "spriteCount": 13,
+        "playerSpriteCount": 9,
+        "playerTiles": [
+          6046,
+          1800,
+          1812,
+          6042,
+          6044,
+          1804,
+          1814,
+          6038,
+          6040
+        ],
+        "playerFlips": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            102,
+            160
+          ],
+          [
+            113,
+            169
+          ],
+          [
+            113,
+            201
+          ],
+          [
+            118,
+            144
+          ],
+          [
+            118,
+            176
+          ],
+          [
+            129,
+            169
+          ],
+          [
+            129,
+            201
+          ],
+          [
+            134,
+            144
+          ],
+          [
+            134,
+            176
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walk_5",
+        "spriteCount": 19,
+        "playerSpriteCount": 10,
+        "playerTiles": [
+          6020,
+          6026,
+          1800,
+          1802,
+          6016,
+          6018,
+          1804,
+          1806,
+          6012,
+          6014
+        ],
+        "playerFlips": [
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            112,
+            144
+          ],
+          [
+            112,
+            160
+          ],
+          [
+            115,
+            169
+          ],
+          [
+            115,
+            201
+          ],
+          [
+            128,
+            144
+          ],
+          [
+            128,
+            176
+          ],
+          [
+            131,
+            169
+          ],
+          [
+            131,
+            201
+          ],
+          [
+            144,
+            144
+          ],
+          [
+            144,
+            176
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walk_6",
+        "spriteCount": 17,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1824,
+          1836,
+          1828,
+          1838,
+          6060,
+          6062,
+          6058,
+          6064
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "playerPositions": [
+          [
+            100,
+            185
+          ],
+          [
+            100,
+            217
+          ],
+          [
+            116,
+            185
+          ],
+          [
+            116,
+            217
+          ],
+          [
+            142,
+            144
+          ],
+          [
+            142,
+            176
+          ],
+          [
+            158,
+            144
+          ],
+          [
+            158,
+            160
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walk_7",
+        "spriteCount": 21,
+        "playerSpriteCount": 12,
+        "playerTiles": [
+          4360,
+          4362,
+          4365,
+          4356,
+          4358,
+          4364,
+          1800,
+          1802,
+          4352,
+          4354,
+          1804,
+          1806
+        ],
+        "playerFlips": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false
+        ],
+        "playerPositions": [
+          [
+            111,
+            169
+          ],
+          [
+            111,
+            201
+          ],
+          [
+            111,
+            217
+          ],
+          [
+            127,
+            169
+          ],
+          [
+            127,
+            201
+          ],
+          [
+            127,
+            217
+          ],
+          [
+            131,
+            158
+          ],
+          [
+            131,
+            190
+          ],
+          [
+            143,
+            169
+          ],
+          [
+            143,
+            217
+          ],
+          [
+            147,
+            158
+          ],
+          [
+            147,
+            190
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walk_8",
+        "spriteCount": 17,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1792,
+          1808,
+          1816,
+          1832,
+          1796,
+          1810,
+          1820,
+          1834
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "playerPositions": [
+          [
+            125,
+            167
+          ],
+          [
+            125,
+            199
+          ],
+          [
+            134,
+            191
+          ],
+          [
+            134,
+            223
+          ],
+          [
+            141,
+            167
+          ],
+          [
+            141,
+            199
+          ],
+          [
+            150,
+            191
+          ],
+          [
+            150,
+            223
+          ]
+        ],
+        "entities": []
+      }
+    ],
+    "walkleft": [
+      {
+        "name": "walkleft_1",
+        "spriteCount": 16,
+        "playerSpriteCount": 7,
+        "playerTiles": [
+          1658,
+          1660,
+          1662,
+          1664,
+          1899,
+          1894,
+          1896
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "playerPositions": [
+          [
+            118,
+            167
+          ],
+          [
+            118,
+            199
+          ],
+          [
+            134,
+            167
+          ],
+          [
+            134,
+            199
+          ],
+          [
+            141,
+            168
+          ],
+          [
+            157,
+            168
+          ],
+          [
+            157,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walkleft_2",
+        "spriteCount": 16,
+        "playerSpriteCount": 7,
+        "playerTiles": [
+          1792,
+          1808,
+          1796,
+          1810,
+          1899,
+          1894,
+          1896
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "playerPositions": [
+          [
+            118,
+            167
+          ],
+          [
+            118,
+            199
+          ],
+          [
+            134,
+            167
+          ],
+          [
+            134,
+            199
+          ],
+          [
+            141,
+            168
+          ],
+          [
+            157,
+            168
+          ],
+          [
+            157,
+            200
+          ]
+        ],
+        "entities": []
+      },
+      {
+        "name": "walkleft_3",
+        "spriteCount": 17,
+        "playerSpriteCount": 8,
+        "playerTiles": [
+          1778,
+          1782,
+          1899,
+          1780,
+          1783,
+          1894,
+          1896,
+          1784
+        ],
+        "playerFlips": [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "playerPositions": [
+          [
+            136,
+            139
+          ],
+          [
+            136,
+            155
+          ],
+          [
+            141,
+            168
+          ],
+          [
+            152,
+            139
+          ],
+          [
+            152,
+            155
+          ],
+          [
+            157,
+            168
+          ],
+          [
+            157,
+            200
+          ],
+          [
+            168,
+            139
+          ]
+        ],
+        "entities": []
+      }
+    ]
+  }
+}
