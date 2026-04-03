@@ -1,0 +1,121 @@
+[
+  {
+    "id": "bruce_lee_runner",
+    "class_id": "game:game",
+    "title": "Bruce Lee Runner",
+    "description": "Phaser 3 endless-runner reinterpretation seeded from Bruce Lee C64 ROM room and spawn tables.",
+    "screen_width": 640,
+    "screen_height": 360,
+    "fps": 60,
+    "render_mode": "auto",
+    "scale_mode": "fit",
+    "auto_center": "center_both",
+    "pixel_art": true,
+    "fullscreen": false,
+    "palette_id": "c64_palette_runner",
+    "input_map_id": "runner_input",
+    "scene_ids": ["runner_room_loop"],
+    "game_loop_id": "runner_loop"
+  },
+  {
+    "id": "c64_palette_runner",
+    "class_id": "game:palette",
+    "name": "C64 Runner Palette",
+    "bit_depth": 4,
+    "colors": [
+      {"index": 0, "r": 0, "g": 0, "b": 0, "name": "black"},
+      {"index": 7, "r": 238, "g": 238, "b": 119, "name": "yellow"},
+      {"index": 12, "r": 108, "g": 108, "b": 108, "name": "grey"},
+      {"index": 13, "r": 154, "g": 210, "b": 132, "name": "light_green"},
+      {"index": 15, "r": 149, "g": 149, "b": 149, "name": "light_grey"}
+    ]
+  },
+  {
+    "id": "runner_input",
+    "class_id": "game:input_map",
+    "name": "Runner Controls",
+    "actions": [
+      {"name": "jump", "keys": ["Space", "ArrowUp", "w"]},
+      {"name": "slide", "keys": ["ArrowDown", "s"]},
+      {"name": "pause", "keys": ["p"]}
+    ]
+  },
+  {
+    "id": "runner_room_loop",
+    "class_id": "game:scene",
+    "name": "Room Loop",
+    "type": "gameplay",
+    "width": 640,
+    "height": 360,
+    "tile_map_id": null,
+    "spawn_points": [
+      {"type": "player", "x": 100, "y": 270}
+    ],
+    "data_vars": {
+      "room_count": 20,
+      "derived_from": ["$47A0", "$4BAE", "$4BC2", "$4BD6", "$4BEA"]
+    }
+  },
+  {
+    "id": "runner_bruce",
+    "class_id": "game:character",
+    "name": "Runner Bruce",
+    "type": "player",
+    "health": 1,
+    "speed": 180,
+    "physics_id": "runner_physics",
+    "animations": {
+      "run": "runner_run_anim",
+      "jump": "runner_jump_anim",
+      "slide": "runner_slide_anim"
+    },
+    "data_vars": {
+      "rom_origin": "Bruce Lee C64",
+      "start_x_table": "$4BAE",
+      "start_y_table": "$4BC2"
+    }
+  },
+  {
+    "id": "runner_physics",
+    "class_id": "game:physics_config",
+    "name": "Runner Physics",
+    "gravity": 1000,
+    "jump_velocity": -430,
+    "walk_speed": 180,
+    "terminal_velocity": 900
+  },
+  {
+    "id": "runner_loop",
+    "class_id": "game:game_loop",
+    "name": "Runner Main Loop",
+    "tick_rate": 60,
+    "phases": [
+      {"name": "input", "handler": "readRunnerInput"},
+      {"name": "physics", "handler": "simulateRunnerPhysics"},
+      {"name": "spawn", "handler": "spawnObstaclesFromRoomSeed"},
+      {"name": "room_transition", "handler": "advanceRoomFromDistance"},
+      {"name": "collision", "handler": "checkRunnerHit"},
+      {"name": "render", "handler": "renderRunnerFrame"}
+    ]
+  },
+  {
+    "id": "runner_rom_source",
+    "class_id": "rom:source",
+    "name": "Bruce Lee C64 Disk Source (Runner subset)",
+    "rom_file": "../roms/Bruce Lee.d64",
+    "disassembly_file": "../extraction/output/full_disassembly.asm",
+    "migration_status": "translating"
+  },
+  {
+    "id": "runner_room_colors",
+    "class_id": "rom:data_table",
+    "name": "Room Colors",
+    "source_id": "runner_rom_source",
+    "address": "$47A0",
+    "entry_size": 1,
+    "data": [254,254,254,254,252,252,252,255,250,250,249,251,249,250,249,252,249,255,254,255],
+    "index_by": "room_index",
+    "purpose": "Background tone seed per room",
+    "maps_to": "runner_room_loop.data_vars.room_theme"
+  }
+]
