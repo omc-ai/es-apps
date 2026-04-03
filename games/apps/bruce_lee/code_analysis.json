@@ -1,0 +1,70 @@
+{
+  "game_code_range": "$0400-$0CFF",
+  "entry_point": "$0400",
+  "subroutine_count": 45,
+  "init_sequence": {
+    "$0400": "SEI, CLD, reset stack",
+    "$0405-$0464": "Copy character ROM to $8800-$8B00 (with banking)",
+    "$0466-$047A": "Initialize sprite/char table entries",
+    "$047A-$0482": "Set up screen pointers"
+  },
+  "room_system": {
+    "room_variable": "$29 (zero page)",
+    "load_room_color": "$09DA: LDX $29; LDA $47A0,X \u2192 fill color RAM",
+    "load_room_layout": "$0A83: LDA $29; ASL; TAX; LDA $4AA8,X \u2192 pointer to room data",
+    "room_type_check": "$0A9D: CPX #$0A / CPX #$12 \u2192 different behavior per room range",
+    "room_flags": "$0A3F: LDX $29; LDA $4C9E,X \u2192 exit flags"
+  },
+  "character_spawn": {
+    "bruce_position": "$0BE7: LDX $29; LDA $4BC2,X",
+    "enemy_flags_1": "$0C02: LDX $29; LDA $136F,X",
+    "enemy_flags_2": "$0C2A: LDX $29; LDA $1333,X"
+  },
+  "key_subroutines": {
+    "$17E2": "utility (8 calls) - needs tracing",
+    "$4892": "init helper (4 calls)",
+    "$50DB": "common routine (4 calls)",
+    "$478D": "sprite/display (4 calls)",
+    "$094B": "game logic (3 calls, in-game)",
+    "$09BC": "game logic (2 calls, in-game)",
+    "$0763": "game logic (3 calls, in-game)",
+    "$0B5F": "game logic (2 calls, in-game)"
+  },
+  "zero_page_variables": {
+    "$01": "CPU port (banking)",
+    "$03": "room subtype/state",
+    "$04-$05": "screen pointer",
+    "$06-$07": "data pointer (room layout)",
+    "$08-$09": "color RAM pointer",
+    "$10-$11": "temp pointer",
+    "$12-$13": "temp pointer 2",
+    "$28": "lives counter (val=4 at capture)",
+    "$29": "room number (val=0 at capture)",
+    "$47": "sprite enable shadow",
+    "$48": "timer/counter",
+    "$F2": "scroll/animation state",
+    "$F3": "column counter"
+  },
+  "room_data_tables": {
+    "$47A0": "room color (20 bytes, 1 per room)",
+    "$4AA8": "room layout pointers (20 x 2 bytes)",
+    "$4BC2": "bruce start position (20 bytes)",
+    "$4BEA": "enemy start position (20 bytes)",
+    "$4C9E": "room exit flags (20 bytes, $00 or $FF)",
+    "$1333": "enemy behavior flags type 1 (20 bytes)",
+    "$136F": "enemy behavior flags type 2 (20 bytes)"
+  },
+  "next_steps": [
+    "Trace main game loop (find the per-frame update routine)",
+    "Trace room drawing routine (decode $4AD0+ compressed format)",
+    "Trace player input \u2192 movement (joystick read \u2192 position update)",
+    "Trace gravity/jump physics (find the velocity/acceleration constants)",
+    "Trace platform collision detection",
+    "Trace ladder detection and climbing",
+    "Trace combat system (attack detection, damage, knockback)",
+    "Trace enemy AI (pathfinding, attack decisions)",
+    "Trace sprite animation (which blocks for which states)",
+    "Trace lantern collection and room exit logic",
+    "Trace score and lives system"
+  ]
+}

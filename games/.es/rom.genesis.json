@@ -1,0 +1,185 @@
+{
+  "version": "1.0.0",
+  "description": "ElementStore rom: namespace — platform-specific classes for ROM/arcade translation and migration. Links to game: namespace classes to map legacy hardware data onto universal game structure.",
+  "classes": [
+    {
+      "id": "rom:platform",
+      "class_id": "@class",
+      "name": "Platform",
+      "description": "Hardware platform definition. Describes the original machine: CPU, video chip, sound chip, memory layout, capabilities. Used to configure the translation pipeline.",
+      "props": [
+        {"id": "rom:platform.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:platform.type", "class_id": "@prop", "key": "type", "label": "Type", "data_type": "string", "options": {"values": ["c64", "nes", "snes", "gameboy", "genesis", "msx", "zx_spectrum", "amstrad_cpc", "atari_2600", "atari_800", "arcade_cps1", "arcade_cps2", "arcade_neogeo", "arcade_namco", "arcade_custom", "amiga", "apple2"]}, "required": true, "display_order": 20},
+        {"id": "rom:platform.cpu", "class_id": "@prop", "key": "cpu", "label": "CPU", "data_type": "string", "description": "CPU type: 6502, z80, 6809, 68000, etc.", "display_order": 30},
+        {"id": "rom:platform.cpu_speed", "class_id": "@prop", "key": "cpu_speed", "label": "CPU Speed (MHz)", "data_type": "float", "display_order": 40},
+        {"id": "rom:platform.video_chip", "class_id": "@prop", "key": "video_chip", "label": "Video Chip", "data_type": "string", "description": "VIC-II, PPU, VDP, custom, etc.", "display_order": 50},
+        {"id": "rom:platform.sound_chip", "class_id": "@prop", "key": "sound_chip", "label": "Sound Chip", "data_type": "string", "description": "SID, APU, AY-3-8910, YM2612, OPL2, etc.", "display_order": 60},
+        {"id": "rom:platform.screen_width", "class_id": "@prop", "key": "screen_width", "label": "Screen Width", "data_type": "integer", "display_order": 70},
+        {"id": "rom:platform.screen_height", "class_id": "@prop", "key": "screen_height", "label": "Screen Height", "data_type": "integer", "display_order": 80},
+        {"id": "rom:platform.refresh_rate", "class_id": "@prop", "key": "refresh_rate", "label": "Refresh Rate", "data_type": "string", "options": {"values": ["pal_50", "ntsc_60", "variable"]}, "display_order": 90},
+        {"id": "rom:platform.color_count", "class_id": "@prop", "key": "color_count", "label": "Total Colors", "data_type": "integer", "description": "Hardware palette size (C64=16, NES=64, etc.)", "display_order": 100},
+        {"id": "rom:platform.max_sprites", "class_id": "@prop", "key": "max_sprites", "label": "Max Sprites", "data_type": "integer", "description": "Hardware sprite limit (C64=8, NES=64, etc.)", "display_order": 110},
+        {"id": "rom:platform.sprite_size", "class_id": "@prop", "key": "sprite_size", "label": "Sprite Size", "data_type": "object", "description": "{width, height} in pixels per hardware sprite", "display_order": 120},
+        {"id": "rom:platform.tile_size", "class_id": "@prop", "key": "tile_size", "label": "Tile Size", "data_type": "object", "description": "{width, height} background tile dimensions", "display_order": 130},
+        {"id": "rom:platform.address_space", "class_id": "@prop", "key": "address_space", "label": "Address Space", "data_type": "integer", "description": "Total addressable memory in bytes (C64=65536)", "display_order": 140},
+        {"id": "rom:platform.pixel_aspect_ratio", "class_id": "@prop", "key": "pixel_aspect_ratio", "label": "Pixel Aspect Ratio", "data_type": "float", "description": "Non-square pixels: C64 PAL ~0.936", "display_order": 150}
+      ]
+    },
+
+    {
+      "id": "rom:memory_map",
+      "class_id": "@class",
+      "name": "Memory Map",
+      "description": "Hardware memory layout for a specific ROM. Maps address ranges to functions: code, data, screen RAM, color RAM, sprites, charset, I/O registers, bank switching.",
+      "props": [
+        {"id": "rom:memory_map.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:memory_map.platform_id", "class_id": "@prop", "key": "platform_id", "label": "Platform", "data_type": "relation", "relation": {"class_id": "rom:platform"}, "required": true, "display_order": 20},
+        {"id": "rom:memory_map.regions", "class_id": "@prop", "key": "regions", "label": "Regions", "data_type": "array", "required": true, "description": "Array of {name, start, end, type, bank, description}. Type: code, data, screen, color, sprite, charset, io, zeropage", "display_order": 30},
+        {"id": "rom:memory_map.bank_config", "class_id": "@prop", "key": "bank_config", "label": "Bank Config", "data_type": "object", "description": "Bank switching configuration (VIC banks, NES mapper, etc.)", "display_order": 40},
+        {"id": "rom:memory_map.zeropage_vars", "class_id": "@prop", "key": "zeropage_vars", "label": "Zero Page / Fast RAM", "data_type": "array", "description": "Array of {address, name, size, indexed_by, description}. Fast-access game state variables.", "display_order": 50}
+      ]
+    },
+
+    {
+      "id": "rom:source",
+      "class_id": "@class",
+      "name": "ROM Source",
+      "description": "The original ROM or disk image being translated. Links to platform, memory map, and the target game: objects being built from it.",
+      "props": [
+        {"id": "rom:source.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:source.platform_id", "class_id": "@prop", "key": "platform_id", "label": "Platform", "data_type": "relation", "relation": {"class_id": "rom:platform"}, "required": true, "display_order": 20},
+        {"id": "rom:source.memory_map_id", "class_id": "@prop", "key": "memory_map_id", "label": "Memory Map", "data_type": "relation", "relation": {"class_id": "rom:memory_map"}, "display_order": 30},
+        {"id": "rom:source.game_id", "class_id": "@prop", "key": "game_id", "label": "Target Game", "data_type": "relation", "relation": {"class_id": "game:game"}, "description": "The game: object this ROM translates into", "display_order": 40},
+        {"id": "rom:source.rom_file", "class_id": "@prop", "key": "rom_file", "label": "ROM File", "data_type": "string", "description": "Path to original ROM/disk image", "display_order": 50},
+        {"id": "rom:source.rom_size", "class_id": "@prop", "key": "rom_size", "label": "ROM Size", "data_type": "integer", "description": "File size in bytes", "display_order": 60},
+        {"id": "rom:source.disassembly_file", "class_id": "@prop", "key": "disassembly_file", "label": "Disassembly File", "data_type": "string", "description": "Path to annotated disassembly", "display_order": 70},
+        {"id": "rom:source.migration_status", "class_id": "@prop", "key": "migration_status", "label": "Migration Status", "data_type": "string", "options": {"values": ["not_started", "extracting", "mapping", "translating", "testing", "complete"]}, "display_order": 80}
+      ]
+    },
+
+    {
+      "id": "rom:data_table",
+      "class_id": "@class",
+      "name": "Data Table",
+      "description": "ROM lookup/data table. Pre-computed values from the original code: sprite mappings, level pointers, sine tables, behavior flags. Preserves exact ROM data for faithful translation.",
+      "props": [
+        {"id": "rom:data_table.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:data_table.source_id", "class_id": "@prop", "key": "source_id", "label": "ROM Source", "data_type": "relation", "relation": {"class_id": "rom:source"}, "display_order": 20},
+        {"id": "rom:data_table.address", "class_id": "@prop", "key": "address", "label": "Address", "data_type": "string", "description": "Start address in ROM (e.g. $47A0)", "display_order": 30},
+        {"id": "rom:data_table.data", "class_id": "@prop", "key": "data", "label": "Data", "data_type": "array", "description": "Array of values (bytes, words, or pointers)", "display_order": 40},
+        {"id": "rom:data_table.entry_size", "class_id": "@prop", "key": "entry_size", "label": "Entry Size", "data_type": "integer", "default_value": 1, "description": "Bytes per entry (1=byte, 2=word/pointer)", "display_order": 50},
+        {"id": "rom:data_table.purpose", "class_id": "@prop", "key": "purpose", "label": "Purpose", "data_type": "string", "description": "What routine uses this table and how", "display_order": 60},
+        {"id": "rom:data_table.index_by", "class_id": "@prop", "key": "index_by", "label": "Indexed By", "data_type": "string", "description": "What variable indexes into this table", "display_order": 70},
+        {"id": "rom:data_table.maps_to", "class_id": "@prop", "key": "maps_to", "label": "Maps To", "data_type": "string", "description": "Which game: class property this table feeds into", "display_order": 80}
+      ]
+    },
+
+    {
+      "id": "rom:routine",
+      "class_id": "@class",
+      "name": "Routine",
+      "description": "A subroutine from the original ROM code. Documents the entry point, purpose, inputs/outputs, and maps it to the corresponding game: system or handler.",
+      "props": [
+        {"id": "rom:routine.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:routine.source_id", "class_id": "@prop", "key": "source_id", "label": "ROM Source", "data_type": "relation", "relation": {"class_id": "rom:source"}, "display_order": 20},
+        {"id": "rom:routine.address", "class_id": "@prop", "key": "address", "label": "Entry Address", "data_type": "string", "description": "Start address (e.g. $0C60)", "display_order": 30},
+        {"id": "rom:routine.end_address", "class_id": "@prop", "key": "end_address", "label": "End Address", "data_type": "string", "display_order": 40},
+        {"id": "rom:routine.purpose", "class_id": "@prop", "key": "purpose", "label": "Purpose", "data_type": "string", "description": "What this routine does", "display_order": 50},
+        {"id": "rom:routine.category", "class_id": "@prop", "key": "category", "label": "Category", "data_type": "string", "options": {"values": ["input", "movement", "physics", "collision", "combat", "ai", "animation", "rendering", "sound", "room_setup", "game_flow", "init", "interrupt"]}, "display_order": 60},
+        {"id": "rom:routine.inputs", "class_id": "@prop", "key": "inputs", "label": "Inputs", "data_type": "array", "description": "Array of {register_or_address, description}. What the routine reads.", "display_order": 70},
+        {"id": "rom:routine.outputs", "class_id": "@prop", "key": "outputs", "label": "Outputs", "data_type": "array", "description": "Array of {register_or_address, description}. What the routine writes.", "display_order": 80},
+        {"id": "rom:routine.calls", "class_id": "@prop", "key": "calls", "label": "Calls", "data_type": "array", "description": "Other routine addresses/IDs this routine calls (JSR targets)", "display_order": 90},
+        {"id": "rom:routine.maps_to", "class_id": "@prop", "key": "maps_to", "label": "Maps To", "data_type": "string", "description": "Which game_loop phase or game: handler this translates to", "display_order": 100},
+        {"id": "rom:routine.translation_status", "class_id": "@prop", "key": "translation_status", "label": "Translation Status", "data_type": "string", "options": {"values": ["not_started", "analyzed", "translated", "tested", "verified"]}, "display_order": 110},
+        {"id": "rom:routine.js_function", "class_id": "@prop", "key": "js_function", "label": "JS Function", "data_type": "string", "description": "Name of the translated JavaScript function", "display_order": 120}
+      ]
+    },
+
+    {
+      "id": "rom:sprite_raw",
+      "class_id": "@class",
+      "name": "Raw Sprite Data",
+      "description": "Original sprite bitmap data extracted from ROM. Raw bytes in hardware format. Links to the game:sprite_def it gets converted into.",
+      "props": [
+        {"id": "rom:sprite_raw.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:sprite_raw.source_id", "class_id": "@prop", "key": "source_id", "label": "ROM Source", "data_type": "relation", "relation": {"class_id": "rom:source"}, "display_order": 20},
+        {"id": "rom:sprite_raw.block_index", "class_id": "@prop", "key": "block_index", "label": "Block Index", "data_type": "integer", "description": "Sprite block number in hardware memory", "display_order": 30},
+        {"id": "rom:sprite_raw.address", "class_id": "@prop", "key": "address", "label": "Address", "data_type": "string", "description": "Memory address of sprite data", "display_order": 40},
+        {"id": "rom:sprite_raw.raw_bytes", "class_id": "@prop", "key": "raw_bytes", "label": "Raw Bytes", "data_type": "string", "description": "Base64-encoded original hardware bytes", "display_order": 50},
+        {"id": "rom:sprite_raw.pixel_text", "class_id": "@prop", "key": "pixel_text", "label": "Pixel Text", "data_type": "string", "description": "Human-readable pixel art (#=set, .=clear)", "display_order": 60},
+        {"id": "rom:sprite_raw.multicolor", "class_id": "@prop", "key": "multicolor", "label": "Multicolor Mode", "data_type": "boolean", "default_value": false, "display_order": 70},
+        {"id": "rom:sprite_raw.maps_to", "class_id": "@prop", "key": "maps_to", "label": "Maps To", "data_type": "relation", "relation": {"class_id": "game:sprite_def"}, "description": "The game: sprite this converts to", "display_order": 80}
+      ]
+    },
+
+    {
+      "id": "rom:charset_raw",
+      "class_id": "@class",
+      "name": "Raw Charset Data",
+      "description": "Original character set / tileset extracted from ROM in hardware format. Links to the game:charset it gets converted into.",
+      "props": [
+        {"id": "rom:charset_raw.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:charset_raw.source_id", "class_id": "@prop", "key": "source_id", "label": "ROM Source", "data_type": "relation", "relation": {"class_id": "rom:source"}, "display_order": 20},
+        {"id": "rom:charset_raw.address", "class_id": "@prop", "key": "address", "label": "Address", "data_type": "string", "description": "Memory address of charset data", "display_order": 30},
+        {"id": "rom:charset_raw.raw_bytes", "class_id": "@prop", "key": "raw_bytes", "label": "Raw Bytes", "data_type": "string", "description": "Base64-encoded original hardware bytes", "display_order": 40},
+        {"id": "rom:charset_raw.multicolor", "class_id": "@prop", "key": "multicolor", "label": "Multicolor Mode", "data_type": "boolean", "default_value": false, "display_order": 50},
+        {"id": "rom:charset_raw.maps_to", "class_id": "@prop", "key": "maps_to", "label": "Maps To", "data_type": "relation", "relation": {"class_id": "game:charset"}, "description": "The game: charset this converts to", "display_order": 60}
+      ]
+    },
+
+    {
+      "id": "rom:room_raw",
+      "class_id": "@class",
+      "name": "Raw Room Data",
+      "description": "Original room/level data from ROM in compressed or hardware format. Includes RLE data, color bytes, and any platform-specific encoding. Links to game:scene and game:tile_map.",
+      "props": [
+        {"id": "rom:room_raw.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:room_raw.source_id", "class_id": "@prop", "key": "source_id", "label": "ROM Source", "data_type": "relation", "relation": {"class_id": "rom:source"}, "display_order": 20},
+        {"id": "rom:room_raw.room_index", "class_id": "@prop", "key": "room_index", "label": "Room Index", "data_type": "integer", "display_order": 30},
+        {"id": "rom:room_raw.data_address", "class_id": "@prop", "key": "data_address", "label": "Data Address", "data_type": "string", "description": "Pointer to compressed room data in ROM", "display_order": 40},
+        {"id": "rom:room_raw.compressed_data", "class_id": "@prop", "key": "compressed_data", "label": "Compressed Data", "data_type": "string", "description": "Base64-encoded original compressed bytes", "display_order": 50},
+        {"id": "rom:room_raw.compression_format", "class_id": "@prop", "key": "compression_format", "label": "Compression", "data_type": "string", "options": {"values": ["none", "rle", "rle_c64", "lz77", "custom"]}, "display_order": 60},
+        {"id": "rom:room_raw.color_byte", "class_id": "@prop", "key": "color_byte", "label": "Color Byte", "data_type": "integer", "description": "Platform-specific per-room color value", "display_order": 70},
+        {"id": "rom:room_raw.header_data", "class_id": "@prop", "key": "header_data", "label": "Header Data", "data_type": "string", "description": "Base64-encoded room header/config bytes", "display_order": 80},
+        {"id": "rom:room_raw.maps_to_scene", "class_id": "@prop", "key": "maps_to_scene", "label": "Maps To Scene", "data_type": "relation", "relation": {"class_id": "game:scene"}, "display_order": 90},
+        {"id": "rom:room_raw.maps_to_tilemap", "class_id": "@prop", "key": "maps_to_tilemap", "label": "Maps To Tile Map", "data_type": "relation", "relation": {"class_id": "game:tile_map"}, "display_order": 100}
+      ]
+    },
+
+    {
+      "id": "rom:character_map",
+      "class_id": "@class",
+      "name": "Character Map",
+      "description": "Maps a ROM character's hardware state variables to a game:character. Documents which ZP addresses, sprite pairs, and behavior flags correspond to which game properties.",
+      "props": [
+        {"id": "rom:character_map.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:character_map.source_id", "class_id": "@prop", "key": "source_id", "label": "ROM Source", "data_type": "relation", "relation": {"class_id": "rom:source"}, "display_order": 20},
+        {"id": "rom:character_map.hw_index", "class_id": "@prop", "key": "hw_index", "label": "Hardware Index", "data_type": "integer", "description": "Character index in ZP arrays (0=Bruce, 1=Yamo, 2=Ninja)", "display_order": 30},
+        {"id": "rom:character_map.variable_map", "class_id": "@prop", "key": "variable_map", "label": "Variable Map", "data_type": "object", "description": "Maps HW addresses to game: property names: {\"$9E\": \"pos_x\", \"$A1\": \"pos_y\", ...}", "display_order": 40},
+        {"id": "rom:character_map.sprite_hw_ids", "class_id": "@prop", "key": "sprite_hw_ids", "label": "HW Sprite IDs", "data_type": "array", "description": "Hardware sprite numbers used by this character", "display_order": 50},
+        {"id": "rom:character_map.initial_values", "class_id": "@prop", "key": "initial_values", "label": "Initial Values", "data_type": "object", "description": "State values at game start from ROM: {state_flags, anim_frame, direction, health, ...}", "display_order": 60},
+        {"id": "rom:character_map.maps_to", "class_id": "@prop", "key": "maps_to", "label": "Maps To", "data_type": "relation", "relation": {"class_id": "game:character"}, "display_order": 70}
+      ]
+    },
+
+    {
+      "id": "rom:migration_task",
+      "class_id": "@class",
+      "name": "Migration Task",
+      "description": "Tracks the translation progress of a specific ROM component. Links the rom: source object to the game: target object with status and notes.",
+      "props": [
+        {"id": "rom:migration_task.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "rom:migration_task.source_id", "class_id": "@prop", "key": "source_id", "label": "ROM Source", "data_type": "relation", "relation": {"class_id": "rom:source"}, "display_order": 20},
+        {"id": "rom:migration_task.source_type", "class_id": "@prop", "key": "source_type", "label": "Source Type", "data_type": "string", "options": {"values": ["routine", "sprite", "charset", "room", "character", "data_table", "sound"]}, "display_order": 30},
+        {"id": "rom:migration_task.source_ref", "class_id": "@prop", "key": "source_ref", "label": "Source Object", "data_type": "string", "description": "ID of the rom: object being translated", "display_order": 40},
+        {"id": "rom:migration_task.target_ref", "class_id": "@prop", "key": "target_ref", "label": "Target Object", "data_type": "string", "description": "ID of the game: object being produced", "display_order": 50},
+        {"id": "rom:migration_task.status", "class_id": "@prop", "key": "status", "label": "Status", "data_type": "string", "options": {"values": ["not_started", "extracting", "analyzing", "translating", "testing", "verified", "complete"]}, "display_order": 60},
+        {"id": "rom:migration_task.notes", "class_id": "@prop", "key": "notes", "label": "Notes", "data_type": "string", "description": "Translation notes, issues, decisions", "display_order": 70},
+        {"id": "rom:migration_task.accuracy", "class_id": "@prop", "key": "accuracy", "label": "Accuracy", "data_type": "string", "options": {"values": ["exact", "equivalent", "approximate", "reimagined"]}, "description": "How faithfully the translation matches the original", "display_order": 80}
+      ]
+    }
+  ],
+  "seed": [
+    {"storage": "./rom_instance.json", "description": "ROM source data and migration tracking instances"}
+  ]
+}

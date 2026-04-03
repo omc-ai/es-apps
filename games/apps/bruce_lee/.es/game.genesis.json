@@ -1,0 +1,459 @@
+{
+  "version": "2.0.0",
+  "description": "ElementStore game: namespace — universal game structure classes. Covers all elements needed to define and run a 2D game: scenes, characters, sprites, tilemaps, physics, AI, combat, audio, input, camera, effects.",
+  "classes": [
+    {
+      "id": "game:game",
+      "class_id": "@class",
+      "name": "Game",
+      "description": "Top-level game definition. Contains metadata, configuration, and references to all game assets and scenes.",
+      "props": [
+        {"id": "game:game.title", "class_id": "@prop", "key": "title", "label": "Title", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:game.description", "class_id": "@prop", "key": "description", "label": "Description", "data_type": "string", "display_order": 15},
+        {"id": "game:game.screen_width", "class_id": "@prop", "key": "screen_width", "label": "Screen Width", "data_type": "integer", "default_value": 320, "display_order": 20},
+        {"id": "game:game.screen_height", "class_id": "@prop", "key": "screen_height", "label": "Screen Height", "data_type": "integer", "default_value": 200, "display_order": 30},
+        {"id": "game:game.fps", "class_id": "@prop", "key": "fps", "label": "Target FPS", "data_type": "integer", "default_value": 60, "display_order": 40},
+        {"id": "game:game.render_mode", "class_id": "@prop", "key": "render_mode", "label": "Render Mode", "data_type": "string", "options": {"values": ["canvas2d", "webgl", "auto"]}, "default_value": "auto", "display_order": 50},
+        {"id": "game:game.scale_mode", "class_id": "@prop", "key": "scale_mode", "label": "Scale Mode", "data_type": "string", "options": {"values": ["none", "fit", "envelop", "resize"]}, "default_value": "fit", "display_order": 60},
+        {"id": "game:game.auto_center", "class_id": "@prop", "key": "auto_center", "label": "Auto Center", "data_type": "string", "options": {"values": ["none", "center_both", "center_horizontal", "center_vertical"]}, "default_value": "center_both", "display_order": 70},
+        {"id": "game:game.pixel_art", "class_id": "@prop", "key": "pixel_art", "label": "Pixel Art Mode", "data_type": "boolean", "default_value": false, "description": "Disable anti-aliasing for crisp pixel rendering", "display_order": 80},
+        {"id": "game:game.fullscreen", "class_id": "@prop", "key": "fullscreen", "label": "Fullscreen Enabled", "data_type": "boolean", "default_value": true, "display_order": 90},
+        {"id": "game:game.palette_id", "class_id": "@prop", "key": "palette_id", "label": "Palette", "data_type": "relation", "relation": {"class_id": "game:palette"}, "description": "Color palette (optional, for indexed-color games)", "display_order": 100},
+        {"id": "game:game.input_map_id", "class_id": "@prop", "key": "input_map_id", "label": "Input Map", "data_type": "relation", "relation": {"class_id": "game:input_map"}, "display_order": 110},
+        {"id": "game:game.scene_ids", "class_id": "@prop", "key": "scene_ids", "label": "Scenes", "data_type": "relation", "relation": {"class_id": "game:scene"}, "is_array": true, "display_order": 120},
+        {"id": "game:game.sound_bank_id", "class_id": "@prop", "key": "sound_bank_id", "label": "Sound Bank", "data_type": "relation", "relation": {"class_id": "game:sound_bank"}, "display_order": 130},
+        {"id": "game:game.asset_manifest_id", "class_id": "@prop", "key": "asset_manifest_id", "label": "Asset Manifest", "data_type": "relation", "relation": {"class_id": "game:asset_manifest"}, "display_order": 140},
+        {"id": "game:game.camera_id", "class_id": "@prop", "key": "camera_id", "label": "Default Camera", "data_type": "relation", "relation": {"class_id": "game:camera"}, "display_order": 150},
+        {"id": "game:game.game_loop_id", "class_id": "@prop", "key": "game_loop_id", "label": "Game Loop", "data_type": "relation", "relation": {"class_id": "game:game_loop"}, "display_order": 160}
+      ]
+    },
+
+    {
+      "id": "game:palette",
+      "class_id": "@class",
+      "name": "Palette",
+      "description": "Color palette definition. Maps index values to RGBA colors. Used for indexed-color games or defining a consistent color scheme.",
+      "props": [
+        {"id": "game:palette.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:palette.colors", "class_id": "@prop", "key": "colors", "label": "Colors", "data_type": "array", "required": true, "description": "Array of {index, r, g, b, a, name}", "display_order": 20},
+        {"id": "game:palette.bit_depth", "class_id": "@prop", "key": "bit_depth", "label": "Bit Depth", "data_type": "integer", "description": "Bits per color channel", "display_order": 30}
+      ]
+    },
+
+    {
+      "id": "game:charset",
+      "class_id": "@class",
+      "name": "Charset",
+      "description": "Character set / tileset. A collection of fixed-size tiles used for background and level rendering. Each tile is a small bitmap (typically 8x8 or 16x16).",
+      "props": [
+        {"id": "game:charset.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:charset.tile_width", "class_id": "@prop", "key": "tile_width", "label": "Tile Width", "data_type": "integer", "default_value": 8, "display_order": 20},
+        {"id": "game:charset.tile_height", "class_id": "@prop", "key": "tile_height", "label": "Tile Height", "data_type": "integer", "default_value": 8, "display_order": 30},
+        {"id": "game:charset.tile_count", "class_id": "@prop", "key": "tile_count", "label": "Tile Count", "data_type": "integer", "default_value": 256, "display_order": 40},
+        {"id": "game:charset.image_url", "class_id": "@prop", "key": "image_url", "label": "Image URL", "data_type": "string", "description": "Path to tileset image (spritesheet of all tiles)", "display_order": 50},
+        {"id": "game:charset.margin", "class_id": "@prop", "key": "margin", "label": "Margin", "data_type": "integer", "default_value": 0, "description": "Pixels around the edge of the tileset image", "display_order": 60},
+        {"id": "game:charset.spacing", "class_id": "@prop", "key": "spacing", "label": "Spacing", "data_type": "integer", "default_value": 0, "description": "Pixels between tiles in the tileset image", "display_order": 70},
+        {"id": "game:charset.color_method", "class_id": "@prop", "key": "color_method", "label": "Color Method", "data_type": "string", "options": {"values": ["per_cell", "per_tile", "global", "rgba"]}, "description": "How colors are assigned to tiles", "display_order": 80}
+      ]
+    },
+
+    {
+      "id": "game:tile_map",
+      "class_id": "@class",
+      "name": "Tile Map",
+      "description": "Grid-based level layout composed of charset tiles. Each cell holds a tile index and optional properties (color, collision type). Supports multiple layers and object layers for spawn points and triggers.",
+      "props": [
+        {"id": "game:tile_map.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:tile_map.cols", "class_id": "@prop", "key": "cols", "label": "Columns", "data_type": "integer", "required": true, "display_order": 20},
+        {"id": "game:tile_map.rows", "class_id": "@prop", "key": "rows", "label": "Rows", "data_type": "integer", "required": true, "display_order": 30},
+        {"id": "game:tile_map.charset_id", "class_id": "@prop", "key": "charset_id", "label": "Primary Tileset", "data_type": "relation", "relation": {"class_id": "game:charset"}, "required": true, "display_order": 40},
+        {"id": "game:tile_map.tileset_ids", "class_id": "@prop", "key": "tileset_ids", "label": "Additional Tilesets", "data_type": "relation", "relation": {"class_id": "game:charset"}, "is_array": true, "description": "Extra tilesets used by this map", "display_order": 45},
+        {"id": "game:tile_map.layers", "class_id": "@prop", "key": "layers", "label": "Tile Layers", "data_type": "array", "description": "Array of {name, data, visible, opacity, scroll_factor_x, scroll_factor_y}. Data is tile index grid.", "display_order": 50},
+        {"id": "game:tile_map.color_data", "class_id": "@prop", "key": "color_data", "label": "Color Data", "data_type": "array", "description": "Per-cell color/tint values (for palette-based games)", "display_order": 60},
+        {"id": "game:tile_map.collision_map", "class_id": "@prop", "key": "collision_map", "label": "Collision Map", "data_type": "array", "description": "Per-cell collision type: solid, platform, ladder, hazard, collectible, empty", "display_order": 70},
+        {"id": "game:tile_map.object_layers", "class_id": "@prop", "key": "object_layers", "label": "Object Layers", "data_type": "array", "description": "Array of {name, objects: [{type, x, y, width, height, properties}]}. Spawn points, trigger areas, decorations.", "display_order": 80},
+        {"id": "game:tile_map.tile_callbacks", "class_id": "@prop", "key": "tile_callbacks", "label": "Tile Callbacks", "data_type": "array", "description": "Array of {tile_index_range, event_name}. Events triggered on tile contact.", "display_order": 90},
+        {"id": "game:tile_map.tile_properties", "class_id": "@prop", "key": "tile_properties", "label": "Tile Properties", "data_type": "object", "description": "Per-tile-index custom properties: {tile_index: {walkable, climbable, damage, ...}}", "display_order": 100}
+      ]
+    },
+
+    {
+      "id": "game:sprite_def",
+      "class_id": "@class",
+      "name": "Sprite Definition",
+      "description": "Single sprite frame. Defines a visual image used by characters, objects, or effects. Can reference an image file or a region within a spritesheet/atlas.",
+      "props": [
+        {"id": "game:sprite_def.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:sprite_def.width", "class_id": "@prop", "key": "width", "label": "Width (px)", "data_type": "integer", "required": true, "display_order": 20},
+        {"id": "game:sprite_def.height", "class_id": "@prop", "key": "height", "label": "Height (px)", "data_type": "integer", "required": true, "display_order": 30},
+        {"id": "game:sprite_def.image_url", "class_id": "@prop", "key": "image_url", "label": "Image URL", "data_type": "string", "description": "Path to image file or spritesheet", "display_order": 40},
+        {"id": "game:sprite_def.frame_x", "class_id": "@prop", "key": "frame_x", "label": "Frame X", "data_type": "integer", "description": "X offset within spritesheet", "display_order": 50},
+        {"id": "game:sprite_def.frame_y", "class_id": "@prop", "key": "frame_y", "label": "Frame Y", "data_type": "integer", "description": "Y offset within spritesheet", "display_order": 60},
+        {"id": "game:sprite_def.origin_x", "class_id": "@prop", "key": "origin_x", "label": "Origin X", "data_type": "float", "default_value": 0.5, "description": "Pivot point X (0=left, 0.5=center, 1=right)", "display_order": 70},
+        {"id": "game:sprite_def.origin_y", "class_id": "@prop", "key": "origin_y", "label": "Origin Y", "data_type": "float", "default_value": 0.5, "description": "Pivot point Y (0=top, 0.5=center, 1=bottom)", "display_order": 80},
+        {"id": "game:sprite_def.tint", "class_id": "@prop", "key": "tint", "label": "Tint", "data_type": "string", "description": "Color tint applied to sprite (hex)", "display_order": 90},
+        {"id": "game:sprite_def.blend_mode", "class_id": "@prop", "key": "blend_mode", "label": "Blend Mode", "data_type": "string", "options": {"values": ["normal", "add", "multiply", "screen"]}, "default_value": "normal", "display_order": 100}
+      ]
+    },
+
+    {
+      "id": "game:sprite_overlay",
+      "class_id": "@class",
+      "name": "Sprite Overlay",
+      "description": "Composite sprite from multiple layers rendered at the same position. Used for multi-color characters, equipment layers, shadow/glow effects, or any stacked visual.",
+      "props": [
+        {"id": "game:sprite_overlay.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:sprite_overlay.layers", "class_id": "@prop", "key": "layers", "label": "Layers", "data_type": "array", "required": true, "description": "Array of {sprite_id, tint, blend_mode, offset_x, offset_y, opacity}. Rendered bottom to top.", "display_order": 20},
+        {"id": "game:sprite_overlay.scale_x", "class_id": "@prop", "key": "scale_x", "label": "Scale X", "data_type": "float", "default_value": 1, "display_order": 30},
+        {"id": "game:sprite_overlay.scale_y", "class_id": "@prop", "key": "scale_y", "label": "Scale Y", "data_type": "float", "default_value": 1, "display_order": 40},
+        {"id": "game:sprite_overlay.priority", "class_id": "@prop", "key": "priority", "label": "Render Priority", "data_type": "integer", "description": "Depth sorting order (lower = behind)", "display_order": 50}
+      ]
+    },
+
+    {
+      "id": "game:animation",
+      "class_id": "@class",
+      "name": "Animation",
+      "description": "Sequence of sprite frames with timing. Defines how a character or object animates through a series of visual states.",
+      "props": [
+        {"id": "game:animation.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:animation.frames", "class_id": "@prop", "key": "frames", "label": "Frames", "data_type": "array", "required": true, "description": "Array of {sprite_id, duration_ms, offset_x, offset_y, flip_h, flip_v}", "display_order": 20},
+        {"id": "game:animation.frame_rate", "class_id": "@prop", "key": "frame_rate", "label": "Frame Rate", "data_type": "integer", "description": "Frames per second (alternative to per-frame duration)", "display_order": 30},
+        {"id": "game:animation.loop", "class_id": "@prop", "key": "loop", "label": "Loop", "data_type": "boolean", "default_value": true, "display_order": 40},
+        {"id": "game:animation.repeat", "class_id": "@prop", "key": "repeat", "label": "Repeat", "data_type": "integer", "default_value": -1, "description": "Times to repeat. -1=infinite, 0=play once", "display_order": 50},
+        {"id": "game:animation.yoyo", "class_id": "@prop", "key": "yoyo", "label": "Yoyo", "data_type": "boolean", "default_value": false, "description": "Play forward then reverse", "display_order": 60},
+        {"id": "game:animation.on_complete_event", "class_id": "@prop", "key": "on_complete_event", "label": "On Complete Event", "data_type": "string", "description": "Event emitted when animation finishes", "display_order": 70},
+        {"id": "game:animation.chain_animation_id", "class_id": "@prop", "key": "chain_animation_id", "label": "Chain Animation", "data_type": "relation", "relation": {"class_id": "game:animation"}, "description": "Next animation to auto-play on completion", "display_order": 80}
+      ]
+    },
+
+    {
+      "id": "game:character",
+      "class_id": "@class",
+      "name": "Character",
+      "description": "Game character — player, enemy, NPC, or boss. Combines visual representation, physics, state, behavior, and combat into a single game entity.",
+      "props": [
+        {"id": "game:character.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:character.type", "class_id": "@prop", "key": "type", "label": "Type", "data_type": "string", "options": {"values": ["player", "enemy", "npc", "boss"]}, "required": true, "display_order": 20},
+        {"id": "game:character.sprite_id", "class_id": "@prop", "key": "sprite_id", "label": "Sprite", "data_type": "relation", "relation": {"class_id": "game:sprite_def"}, "description": "Single-layer sprite", "display_order": 30},
+        {"id": "game:character.sprite_overlay_id", "class_id": "@prop", "key": "sprite_overlay_id", "label": "Sprite Overlay", "data_type": "relation", "relation": {"class_id": "game:sprite_overlay"}, "description": "Multi-layer composite sprite", "display_order": 35},
+        {"id": "game:character.animations", "class_id": "@prop", "key": "animations", "label": "Animations", "data_type": "object", "description": "Map of state->animation_id: {idle, walk, run, jump, fall, attack, climb, stun, death, ...}", "display_order": 40},
+        {"id": "game:character.physics_id", "class_id": "@prop", "key": "physics_id", "label": "Physics", "data_type": "relation", "relation": {"class_id": "game:physics_config"}, "display_order": 50},
+        {"id": "game:character.collision_box", "class_id": "@prop", "key": "collision_box", "label": "Collision Box", "data_type": "object", "description": "{x, y, width, height} relative to sprite origin", "display_order": 60},
+        {"id": "game:character.attack_box", "class_id": "@prop", "key": "attack_box", "label": "Attack Box", "data_type": "object", "description": "{x, y, width, height} hit area during attack", "display_order": 65},
+        {"id": "game:character.health", "class_id": "@prop", "key": "health", "label": "Health", "data_type": "integer", "default_value": 3, "display_order": 70},
+        {"id": "game:character.speed", "class_id": "@prop", "key": "speed", "label": "Speed", "data_type": "float", "description": "Base movement speed", "display_order": 80},
+        {"id": "game:character.ai_id", "class_id": "@prop", "key": "ai_id", "label": "AI Behavior", "data_type": "relation", "relation": {"class_id": "game:ai_behavior"}, "description": "AI for enemy/NPC characters", "display_order": 90},
+        {"id": "game:character.combat_id", "class_id": "@prop", "key": "combat_id", "label": "Combat Config", "data_type": "relation", "relation": {"class_id": "game:combat_config"}, "display_order": 100},
+        {"id": "game:character.data_vars", "class_id": "@prop", "key": "data_vars", "label": "Data Variables", "data_type": "object", "description": "Custom key-value pairs with change events (score, ammo, power_level, etc.)", "display_order": 110},
+        {"id": "game:character.container_children", "class_id": "@prop", "key": "container_children", "label": "Attached Objects", "data_type": "array", "description": "Child objects with relative transform (weapons, shields, effects)", "display_order": 120},
+        {"id": "game:character.depth", "class_id": "@prop", "key": "depth", "label": "Depth", "data_type": "integer", "default_value": 0, "description": "Render order within scene", "display_order": 130}
+      ]
+    },
+
+    {
+      "id": "game:physics_config",
+      "class_id": "@class",
+      "name": "Physics Config",
+      "description": "Movement physics parameters. Gravity, jump arcs, acceleration, terminal velocity, friction. Defines how a character moves through the game world.",
+      "props": [
+        {"id": "game:physics_config.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:physics_config.gravity", "class_id": "@prop", "key": "gravity", "label": "Gravity", "data_type": "float", "description": "Downward acceleration per tick", "display_order": 20},
+        {"id": "game:physics_config.jump_velocity", "class_id": "@prop", "key": "jump_velocity", "label": "Jump Velocity", "data_type": "float", "description": "Initial upward velocity on jump", "display_order": 30},
+        {"id": "game:physics_config.walk_speed", "class_id": "@prop", "key": "walk_speed", "label": "Walk Speed", "data_type": "float", "description": "Horizontal movement speed", "display_order": 40},
+        {"id": "game:physics_config.run_speed", "class_id": "@prop", "key": "run_speed", "label": "Run Speed", "data_type": "float", "description": "Horizontal sprint speed", "display_order": 45},
+        {"id": "game:physics_config.fall_speed_max", "class_id": "@prop", "key": "fall_speed_max", "label": "Max Fall Speed", "data_type": "float", "description": "Terminal velocity", "display_order": 50},
+        {"id": "game:physics_config.climb_speed", "class_id": "@prop", "key": "climb_speed", "label": "Climb Speed", "data_type": "float", "description": "Ladder/wall climb speed", "display_order": 60},
+        {"id": "game:physics_config.acceleration", "class_id": "@prop", "key": "acceleration", "label": "Acceleration", "data_type": "float", "description": "How fast character reaches walk/run speed", "display_order": 70},
+        {"id": "game:physics_config.drag", "class_id": "@prop", "key": "drag", "label": "Drag", "data_type": "float", "description": "Deceleration when no input (friction)", "display_order": 80},
+        {"id": "game:physics_config.bounce", "class_id": "@prop", "key": "bounce", "label": "Bounce", "data_type": "float", "default_value": 0, "description": "Bounciness on collision (0=none, 1=full)", "display_order": 90},
+        {"id": "game:physics_config.mass", "class_id": "@prop", "key": "mass", "label": "Mass", "data_type": "float", "default_value": 1, "description": "Affects collision response between objects", "display_order": 100},
+        {"id": "game:physics_config.collide_world_bounds", "class_id": "@prop", "key": "collide_world_bounds", "label": "Collide World Bounds", "data_type": "boolean", "default_value": true, "display_order": 110}
+      ]
+    },
+
+    {
+      "id": "game:collision_config",
+      "class_id": "@class",
+      "name": "Collision Config",
+      "description": "Collision detection configuration. Defines how collisions are checked between sprites, between sprites and tiles, and what responses they trigger.",
+      "props": [
+        {"id": "game:collision_config.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:collision_config.method", "class_id": "@prop", "key": "method", "label": "Method", "data_type": "string", "options": {"values": ["bbox", "circle", "pixel", "tile_check"]}, "description": "Detection method: bounding box, circle, pixel-perfect, or tile lookup", "display_order": 20},
+        {"id": "game:collision_config.sprite_sprite_pairs", "class_id": "@prop", "key": "sprite_sprite_pairs", "label": "Sprite-Sprite Pairs", "data_type": "array", "description": "Array of {a, b, response, callback_event}. What happens when objects collide.", "display_order": 30},
+        {"id": "game:collision_config.tile_types", "class_id": "@prop", "key": "tile_types", "label": "Tile Types", "data_type": "array", "description": "Array of {tile_index_range, type, response}. Type: solid, platform, ladder, hazard, collectible", "display_order": 40},
+        {"id": "game:collision_config.collision_groups", "class_id": "@prop", "key": "collision_groups", "label": "Collision Groups", "data_type": "array", "description": "Array of {name, collides_with: [group_names]}. Filter which groups check against each other.", "display_order": 50},
+        {"id": "game:collision_config.world_bounds", "class_id": "@prop", "key": "world_bounds", "label": "World Bounds", "data_type": "object", "description": "{x, y, width, height, check_left, check_right, check_up, check_down}", "display_order": 60}
+      ]
+    },
+
+    {
+      "id": "game:combat_config",
+      "class_id": "@class",
+      "name": "Combat Config",
+      "description": "Combat system parameters. Attack types, damage values, stun durations, invincibility frames, knockback.",
+      "props": [
+        {"id": "game:combat_config.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:combat_config.attacks", "class_id": "@prop", "key": "attacks", "label": "Attacks", "data_type": "array", "description": "Array of {name, damage, range, duration_ms, cooldown_ms, animation_id, hit_event}", "display_order": 20},
+        {"id": "game:combat_config.stun_duration", "class_id": "@prop", "key": "stun_duration", "label": "Stun Duration (ms)", "data_type": "integer", "description": "How long character is stunned after being hit", "display_order": 30},
+        {"id": "game:combat_config.invincibility_duration", "class_id": "@prop", "key": "invincibility_duration", "label": "I-Frame Duration (ms)", "data_type": "integer", "description": "Invincibility window after taking damage", "display_order": 40},
+        {"id": "game:combat_config.knockback_force", "class_id": "@prop", "key": "knockback_force", "label": "Knockback Force", "data_type": "float", "description": "Push-back velocity applied on hit", "display_order": 50},
+        {"id": "game:combat_config.death_event", "class_id": "@prop", "key": "death_event", "label": "Death Event", "data_type": "string", "description": "Event emitted when health reaches 0", "display_order": 60}
+      ]
+    },
+
+    {
+      "id": "game:ai_behavior",
+      "class_id": "@class",
+      "name": "AI Behavior",
+      "description": "Enemy/NPC AI behavior definition. State machine with transitions, pathfinding rules, and aggression settings.",
+      "props": [
+        {"id": "game:ai_behavior.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:ai_behavior.type", "class_id": "@prop", "key": "type", "label": "Type", "data_type": "string", "options": {"values": ["chase", "patrol", "guard", "flee", "scripted", "none"]}, "display_order": 20},
+        {"id": "game:ai_behavior.states", "class_id": "@prop", "key": "states", "label": "States", "data_type": "array", "description": "Array of {name, action, transitions: [{condition, target_state}]}", "display_order": 30},
+        {"id": "game:ai_behavior.aggression", "class_id": "@prop", "key": "aggression", "label": "Aggression", "data_type": "float", "description": "0.0=passive, 1.0=always attacks", "display_order": 40},
+        {"id": "game:ai_behavior.detection_range", "class_id": "@prop", "key": "detection_range", "label": "Detection Range", "data_type": "float", "description": "Distance at which AI detects the player", "display_order": 50},
+        {"id": "game:ai_behavior.attack_range", "class_id": "@prop", "key": "attack_range", "label": "Attack Range", "data_type": "float", "description": "Distance at which AI initiates attack", "display_order": 60},
+        {"id": "game:ai_behavior.pathfinding", "class_id": "@prop", "key": "pathfinding", "label": "Pathfinding", "data_type": "string", "options": {"values": ["none", "direct", "ladder_aware", "platform_aware", "a_star"]}, "display_order": 70},
+        {"id": "game:ai_behavior.patrol_points", "class_id": "@prop", "key": "patrol_points", "label": "Patrol Points", "data_type": "array", "description": "Array of {x, y, wait_ms} for patrol routes", "display_order": 80}
+      ]
+    },
+
+    {
+      "id": "game:scene",
+      "class_id": "@class",
+      "name": "Scene",
+      "description": "A game scene — level, room, menu, or any distinct game state. Contains the tilemap, spawn points, collectibles, exits, and scene-specific configuration.",
+      "props": [
+        {"id": "game:scene.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:scene.type", "class_id": "@prop", "key": "type", "label": "Type", "data_type": "string", "options": {"values": ["gameplay", "menu", "title", "cutscene", "hud_overlay", "loading", "game_over"]}, "default_value": "gameplay", "display_order": 15},
+        {"id": "game:scene.tile_map_id", "class_id": "@prop", "key": "tile_map_id", "label": "Tile Map", "data_type": "relation", "relation": {"class_id": "game:tile_map"}, "display_order": 20},
+        {"id": "game:scene.bg_color", "class_id": "@prop", "key": "bg_color", "label": "Background Color", "data_type": "string", "description": "Hex color for scene background", "display_order": 30},
+        {"id": "game:scene.bg_image", "class_id": "@prop", "key": "bg_image", "label": "Background Image", "data_type": "string", "description": "URL of background image", "display_order": 35},
+        {"id": "game:scene.spawn_points", "class_id": "@prop", "key": "spawn_points", "label": "Spawn Points", "data_type": "array", "description": "Array of {character_id, x, y, direction}", "display_order": 40},
+        {"id": "game:scene.collectibles", "class_id": "@prop", "key": "collectibles", "label": "Collectibles", "data_type": "array", "description": "Array of {type, x, y, sprite_id, points, required_for_exit}", "display_order": 50},
+        {"id": "game:scene.exits", "class_id": "@prop", "key": "exits", "label": "Exits", "data_type": "array", "description": "Array of {direction, target_scene_id, condition, x, y, width, height}", "display_order": 60},
+        {"id": "game:scene.trigger_zones", "class_id": "@prop", "key": "trigger_zones", "label": "Trigger Zones", "data_type": "relation", "relation": {"class_id": "game:trigger_zone"}, "is_array": true, "display_order": 70},
+        {"id": "game:scene.camera_id", "class_id": "@prop", "key": "camera_id", "label": "Camera", "data_type": "relation", "relation": {"class_id": "game:camera"}, "description": "Camera config for this scene", "display_order": 80},
+        {"id": "game:scene.lifecycle_hooks", "class_id": "@prop", "key": "lifecycle_hooks", "label": "Lifecycle Hooks", "data_type": "object", "description": "Handler names: {on_init, on_create, on_update, on_enter, on_exit, on_pause, on_resume}", "display_order": 90},
+        {"id": "game:scene.parallel", "class_id": "@prop", "key": "parallel", "label": "Parallel Scene", "data_type": "boolean", "default_value": false, "description": "Runs alongside other scenes (e.g. HUD overlay)", "display_order": 100},
+        {"id": "game:scene.transition_type", "class_id": "@prop", "key": "transition_type", "label": "Transition Type", "data_type": "string", "options": {"values": ["none", "fade", "slide_left", "slide_right", "slide_up", "slide_down", "wipe", "iris"]}, "default_value": "none", "display_order": 110},
+        {"id": "game:scene.transition_duration", "class_id": "@prop", "key": "transition_duration", "label": "Transition Duration (ms)", "data_type": "integer", "default_value": 500, "display_order": 115},
+        {"id": "game:scene.scene_order", "class_id": "@prop", "key": "scene_order", "label": "Scene Order", "data_type": "integer", "description": "Processing order when multiple scenes active (lower = first)", "display_order": 120}
+      ]
+    },
+
+    {
+      "id": "game:input_map",
+      "class_id": "@class",
+      "name": "Input Map",
+      "description": "Maps physical inputs (keyboard, gamepad, touch) to logical game actions. Abstracts hardware so game code only deals with action names.",
+      "props": [
+        {"id": "game:input_map.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:input_map.actions", "class_id": "@prop", "key": "actions", "label": "Actions", "data_type": "array", "required": true, "description": "Array of {name, keys, gamepad_buttons, touch_zone, description}", "display_order": 20},
+        {"id": "game:input_map.combos", "class_id": "@prop", "key": "combos", "label": "Combos", "data_type": "array", "description": "Array of {name, sequence: [action_names], max_delay_ms, event_name}. Multi-press combos.", "display_order": 30},
+        {"id": "game:input_map.deadzone", "class_id": "@prop", "key": "deadzone", "label": "Stick Deadzone", "data_type": "float", "default_value": 0.1, "description": "Analog stick deadzone threshold", "display_order": 40}
+      ]
+    },
+
+    {
+      "id": "game:sound_bank",
+      "class_id": "@class",
+      "name": "Sound Bank",
+      "description": "Collection of sound effects and music tracks. Supports individual files, audio sprites (regions within a single file), and spatial audio.",
+      "props": [
+        {"id": "game:sound_bank.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:sound_bank.sounds", "class_id": "@prop", "key": "sounds", "label": "Sounds", "data_type": "array", "required": true, "description": "Array of {name, url, type, volume, loop, trigger_event}. Type: sfx, music, ambient", "display_order": 20},
+        {"id": "game:sound_bank.markers", "class_id": "@prop", "key": "markers", "label": "Audio Markers", "data_type": "array", "description": "Array of {name, start_ms, duration_ms}. Named regions in an audio sprite file.", "display_order": 30},
+        {"id": "game:sound_bank.spatial", "class_id": "@prop", "key": "spatial", "label": "Spatial Audio", "data_type": "boolean", "default_value": false, "description": "Enable positional audio (panning based on source position)", "display_order": 40},
+        {"id": "game:sound_bank.master_volume", "class_id": "@prop", "key": "master_volume", "label": "Master Volume", "data_type": "float", "default_value": 1, "display_order": 50}
+      ]
+    },
+
+    {
+      "id": "game:hud",
+      "class_id": "@class",
+      "name": "HUD",
+      "description": "Heads-up display configuration. Defines score, lives, health bars, timers, and other status indicators rendered on top of gameplay.",
+      "props": [
+        {"id": "game:hud.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:hud.elements", "class_id": "@prop", "key": "elements", "label": "Elements", "data_type": "array", "required": true, "description": "Array of {type, x, y, width, height, format, source_var, style}. Type: score, lives, health_bar, timer, text, icon", "display_order": 20},
+        {"id": "game:hud.region", "class_id": "@prop", "key": "region", "label": "Screen Region", "data_type": "object", "description": "{x, y, width, height} in pixels. Where the HUD is drawn.", "display_order": 30},
+        {"id": "game:hud.fixed_to_camera", "class_id": "@prop", "key": "fixed_to_camera", "label": "Fixed to Camera", "data_type": "boolean", "default_value": true, "description": "HUD stays on screen regardless of camera scroll", "display_order": 40},
+        {"id": "game:hud.visible_in_scenes", "class_id": "@prop", "key": "visible_in_scenes", "label": "Visible In Scenes", "data_type": "array", "description": "Scene IDs where this HUD is shown. Empty = all gameplay scenes.", "display_order": 50}
+      ]
+    },
+
+    {
+      "id": "game:game_loop",
+      "class_id": "@class",
+      "name": "Game Loop",
+      "description": "Main game loop configuration. Defines tick rate, update phases, and the order of game systems per frame.",
+      "props": [
+        {"id": "game:game_loop.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:game_loop.tick_rate", "class_id": "@prop", "key": "tick_rate", "label": "Tick Rate", "data_type": "integer", "description": "Game logic updates per second (may differ from render FPS)", "display_order": 20},
+        {"id": "game:game_loop.fixed_timestep", "class_id": "@prop", "key": "fixed_timestep", "label": "Fixed Timestep", "data_type": "boolean", "default_value": true, "description": "Use fixed delta time for deterministic physics", "display_order": 30},
+        {"id": "game:game_loop.phases", "class_id": "@prop", "key": "phases", "label": "Phases", "data_type": "array", "description": "Ordered array of {name, handler}. E.g.: [input, ai, physics, collision, animation, render, sound]", "display_order": 40},
+        {"id": "game:game_loop.pause_on_blur", "class_id": "@prop", "key": "pause_on_blur", "label": "Pause on Blur", "data_type": "boolean", "default_value": true, "description": "Pause game when browser tab loses focus", "display_order": 50}
+      ]
+    },
+
+    {
+      "id": "game:game_state",
+      "class_id": "@class",
+      "name": "Game State",
+      "description": "Runtime game state snapshot. All mutable state during gameplay. Used for save/load, debugging, checkpoints, and replay.",
+      "props": [
+        {"id": "game:game_state.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:game_state.current_scene", "class_id": "@prop", "key": "current_scene", "label": "Current Scene", "data_type": "string", "description": "Active scene ID", "display_order": 20},
+        {"id": "game:game_state.score", "class_id": "@prop", "key": "score", "label": "Score", "data_type": "integer", "default_value": 0, "display_order": 30},
+        {"id": "game:game_state.lives", "class_id": "@prop", "key": "lives", "label": "Lives", "data_type": "integer", "default_value": 3, "display_order": 40},
+        {"id": "game:game_state.characters", "class_id": "@prop", "key": "characters", "label": "Character States", "data_type": "array", "description": "Array of per-character runtime state: {id, pos_x, pos_y, velocity_x, velocity_y, health, state, direction, anim_frame}", "display_order": 50},
+        {"id": "game:game_state.collectibles_collected", "class_id": "@prop", "key": "collectibles_collected", "label": "Collectibles", "data_type": "array", "description": "IDs of collected items", "display_order": 60},
+        {"id": "game:game_state.flags", "class_id": "@prop", "key": "flags", "label": "Game Flags", "data_type": "object", "description": "Key-value game progression flags (doors_opened, boss_defeated, etc.)", "display_order": 70},
+        {"id": "game:game_state.elapsed_time", "class_id": "@prop", "key": "elapsed_time", "label": "Elapsed Time (ms)", "data_type": "integer", "default_value": 0, "display_order": 80},
+        {"id": "game:game_state.checkpoint", "class_id": "@prop", "key": "checkpoint", "label": "Checkpoint", "data_type": "object", "description": "{scene_id, x, y} last checkpoint reached", "display_order": 90}
+      ]
+    },
+
+    {
+      "id": "game:camera",
+      "class_id": "@class",
+      "name": "Camera",
+      "description": "Viewport into the game world. Controls scrolling, following, zoom, and visual effects like shake, fade, and flash.",
+      "props": [
+        {"id": "game:camera.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:camera.viewport", "class_id": "@prop", "key": "viewport", "label": "Viewport", "data_type": "object", "description": "{x, y, width, height} in screen pixels", "display_order": 20},
+        {"id": "game:camera.bounds", "class_id": "@prop", "key": "bounds", "label": "World Bounds", "data_type": "object", "description": "{x, y, width, height} camera scroll limits", "display_order": 30},
+        {"id": "game:camera.follow_target", "class_id": "@prop", "key": "follow_target", "label": "Follow Target", "data_type": "string", "description": "Character ID the camera tracks", "display_order": 40},
+        {"id": "game:camera.follow_lerp", "class_id": "@prop", "key": "follow_lerp", "label": "Follow Smoothing", "data_type": "object", "description": "{x, y} smoothing factor 0-1. Lower = smoother follow", "display_order": 50},
+        {"id": "game:camera.deadzone", "class_id": "@prop", "key": "deadzone", "label": "Deadzone", "data_type": "object", "description": "{width, height} area where target moves without camera following", "display_order": 60},
+        {"id": "game:camera.zoom", "class_id": "@prop", "key": "zoom", "label": "Zoom", "data_type": "float", "default_value": 1, "description": "1=normal, 2=2x zoom in, 0.5=zoom out", "display_order": 70},
+        {"id": "game:camera.rotation", "class_id": "@prop", "key": "rotation", "label": "Rotation", "data_type": "float", "default_value": 0, "description": "Camera rotation in radians", "display_order": 80},
+        {"id": "game:camera.round_pixels", "class_id": "@prop", "key": "round_pixels", "label": "Round Pixels", "data_type": "boolean", "default_value": true, "description": "Snap to integer positions to prevent sub-pixel blur", "display_order": 90},
+        {"id": "game:camera.bg_color", "class_id": "@prop", "key": "bg_color", "label": "Background Color", "data_type": "string", "description": "Hex color for areas outside world bounds", "display_order": 100},
+        {"id": "game:camera.effects", "class_id": "@prop", "key": "effects", "label": "Available Effects", "data_type": "array", "description": "Array of {type, config}. Types: shake, fade, flash, pan, zoom_to", "display_order": 110}
+      ]
+    },
+
+    {
+      "id": "game:tween",
+      "class_id": "@class",
+      "name": "Tween",
+      "description": "Smooth property interpolation over time. Animates any numeric property: position, scale, alpha, rotation, color. Used for moving platforms, doors, UI transitions, cutscenes.",
+      "props": [
+        {"id": "game:tween.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:tween.target_type", "class_id": "@prop", "key": "target_type", "label": "Target Type", "data_type": "string", "options": {"values": ["character", "sprite", "camera", "tile_map", "hud_element", "custom"]}, "display_order": 20},
+        {"id": "game:tween.target_id", "class_id": "@prop", "key": "target_id", "label": "Target ID", "data_type": "string", "description": "ID of the object to tween", "display_order": 30},
+        {"id": "game:tween.properties", "class_id": "@prop", "key": "properties", "label": "Properties", "data_type": "array", "required": true, "description": "Array of {key, from, to}. Properties and value ranges to interpolate.", "display_order": 40},
+        {"id": "game:tween.duration", "class_id": "@prop", "key": "duration", "label": "Duration (ms)", "data_type": "integer", "required": true, "display_order": 50},
+        {"id": "game:tween.ease", "class_id": "@prop", "key": "ease", "label": "Easing", "data_type": "string", "options": {"values": ["linear", "quad_in", "quad_out", "quad_inout", "cubic_in", "cubic_out", "cubic_inout", "sine_in", "sine_out", "sine_inout", "expo_in", "expo_out", "bounce_out", "elastic_out", "back_out", "stepped"]}, "default_value": "linear", "display_order": 60},
+        {"id": "game:tween.delay", "class_id": "@prop", "key": "delay", "label": "Delay (ms)", "data_type": "integer", "default_value": 0, "display_order": 70},
+        {"id": "game:tween.repeat", "class_id": "@prop", "key": "repeat", "label": "Repeat", "data_type": "integer", "default_value": 0, "description": "-1 = infinite", "display_order": 80},
+        {"id": "game:tween.yoyo", "class_id": "@prop", "key": "yoyo", "label": "Yoyo", "data_type": "boolean", "default_value": false, "description": "Reverse back to start values on completion", "display_order": 90},
+        {"id": "game:tween.hold", "class_id": "@prop", "key": "hold", "label": "Hold (ms)", "data_type": "integer", "default_value": 0, "description": "Pause at end value before yoyo/repeat", "display_order": 100},
+        {"id": "game:tween.chain_tween_id", "class_id": "@prop", "key": "chain_tween_id", "label": "Chain Tween", "data_type": "relation", "relation": {"class_id": "game:tween"}, "description": "Next tween to auto-play on completion", "display_order": 110},
+        {"id": "game:tween.on_complete_event", "class_id": "@prop", "key": "on_complete_event", "label": "On Complete Event", "data_type": "string", "display_order": 120},
+        {"id": "game:tween.on_update_event", "class_id": "@prop", "key": "on_update_event", "label": "On Update Event", "data_type": "string", "display_order": 130}
+      ]
+    },
+
+    {
+      "id": "game:particle_emitter",
+      "class_id": "@class",
+      "name": "Particle Emitter",
+      "description": "Spawns short-lived visual particles for effects: explosions, sparks, dust, fire, smoke, sparkles, blood.",
+      "props": [
+        {"id": "game:particle_emitter.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:particle_emitter.sprite_id", "class_id": "@prop", "key": "sprite_id", "label": "Particle Sprite", "data_type": "relation", "relation": {"class_id": "game:sprite_def"}, "display_order": 20},
+        {"id": "game:particle_emitter.frequency", "class_id": "@prop", "key": "frequency", "label": "Frequency (ms)", "data_type": "integer", "description": "Spawn interval. 0 = burst all at once", "display_order": 30},
+        {"id": "game:particle_emitter.quantity", "class_id": "@prop", "key": "quantity", "label": "Quantity", "data_type": "integer", "default_value": 1, "description": "Particles per emission", "display_order": 40},
+        {"id": "game:particle_emitter.lifespan", "class_id": "@prop", "key": "lifespan", "label": "Lifespan (ms)", "data_type": "object", "description": "{min, max} particle lifetime", "display_order": 50},
+        {"id": "game:particle_emitter.speed", "class_id": "@prop", "key": "speed", "label": "Speed", "data_type": "object", "description": "{min, max} initial particle speed", "display_order": 60},
+        {"id": "game:particle_emitter.angle", "class_id": "@prop", "key": "angle", "label": "Angle", "data_type": "object", "description": "{min, max} emission angle in degrees", "display_order": 70},
+        {"id": "game:particle_emitter.scale", "class_id": "@prop", "key": "scale", "label": "Scale", "data_type": "object", "description": "{start, end} particle scale over lifetime", "display_order": 80},
+        {"id": "game:particle_emitter.alpha", "class_id": "@prop", "key": "alpha", "label": "Alpha", "data_type": "object", "description": "{start, end} particle opacity over lifetime", "display_order": 90},
+        {"id": "game:particle_emitter.tint", "class_id": "@prop", "key": "tint", "label": "Tint Colors", "data_type": "array", "description": "Hex colors randomly assigned to particles", "display_order": 100},
+        {"id": "game:particle_emitter.gravity_x", "class_id": "@prop", "key": "gravity_x", "label": "Gravity X", "data_type": "float", "default_value": 0, "display_order": 110},
+        {"id": "game:particle_emitter.gravity_y", "class_id": "@prop", "key": "gravity_y", "label": "Gravity Y", "data_type": "float", "default_value": 0, "display_order": 120},
+        {"id": "game:particle_emitter.blend_mode", "class_id": "@prop", "key": "blend_mode", "label": "Blend Mode", "data_type": "string", "options": {"values": ["normal", "add", "multiply", "screen"]}, "default_value": "normal", "display_order": 130},
+        {"id": "game:particle_emitter.emit_zone", "class_id": "@prop", "key": "emit_zone", "label": "Emit Zone", "data_type": "object", "description": "{type, source}. Type: point, rect, circle, edge", "display_order": 140},
+        {"id": "game:particle_emitter.max_particles", "class_id": "@prop", "key": "max_particles", "label": "Max Particles", "data_type": "integer", "default_value": 50, "display_order": 150},
+        {"id": "game:particle_emitter.follow_target", "class_id": "@prop", "key": "follow_target", "label": "Follow Target", "data_type": "string", "description": "Character/object ID to attach emitter to", "display_order": 160}
+      ]
+    },
+
+    {
+      "id": "game:timer_event",
+      "class_id": "@class",
+      "name": "Timer Event",
+      "description": "Delayed or repeating timed event. Enemy spawn intervals, power-up durations, cooldowns, countdowns, delayed actions.",
+      "props": [
+        {"id": "game:timer_event.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:timer_event.delay", "class_id": "@prop", "key": "delay", "label": "Delay (ms)", "data_type": "integer", "required": true, "display_order": 20},
+        {"id": "game:timer_event.repeat", "class_id": "@prop", "key": "repeat", "label": "Repeat", "data_type": "integer", "default_value": 0, "description": "-1 = infinite", "display_order": 30},
+        {"id": "game:timer_event.loop", "class_id": "@prop", "key": "loop", "label": "Loop", "data_type": "boolean", "default_value": false, "display_order": 40},
+        {"id": "game:timer_event.event_name", "class_id": "@prop", "key": "event_name", "label": "Event Name", "data_type": "string", "required": true, "description": "Event emitted when timer fires", "display_order": 50},
+        {"id": "game:timer_event.event_data", "class_id": "@prop", "key": "event_data", "label": "Event Data", "data_type": "object", "description": "Payload passed with the event", "display_order": 60},
+        {"id": "game:timer_event.start_paused", "class_id": "@prop", "key": "start_paused", "label": "Start Paused", "data_type": "boolean", "default_value": false, "display_order": 70},
+        {"id": "game:timer_event.scene_id", "class_id": "@prop", "key": "scene_id", "label": "Scene", "data_type": "string", "description": "Scene this timer belongs to (pauses with scene)", "display_order": 80}
+      ]
+    },
+
+    {
+      "id": "game:object_pool",
+      "class_id": "@class",
+      "name": "Object Pool",
+      "description": "Reusable object pool. Pre-allocates and recycles frequently spawned objects (bullets, enemies, collectibles, particles) for performance.",
+      "props": [
+        {"id": "game:object_pool.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:object_pool.object_class", "class_id": "@prop", "key": "object_class", "label": "Object Class", "data_type": "string", "required": true, "description": "ES class ID of pooled objects", "display_order": 20},
+        {"id": "game:object_pool.max_size", "class_id": "@prop", "key": "max_size", "label": "Max Size", "data_type": "integer", "default_value": 20, "display_order": 30},
+        {"id": "game:object_pool.create_if_empty", "class_id": "@prop", "key": "create_if_empty", "label": "Create If Empty", "data_type": "boolean", "default_value": true, "description": "Auto-expand when all objects active", "display_order": 40},
+        {"id": "game:object_pool.default_props", "class_id": "@prop", "key": "default_props", "label": "Default Properties", "data_type": "object", "description": "Values applied when recycling an object", "display_order": 50},
+        {"id": "game:object_pool.recycle_policy", "class_id": "@prop", "key": "recycle_policy", "label": "Recycle Policy", "data_type": "string", "options": {"values": ["oldest_first", "nearest", "none"]}, "default_value": "oldest_first", "display_order": 60},
+        {"id": "game:object_pool.run_child_update", "class_id": "@prop", "key": "run_child_update", "label": "Run Child Update", "data_type": "boolean", "default_value": true, "description": "Call update() on active pool members each tick", "display_order": 70}
+      ]
+    },
+
+    {
+      "id": "game:trigger_zone",
+      "class_id": "@class",
+      "name": "Trigger Zone",
+      "description": "Invisible area that fires events on character entry/exit/overlap. Room transitions, traps, checkpoints, boss encounters, secrets, cutscene triggers.",
+      "props": [
+        {"id": "game:trigger_zone.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:trigger_zone.x", "class_id": "@prop", "key": "x", "label": "X", "data_type": "integer", "required": true, "display_order": 20},
+        {"id": "game:trigger_zone.y", "class_id": "@prop", "key": "y", "label": "Y", "data_type": "integer", "required": true, "display_order": 30},
+        {"id": "game:trigger_zone.width", "class_id": "@prop", "key": "width", "label": "Width", "data_type": "integer", "required": true, "display_order": 40},
+        {"id": "game:trigger_zone.height", "class_id": "@prop", "key": "height", "label": "Height", "data_type": "integer", "required": true, "display_order": 50},
+        {"id": "game:trigger_zone.shape", "class_id": "@prop", "key": "shape", "label": "Shape", "data_type": "string", "options": {"values": ["rect", "circle", "polygon"]}, "default_value": "rect", "display_order": 55},
+        {"id": "game:trigger_zone.on_enter_event", "class_id": "@prop", "key": "on_enter_event", "label": "On Enter Event", "data_type": "string", "display_order": 60},
+        {"id": "game:trigger_zone.on_exit_event", "class_id": "@prop", "key": "on_exit_event", "label": "On Exit Event", "data_type": "string", "display_order": 70},
+        {"id": "game:trigger_zone.on_overlap_event", "class_id": "@prop", "key": "on_overlap_event", "label": "On Overlap Event", "data_type": "string", "description": "Fires every tick while overlapping", "display_order": 80},
+        {"id": "game:trigger_zone.trigger_for", "class_id": "@prop", "key": "trigger_for", "label": "Trigger For", "data_type": "array", "description": "Character IDs or types that activate this zone. Empty = all.", "display_order": 90},
+        {"id": "game:trigger_zone.once", "class_id": "@prop", "key": "once", "label": "One-Shot", "data_type": "boolean", "default_value": false, "description": "Deactivate after first trigger", "display_order": 100},
+        {"id": "game:trigger_zone.enabled", "class_id": "@prop", "key": "enabled", "label": "Enabled", "data_type": "boolean", "default_value": true, "display_order": 110},
+        {"id": "game:trigger_zone.event_data", "class_id": "@prop", "key": "event_data", "label": "Event Data", "data_type": "object", "description": "Custom payload passed with trigger events", "display_order": 120}
+      ]
+    },
+
+    {
+      "id": "game:asset_manifest",
+      "class_id": "@class",
+      "name": "Asset Manifest",
+      "description": "External asset loading manifest. Lists all files to preload before game or scene starts. Supports images, spritesheets, atlases, tilemaps, audio, JSON, binary.",
+      "props": [
+        {"id": "game:asset_manifest.name", "class_id": "@prop", "key": "name", "label": "Name", "data_type": "string", "required": true, "display_order": 10},
+        {"id": "game:asset_manifest.base_url", "class_id": "@prop", "key": "base_url", "label": "Base URL", "data_type": "string", "description": "Prefix for all asset paths", "display_order": 20},
+        {"id": "game:asset_manifest.entries", "class_id": "@prop", "key": "entries", "label": "Entries", "data_type": "array", "required": true, "description": "Array of {key, type, url, config}. Type: image, spritesheet, atlas, tilemap_json, audio, audio_sprite, bitmap_font, json, binary", "display_order": 30},
+        {"id": "game:asset_manifest.load_scene", "class_id": "@prop", "key": "load_scene", "label": "Load Scene", "data_type": "string", "description": "Which scene uses this manifest (global or per-scene)", "display_order": 40},
+        {"id": "game:asset_manifest.on_progress_event", "class_id": "@prop", "key": "on_progress_event", "label": "On Progress Event", "data_type": "string", "description": "Event emitted with {percent, file} during loading", "display_order": 50},
+        {"id": "game:asset_manifest.on_complete_event", "class_id": "@prop", "key": "on_complete_event", "label": "On Complete Event", "data_type": "string", "display_order": 60}
+      ]
+    }
+  ],
+  "seed": [
+    {"storage": "./game_instance.json", "description": "Game definitions and asset instances"}
+  ]
+}

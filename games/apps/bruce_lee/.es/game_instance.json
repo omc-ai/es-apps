@@ -1,0 +1,324 @@
+[
+  {
+    "id": "bruce_lee_c64",
+    "class_id": "game:game",
+    "title": "Bruce Lee",
+    "platform_origin": "c64",
+    "screen_width": 320,
+    "screen_height": 200,
+    "fps": 50,
+    "pixel_aspect_ratio": 0.936,
+    "render_mode": "canvas2d",
+    "palette_id": "c64_palette",
+    "input_map_id": "c64_joystick",
+    "memory_map_id": "c64_brucelee_mem",
+    "scene_ids": ["room_00", "room_01", "room_02", "room_03", "room_04", "room_05", "room_06", "room_07", "room_08", "room_09", "room_10", "room_11", "room_12", "room_13", "room_14", "room_15", "room_16", "room_17", "room_18", "room_19"],
+    "sound_bank_id": "brucelee_sid"
+  },
+
+  {
+    "id": "c64_palette",
+    "class_id": "game:palette",
+    "name": "C64 Palette",
+    "colors": [
+      {"index": 0, "r": 0, "g": 0, "b": 0, "name": "black"},
+      {"index": 1, "r": 255, "g": 255, "b": 255, "name": "white"},
+      {"index": 2, "r": 136, "g": 0, "b": 0, "name": "red"},
+      {"index": 3, "r": 170, "g": 255, "b": 238, "name": "cyan"},
+      {"index": 4, "r": 204, "g": 68, "b": 204, "name": "purple"},
+      {"index": 5, "r": 0, "g": 204, "b": 85, "name": "green"},
+      {"index": 6, "r": 0, "g": 0, "b": 170, "name": "blue"},
+      {"index": 7, "r": 238, "g": 238, "b": 119, "name": "yellow"},
+      {"index": 8, "r": 221, "g": 136, "b": 85, "name": "orange"},
+      {"index": 9, "r": 102, "g": 68, "b": 0, "name": "brown"},
+      {"index": 10, "r": 255, "g": 119, "b": 119, "name": "light_red"},
+      {"index": 11, "r": 51, "g": 51, "b": 51, "name": "dark_grey"},
+      {"index": 12, "r": 119, "g": 119, "b": 119, "name": "grey"},
+      {"index": 13, "r": 170, "g": 255, "b": 102, "name": "light_green"},
+      {"index": 14, "r": 0, "g": 136, "b": 255, "name": "light_blue"},
+      {"index": 15, "r": 187, "g": 187, "b": 187, "name": "light_grey"}
+    ],
+    "bit_depth": 4
+  },
+
+  {
+    "id": "c64_brucelee_mem",
+    "class_id": "game:memory_map",
+    "name": "Bruce Lee C64 Memory Map",
+    "total_size": 65536,
+    "regions": [
+      {"name": "zero_page", "start": "0x0000", "end": "0x00FF", "type": "zeropage", "description": "Character arrays and game state variables"},
+      {"name": "game_code", "start": "0x0400", "end": "0x0CFF", "type": "code", "description": "Main game logic routines"},
+      {"name": "room_header", "start": "0x0153", "end": "0x0166", "type": "data", "description": "Per-room config (20 bytes copied during room setup)"},
+      {"name": "enemy_flags_1", "start": "0x1333", "end": "0x1346", "type": "data", "description": "Enemy behavior flags table 1 (20 rooms)"},
+      {"name": "enemy_flags_2", "start": "0x136F", "end": "0x1382", "type": "data", "description": "Enemy behavior flags table 2 (20 rooms)"},
+      {"name": "sprite_tables", "start": "0x2763", "end": "0x2782", "type": "data", "description": "Sprite pair mapping, MSB masks, enable masks"},
+      {"name": "screen_draw_ptrs", "start": "0x43BE", "end": "0x43FF", "type": "data", "description": "Screen drawing routine pointers"},
+      {"name": "room_colors", "start": "0x47A0", "end": "0x47B3", "type": "data", "description": "Per-room color bytes (20 rooms)"},
+      {"name": "room_decor", "start": "0x490D", "end": "0x4A34", "type": "data", "description": "Room decoration tables"},
+      {"name": "room_layout_ptrs", "start": "0x4AA8", "end": "0x4ACF", "type": "data", "description": "Room layout data pointers (20x2 bytes)"},
+      {"name": "room_layout_data", "start": "0x4AD0", "end": "0x4BAD", "type": "data", "description": "Compressed room layout data (RLE)"},
+      {"name": "bruce_start_x", "start": "0x4BAE", "end": "0x4BC1", "type": "data", "description": "Bruce starting X per room (20 bytes)"},
+      {"name": "bruce_start_y", "start": "0x4BC2", "end": "0x4BD5", "type": "data", "description": "Bruce starting Y per room (20 bytes)"},
+      {"name": "enemy_start_x", "start": "0x4BD6", "end": "0x4BE9", "type": "data", "description": "Enemy starting X per room (20 bytes)"},
+      {"name": "enemy_start_y", "start": "0x4BEA", "end": "0x4BFD", "type": "data", "description": "Enemy starting Y per room (20 bytes)"},
+      {"name": "room_exit_flags", "start": "0x4C9E", "end": "0x4CB1", "type": "data", "description": "Room exit condition flags (20 bytes)"},
+      {"name": "sprite_data", "start": "0x8000", "end": "0x83FF", "type": "sprite", "bank": 2, "description": "Sprite blocks 0-15 (characters)"},
+      {"name": "sprite_bg", "start": "0x8400", "end": "0x87FF", "type": "sprite", "bank": 2, "description": "Sprite blocks 16-31 (background patterns)"},
+      {"name": "game_charset", "start": "0x8800", "end": "0x8FFF", "type": "charset", "bank": 2, "description": "Game charset (256 chars, multicolor)"},
+      {"name": "screen_ram", "start": "0x8C00", "end": "0x8FF7", "type": "screen", "bank": 2, "description": "Screen RAM (40x25 char indices)"},
+      {"name": "sprite_pointers", "start": "0x8FF8", "end": "0x8FFF", "type": "data", "bank": 2, "description": "Sprite block pointers (8 bytes)"},
+      {"name": "color_ram", "start": "0xD800", "end": "0xDBE7", "type": "color", "description": "Color RAM (per-cell colors, always at this address)"},
+      {"name": "vic_registers", "start": "0xD000", "end": "0xD02E", "type": "io", "description": "VIC-II video chip registers"},
+      {"name": "sid_registers", "start": "0xD400", "end": "0xD41C", "type": "io", "description": "SID sound chip registers"},
+      {"name": "cia1", "start": "0xDC00", "end": "0xDC0F", "type": "io", "description": "CIA1 (joystick, keyboard)"}
+    ],
+    "bank_config": {
+      "type": "vic_bank",
+      "active_bank": 2,
+      "bank_start": "0x8000",
+      "bank_size": 16384,
+      "register": "0xDD00"
+    },
+    "zeropage_vars": [
+      {"address": "0x29", "name": "room_number", "size": 1, "description": "Current room (0-19)"},
+      {"address": "0x28", "name": "lives", "size": 1, "description": "Lives remaining"},
+      {"address": "0x47", "name": "sprite_enable_shadow", "size": 1, "description": "Shadow of $D015"},
+      {"address": "0x51", "name": "character_index", "size": 1, "description": "Current character being processed"},
+      {"address": "0x8A", "name": "temp_flag", "size": 3, "indexed_by": "char_index", "description": "Temporary flag"},
+      {"address": "0x95", "name": "state_flags", "size": 3, "indexed_by": "char_index", "description": "Active/direction/jumping/climbing bitmask"},
+      {"address": "0x98", "name": "anim_frame", "size": 3, "indexed_by": "char_index", "description": "Current animation frame"},
+      {"address": "0x9B", "name": "direction", "size": 3, "indexed_by": "char_index", "description": "Facing direction"},
+      {"address": "0x9E", "name": "pos_x", "size": 3, "indexed_by": "char_index", "description": "X position (game coords, *2 for screen)"},
+      {"address": "0xA1", "name": "pos_y", "size": 3, "indexed_by": "char_index", "description": "Y position (+29 for VIC sprite Y)"},
+      {"address": "0xA4", "name": "move_state", "size": 3, "indexed_by": "char_index", "description": "Velocity / movement state"},
+      {"address": "0xA9", "name": "gravity_counter", "size": 3, "indexed_by": "char_index", "description": "Gravity counter"},
+      {"address": "0xB6", "name": "health", "size": 3, "indexed_by": "char_index", "description": "Health/timer (most read variable)"},
+      {"address": "0xBC", "name": "combat_state", "size": 3, "indexed_by": "char_index", "description": "Combat state"},
+      {"address": "0xBF", "name": "attack_timer", "size": 3, "indexed_by": "char_index", "description": "Attack timer"},
+      {"address": "0xC2", "name": "attack_type", "size": 3, "indexed_by": "char_index", "description": "Attack type"},
+      {"address": "0xCB", "name": "char_color", "size": 3, "indexed_by": "char_index", "description": "Character color"},
+      {"address": "0xCE", "name": "stun_timer", "size": 3, "indexed_by": "char_index", "description": "Stun/damage timer"},
+      {"address": "0xD0", "name": "spr_pair_block", "size": 3, "indexed_by": "char_index", "description": "Sprite pair block number"},
+      {"address": "0xD1", "name": "spr_main_block", "size": 3, "indexed_by": "char_index", "description": "Sprite main block number"},
+      {"address": "0xE0", "name": "height_state", "size": 3, "indexed_by": "char_index", "description": "Jump height state"},
+      {"address": "0xE9", "name": "speed_val", "size": 3, "indexed_by": "char_index", "description": "Movement speed value"},
+      {"address": "0xF2", "name": "scroll_state", "size": 1, "description": "Scroll/animation state"},
+      {"address": "0xF3", "name": "col_draw_counter", "size": 1, "description": "Column draw counter"}
+    ]
+  },
+
+  {
+    "id": "c64_joystick",
+    "class_id": "game:input_map",
+    "name": "C64 Joystick Port 2",
+    "actions": [
+      {"name": "up", "keys": ["ArrowUp", "w"], "gamepad_button": 12, "touch_zone": "dpad_up"},
+      {"name": "down", "keys": ["ArrowDown", "s"], "gamepad_button": 13, "touch_zone": "dpad_down"},
+      {"name": "left", "keys": ["ArrowLeft", "a"], "gamepad_button": 14, "touch_zone": "dpad_left"},
+      {"name": "right", "keys": ["ArrowRight", "d"], "gamepad_button": 15, "touch_zone": "dpad_right"},
+      {"name": "fire", "keys": ["Space", "z"], "gamepad_button": 0, "touch_zone": "action_a"}
+    ],
+    "hw_port": "$DC00",
+    "active_low": true,
+    "bit_map": {"0": "up", "1": "down", "2": "left", "3": "right", "4": "fire"}
+  },
+
+  {
+    "id": "bruce_lee_char",
+    "class_id": "game:character",
+    "name": "Bruce Lee",
+    "char_index": 0,
+    "type": "player",
+    "sprite_overlay_id": "bruce_overlay",
+    "animations": {
+      "idle": "bruce_idle",
+      "walk": "bruce_walk",
+      "jump": "bruce_jump",
+      "fall": "bruce_fall",
+      "kick": "bruce_kick",
+      "climb": "bruce_climb",
+      "stun": "bruce_stun",
+      "death": "bruce_death"
+    },
+    "physics_id": "player_physics",
+    "health": 3,
+    "speed": 12,
+    "state_flags": {"initial": 1, "bits": {"0": "active", "6": "climbing", "7": "enemy_flag"}},
+    "zp_map": {
+      "$95": "state_flags", "$98": "anim_frame", "$9B": "direction",
+      "$9E": "pos_x", "$A1": "pos_y", "$A4": "move_state",
+      "$A9": "gravity_counter", "$B6": "health", "$BF": "attack_timer",
+      "$CE": "stun_timer", "$D0": "spr_pair_block", "$D1": "spr_main_block",
+      "$E0": "height_state", "$E9": "speed_val"
+    }
+  },
+
+  {
+    "id": "green_yamo_char",
+    "class_id": "game:character",
+    "name": "Green Yamo",
+    "char_index": 1,
+    "type": "enemy",
+    "sprite_overlay_id": "yamo_overlay",
+    "ai_id": "yamo_ai",
+    "health": 0,
+    "speed": 12,
+    "state_flags": {"initial": 129, "bits": {"0": "active", "7": "enemy_flag"}},
+    "zp_map": {
+      "$96": "state_flags", "$99": "anim_frame", "$9C": "direction",
+      "$9F": "pos_x", "$A2": "pos_y", "$A5": "move_state",
+      "$AA": "gravity_counter", "$B7": "health", "$C0": "attack_timer",
+      "$CF": "stun_timer", "$D2": "spr_main_block", "$E1": "height_state", "$EA": "speed_val"
+    }
+  },
+
+  {
+    "id": "ninja_char",
+    "class_id": "game:character",
+    "name": "Ninja",
+    "char_index": 2,
+    "type": "enemy",
+    "sprite_overlay_id": null,
+    "ai_id": "ninja_ai",
+    "health": 1,
+    "speed": 12,
+    "state_flags": {"initial": 65, "bits": {"0": "active", "6": "climbing"}},
+    "zp_map": {
+      "$97": "state_flags", "$9A": "anim_frame", "$9D": "direction",
+      "$A0": "pos_x", "$A3": "pos_y", "$A6": "move_state",
+      "$AB": "gravity_counter", "$B8": "health", "$C1": "attack_timer",
+      "$D0": "stun_timer", "$D3": "spr_main_block", "$E2": "height_state", "$EB": "speed_val"
+    }
+  },
+
+  {
+    "id": "bruce_overlay",
+    "class_id": "game:sprite_overlay",
+    "name": "Bruce Lee Sprite Overlay",
+    "fill_sprite_id": "spr_bruce_fill",
+    "outline_sprite_id": "spr_bruce_outline",
+    "fill_color": 7,
+    "outline_color": 0,
+    "hw_sprite_pair": [0, 1],
+    "x_expand": true,
+    "y_expand": false,
+    "priority": 2
+  },
+
+  {
+    "id": "yamo_overlay",
+    "class_id": "game:sprite_overlay",
+    "name": "Green Yamo Sprite Overlay",
+    "fill_sprite_id": "spr_yamo_fill",
+    "outline_sprite_id": "spr_yamo_outline",
+    "fill_color": 5,
+    "outline_color": 0,
+    "hw_sprite_pair": [2, 3],
+    "x_expand": true,
+    "y_expand": false,
+    "priority": 1
+  },
+
+  {
+    "id": "player_physics",
+    "class_id": "game:physics_config",
+    "name": "Player Physics",
+    "x_scale_factor": 2,
+    "y_offset": 29,
+    "movement_routine": "$0C60"
+  },
+
+  {
+    "id": "yamo_ai",
+    "class_id": "game:ai_behavior",
+    "name": "Green Yamo AI",
+    "type": "chase",
+    "per_room_flags": [2, 2, 0, 0, 128, 128, 2, 2, 0, 0, 2, 0, 128, 0, 2, 0, 128, 0, 0, 0],
+    "pathfinding": "platform_aware"
+  },
+
+  {
+    "id": "ninja_ai",
+    "class_id": "game:ai_behavior",
+    "name": "Ninja AI",
+    "type": "chase",
+    "per_room_flags": [128, 128, 0, 0, 128, 2, 0, 128, 0, 0, 128, 0, 128, 0, 0, 0, 2, 0, 0, 0],
+    "pathfinding": "ladder_aware"
+  },
+
+  {
+    "id": "brucelee_game_loop",
+    "class_id": "game:game_loop",
+    "name": "Bruce Lee Main Loop",
+    "tick_rate": 50,
+    "phases": [
+      {"name": "input", "handler": "readInput", "hw_ref": "$094B"},
+      {"name": "player_update", "handler": "updatePlayer"},
+      {"name": "enemy_ai", "handler": "updateEnemies"},
+      {"name": "physics", "handler": "applyPhysics"},
+      {"name": "collision", "handler": "checkCollisions"},
+      {"name": "combat", "handler": "processCombat"},
+      {"name": "animation", "handler": "updateAnimation"},
+      {"name": "sprite_render", "handler": "updateSprites", "hw_ref": "$0C60"},
+      {"name": "room_render", "handler": "drawRoom", "hw_ref": "$0927"},
+      {"name": "hud_render", "handler": "drawHUD"},
+      {"name": "sound", "handler": "updateSound"}
+    ],
+    "interrupt_type": "raster",
+    "hw_irq_vector": "$0314"
+  },
+
+  {
+    "id": "spr_pair_map_table",
+    "class_id": "game:lookup_table",
+    "name": "Sprite Pair Mapping",
+    "hw_address": "$2763",
+    "data": [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0, 2, 4, 1, 3, 255, 1, 2, 4, 8],
+    "entry_size": 1,
+    "purpose": "Maps character index to sprite block pairs. Used by sprite position update at $0C60",
+    "index_by": "character_index"
+  },
+
+  {
+    "id": "spr_xmsb_set_table",
+    "class_id": "game:lookup_table",
+    "name": "Sprite X MSB Set Masks",
+    "hw_address": "$2773",
+    "data": [1, 2, 4, 8, 16, 254, 253, 251],
+    "entry_size": 1,
+    "purpose": "OR masks for setting 9th bit of sprite X position in $D010"
+  },
+
+  {
+    "id": "spr_xmsb_clr_table",
+    "class_id": "game:lookup_table",
+    "name": "Sprite X MSB Clear Masks",
+    "hw_address": "$2778",
+    "data": [254, 253, 251, 247, 239, 1, 1, 255],
+    "entry_size": 1,
+    "purpose": "AND masks for clearing 9th bit of sprite X position in $D010"
+  },
+
+  {
+    "id": "room_colors_table",
+    "class_id": "game:lookup_table",
+    "name": "Room Colors",
+    "hw_address": "$47A0",
+    "data": [254, 254, 254, 254, 252, 252, 252, 255, 250, 250, 249, 251, 249, 250, 249, 252, 249, 255, 254, 255],
+    "entry_size": 1,
+    "purpose": "Per-room color byte. Lower nibble = accent color applied to color RAM during room setup at $09DA",
+    "index_by": "room_number"
+  },
+
+  {
+    "id": "room_exit_flags_table",
+    "class_id": "game:lookup_table",
+    "name": "Room Exit Flags",
+    "hw_address": "$4C9E",
+    "data": [0, 0, 0, 255, 0, 0, 0, 0, 255, 255, 0, 255, 0, 255, 0, 0, 0, 255, 255, 255],
+    "entry_size": 1,
+    "purpose": "Room exit condition flags. $00=normal progression, $FF=special exit (collect all lanterns)",
+    "index_by": "room_number"
+  }
+]
