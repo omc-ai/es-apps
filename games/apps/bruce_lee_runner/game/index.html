@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bruce Lee Runner (ROM-driven Phaser prototype)</title>
+  <style>
+    html, body {
+      margin: 0;
+      background: #101010;
+      color: #ddd;
+      font-family: monospace;
+      height: 100%;
+      display: grid;
+      place-items: center;
+    }
+    #wrap { text-align: center; }
+    #game { border: 2px solid #333; image-rendering: pixelated; }
+    .help { font-size: 12px; margin-top: 8px; color: #9ad284; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="game"></div>
+    <div class="help">SPACE/UP: jump • DOWN: slide • P: pause</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script>
+    // ROM-derived data extracted from Bruce Lee C64 tables.
+    // We use these values to drive stage progression and pacing.
+    const ROM = {
+      roomColors: [254,254,254,254,252,252,252,255,250,250,249,251,249,250,249,252,249,255,254,255],
+      bruceStartX: [26,24,48,32,148,34,134,28,20,18,52,64,24,152,24,28,24,24,24,18],
+      bruceStartY: [196,98,196,192,180,81,179,68,70,198,140,76,92,50,92,195,92,180,198,149],
+      enemyStartX: [159,149,150,56,150,40,129,31,0,0,150,0,112,0,146,122,129,0,0,0],
+      enemyStartY: [98,146,196,196,180,194,114,116,0,0,92,0,92,0,190,196,142,0,0,0]
+    };
+
+    const WIDTH = 640;
+    const HEIGHT = 360;
+    const FLOOR_Y = 292;
+
+    class RunnerScene extends Phaser.Scene {
+      constructor() { super('runner'); }
+
+      create() {
+        this.roomIndex = 0;
+        this.distance = 0;
+        this.baseSpeed = 180;
+        this.speed = this.baseSpeed;
+        this.spawnTimer = 0;
+        this.paused = false;
+
+        this.cameras.main.setBackgroundColor('#0a0a18');
+
+        this.floor = this.add.rectangle(WIDTH / 2, FLOOR_Y + 30, WIDTH, 80, 0x333333);
+
+        this.platforms = this.physics.add.staticGroup();
+        this._buildRoomPlatforms();
+
+        this.player = this.add.rectangle(100, FLOOR_Y - 16, 22, 30, 0xeeee77);
+        this.physics.add.existing(this.player);
+        this.player.body.setCollideWorldBounds(true);
+        this.player.body.setSize(20, 28);
+        this.player.body.setGravityY(1000);
+
+        this.obstacles = this.physics.add.group();
+
+        this.physics.add.collider(this.player, this.platforms);
+        this.physics.add.overlap(this.player, this.obstacles, () => this._gameOver(), null, this);
+
+        this.keys = this.input.keyboard.addKeys('SPACE,UP,DOWN,P');
+
+        this.roomText = this.add.text(12, 10, '', { fontSize: '14px', color: '#9ad284' });
+        this.scoreText = this.add.text(12, 30, '', { fontSize: '14px', color: '#ffffff' });
+        this.stateText = this.add.text(WIDTH / 2, HEIGHT / 2, '', { fontSize: '30px', color: '#ff7777' }).setOrigin(0.5).setVisible(false);
+
+        this._refreshHud();
+      }
+
+      _buildRoomPlatforms() {
+        this.platforms.clear(true, true);
+
+        // Procedural room profile using ROM spawn Y values.
+        const playerY = ROM.bruceStartY[this.roomIndex] || 180;
+        const enemyY = ROM.enemyStartY[this.roomIndex] || 160;
+        const pA = Phaser.Math.Clamp(HEIGHT - playerY - 40, 120, FLOOR_Y);
+        const pB = Phaser.Math.Clamp(HEIGHT - enemyY - 20, 120, FLOOR_Y);
+
+        this.platforms.create(180, pA, null).setDisplaySize(120, 14).refreshBody();
+        this.platforms.create(430, pB, null).setDisplaySize(140, 14).refreshBody();
+        this.platforms.create(WIDTH / 2, FLOOR_Y + 20, null).setDisplaySize(WIDTH, 40).refreshBody();
+
+        const bgColor = Phaser.Display.Color.IntegerToColor((ROM.roomColors[this.roomIndex] & 0x0f) * 0x111111);
+        this.floor.setFillStyle(bgColor.color || 0x333333);
+      }
+
+      _spawnObstacle(dt) {
+        this.spawnTimer += dt;
+        if (this.spawnTimer < 850) return;
+        this.spawnTimer = 0;
+
+        const obstacleH = Phaser.Math.Between(24, 42);
+        const obstacle = this.add.rectangle(WIDTH + 30, FLOOR_Y - obstacleH / 2, 20, obstacleH, 0xcccccc);
+        this.physics.add.existing(obstacle);
+        obstacle.body.setAllowGravity(false);
+        obstacle.body.setImmovable(true);
+        this.obstacles.add(obstacle);
+      }
+
+      _advanceRoomIfNeeded() {
+        const roomLength = 1200 + (ROM.bruceStartX[this.roomIndex] || 0) * 3;
+        if (this.distance < roomLength) return;
+
+        this.distance = 0;
+        this.roomIndex = (this.roomIndex + 1) % ROM.roomColors.length;
+        this.speed = this.baseSpeed + this.roomIndex * 7;
+        this._buildRoomPlatforms();
+        this._refreshHud();
+      }
+
+      _refreshHud() {
+        this.roomText.setText(`ROOM ${this.roomIndex.toString().padStart(2, '0')}`);
+        this.scoreText.setText(`SPEED ${Math.floor(this.speed)}  DIST ${Math.floor(this.distance)}`);
+      }
+
+      _gameOver() {
+        this.physics.pause();
+        this.paused = true;
+        this.stateText.setText('GAME OVER\nR TO RESTART').setVisible(true);
+        this.input.keyboard.once('keydown-R', () => this.scene.restart());
+      }
+
+      update(_, dtMs) {
+        if (Phaser.Input.Keyboard.JustDown(this.keys.P)) {
+          this.paused = !this.paused;
+          this.physics.world.isPaused = this.paused;
+          this.stateText.setText('PAUSED').setVisible(this.paused);
+        }
+        if (this.paused) return;
+
+        const dt = dtMs / 1000;
+        this.distance += this.speed * dt;
+
+        const onGround = this.player.body.blocked.down || this.player.body.touching.down;
+        if ((Phaser.Input.Keyboard.JustDown(this.keys.SPACE) || Phaser.Input.Keyboard.JustDown(this.keys.UP)) && onGround) {
+          this.player.body.setVelocityY(-430);
+        }
+
+        const sliding = this.keys.DOWN.isDown && onGround;
+        this.player.body.setSize(20, sliding ? 16 : 28, true);
+        this.player.height = sliding ? 18 : 30;
+
+        this._spawnObstacle(dtMs);
+        this._advanceRoomIfNeeded();
+
+        this.obstacles.children.each((obs) => {
+          obs.x -= this.speed * dt;
+          obs.body.updateFromGameObject();
+          if (obs.x < -40) obs.destroy();
+        });
+
+        this._refreshHud();
+      }
+    }
+
+    new Phaser.Game({
+      type: Phaser.AUTO,
+      width: WIDTH,
+      height: HEIGHT,
+      parent: 'game',
+      backgroundColor: '#000000',
+      pixelArt: true,
+      physics: {
+        default: 'arcade',
+        arcade: { gravity: { y: 0 }, debug: false }
+      },
+      scene: [RunnerScene]
+    });
+  </script>
+</body>
+</html>
